@@ -86,7 +86,11 @@ The 3 product mockups are inline SVG components (`components/brand/mockups/*`) �
 
 ## Deployment
 
-Vercel-ready. Required env vars in production:
+Auto-deploys to **Vercel** on every push to `main`. See [`DEPLOY.md`](./DEPLOY.md) for full setup.
+
+Quick path: https://vercel.com/new → Import `oneup24/legion-www` → Deploy. ~2 minutes.
+
+Required env vars in production (set in Vercel dashboard):
 
 - `RESEND_API_KEY`, `RESEND_FROM`, `RESEND_TO_SALES`, `RESEND_TO_PARTNERS`
 - `GOOGLE_SERVICE_ACCOUNT_JSON` (single-line JSON string), `GOOGLE_SHEETS_ID`
