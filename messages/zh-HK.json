@@ -1,0 +1,486 @@
+{
+  "nav": {
+    "products": "產品功能",
+    "useCases": "應用場景",
+    "partners": "合作夥伴",
+    "pricing": "定價",
+    "about": "關於我們",
+    "contact": "聯絡我們",
+    "bookDemo": "預約示範",
+    "openMenu": "開啟選單",
+    "closeMenu": "關閉選單"
+  },
+  "footer": {
+    "tagline": "少數精銳，全力出擊。",
+    "company": "公司",
+    "product": "產品",
+    "resources": "資源",
+    "legal": "法律",
+    "rights": "版權所有",
+    "address": "香港",
+    "privacy": "私隱政策",
+    "terms": "使用條款",
+    "sitemap": "網站地圖"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "LegionOne · 商務作業系統",
+      "headline": "少數精銳，全力出擊。",
+      "sub": "為香港中小企而設的 ERP + CRM 平台。一個系統，統一營收、財務、客戶與庫存。",
+      "primaryCta": "預約免費示範",
+      "secondaryCta": "了解產品功能",
+      "mockupCaption": "畫面為開發中版本"
+    },
+    "painPoints": {
+      "eyebrow": "日常痛點",
+      "headline": "帳目散落、流程斷層，是香港中小企最大的隱性成本。",
+      "lead": "我們每天都在同一個戰場。",
+      "before": "現況",
+      "after": "用 LegionOne 之後",
+      "items": [
+        {
+          "before": "Excel 報價、WhatsApp 確認、銀行過數，三個系統永遠對不上。",
+          "after": "報價 → 訂單 → 收款，全程同一個資料源，零人手對數。"
+        },
+        {
+          "before": "客戶資料散落於 4 個同事的私人 WhatsApp 名單。",
+          "after": "客戶主檔集中管理，聯絡紀錄、報價、發票一鍵翻查。"
+        },
+        {
+          "before": "月底對數動輒 3 日，毛利數字永遠是「大概」。",
+          "after": "AR/AP 帳齡、即時毛利，月底一日內完成。"
+        },
+        {
+          "before": "業務出差，財務、跟單、倉存完全失聯。",
+          "after": "雲端即時同步，手機、平板、桌面無縫銜接。"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "四大核心能力",
+      "headline": "一個系統，四個維度，全面掌控。",
+      "items": [
+        {
+          "title": "統一資料源",
+          "desc": "報價、訂單、發票、收款、庫存，全部互聯互通。",
+          "icon": "Layers"
+        },
+        {
+          "title": "智能自動化",
+          "desc": "對賬、開單、催收、補貨提醒自動執行，告別人手操作。",
+          "icon": "Sparkles"
+        },
+        {
+          "title": "即時決策儀表板",
+          "desc": "營收、毛利、待辦應收一眼看清，月底不再趕死線。",
+          "icon": "Gauge"
+        },
+        {
+          "title": "無限擴展",
+          "desc": "從一人公司到 200 人團隊，模組化隨業務節奏成長。",
+          "icon": "Maximize2"
+        }
+      ]
+    },
+    "productPreview": {
+      "eyebrow": "產品預覽",
+      "headline": "看看 LegionOne 介面。",
+      "sub": "Dashboard、財務、CRM 三大模組切換瀏覽。",
+      "tabs": {
+        "dashboard": "Dashboard",
+        "finance": "財務",
+        "crm": "CRM"
+      },
+      "descriptions": {
+        "dashboard": "KPI 卡片、營收趨勢圖、近期活動 — 一頁掌握公司全局。",
+        "finance": "AR/AP 帳齡、發票管理、現金流預測，財務健康一目了然。",
+        "crm": "銷售管道看板、客戶名單、聯絡人抽屜，跟進不漏接。"
+      }
+    },
+    "socialProof": {
+      "headline": "數據說明一切。",
+      "stats": [
+        { "value": "5", "suffix": "+", "label": "行業模板" },
+        { "value": "40", "suffix": "%", "label": "行政時間減省" },
+        { "value": "50", "suffix": "+", "label": "合作夥伴" },
+        { "value": "7", "suffix": "天", "label": "平均上線時間" }
+      ]
+    },
+    "partnerCta": {
+      "headline": "成為 LegionOne 合作夥伴。",
+      "sub": "會計師事務所、ERP 顧問、IT 公司 — 與我們一起服務香港中小企。",
+      "cta": "了解合作模式"
+    },
+    "finalCta": {
+      "headline": "準備好開始了嗎？",
+      "sub": "免費示範、免費試用，無需信用卡。",
+      "primaryCta": "預約免費示範",
+      "secondaryCta": "聯絡我們"
+    }
+  },
+  "product": {
+    "headline": "七大模組，一個平台。",
+    "sub": "從報價到收款，從潛客到忠誠客戶，全部在一個畫面。",
+    "section": {
+      "dashboard": {
+        "title": "Dashboard",
+        "tagline": "公司全局，一頁掌握。",
+        "bullets": [
+          "KPI 卡片：營收、毛利、待辦應收、庫存值",
+          "營收趨勢圖（年 / 月 / 日切換）",
+          "近期活動時間軸",
+          "自訂儀表板，拖拉式排版"
+        ]
+      },
+      "finance": {
+        "title": "財務管理",
+        "tagline": "從發票到帳齡，告別月底趕數。",
+        "bullets": [
+          "AR/AP 帳齡分析",
+          "發票開立、寄送、催收一條龍",
+          "現金流預測",
+          "多幣別、多稅制支援"
+        ]
+      },
+      "crm": {
+        "title": "CRM 客戶管理",
+        "tagline": "客戶資料、銷售管道、聯絡紀錄集中管理。",
+        "bullets": [
+          "銷售管道看板（拖拽切換階段）",
+          "客戶 360° 主檔",
+          "聯絡紀錄、報價、發票關聯",
+          "WhatsApp / Email 整合"
+        ]
+      },
+      "inventory": {
+        "title": "庫存管理",
+        "tagline": "即時庫存，告別缺貨與囤貨。",
+        "bullets": [
+          "多倉庫、即時盤點",
+          "自動補貨提醒",
+          "批次、序號、保質期追蹤",
+          "與 POS / 電商平台同步"
+        ]
+      },
+      "sales": {
+        "title": "銷售與報價",
+        "tagline": "報價 → 訂單 → 發票，一氣呵成。",
+        "bullets": [
+          "拖拉式報價單設計",
+          "客戶線上簽署確認",
+          "一鍵轉訂單 / 發票",
+          "折扣、稅項、多幣別處理"
+        ]
+      },
+      "hr": {
+        "title": "人力資源",
+        "tagline": "員工資料、出勤、假期、薪酬，一站管理。",
+        "bullets": [
+          "員工主檔與組織架構",
+          "出勤打卡、假期申請",
+          "薪酬計算、MPF 處理",
+          "績效與晉升紀錄"
+        ]
+      },
+      "automation": {
+        "title": "自動化工作流",
+        "tagline": "規則引擎，把重複交給系統。",
+        "bullets": [
+          "拖拉式流程設計",
+          "條件觸發：時間、金額、狀態變更",
+          "自動 Email / WhatsApp 通知",
+          "API 串接外部系統"
+        ]
+      }
+    },
+    "bottomCta": {
+      "headline": "看完整示範，15 分鐘。",
+      "primaryCta": "預約免費示範",
+      "secondaryCta": "下載產品手冊"
+    }
+  },
+  "useCases": {
+    "hub": {
+      "headline": "為不同行業而生。",
+      "sub": "我們選擇先深入兩個行業：貿易與專業服務。其他行業陸續推出。",
+      "comingSoon": "即將推出"
+    },
+    "trading": {
+      "headline": "貿易公司",
+      "sub": "由報價、訂單、船務、收款的整條供應鏈，LegionOne 幫你理順。",
+      "pain": {
+        "title": "貿易老闆的日常",
+        "items": [
+          "報價單改了 8 次，客人 WhatsApp 確認後才發現沒更新",
+          "船期改了，倉庫已經入貨，客戶卻還在等",
+          "月底對數，Excel 與銀行月結永遠差幾萬",
+          "業務出差，整個公司失聯"
+        ]
+      },
+      "solution": {
+        "title": "LegionOne 怎樣解決",
+        "items": [
+          "報價 → 訂單 → 入貨單 → 發票，狀態全自動同步",
+          "船務排期與庫存聯動，逾期自動通知",
+          "AR/AP 即時對賬，銀行月結一鍵導入",
+          "雲端即時同步，老闆出差也可批單"
+        ]
+      },
+      "dayFlow": {
+        "title": "典型一天",
+        "steps": [
+          { "time": "09:00", "title": "客戶確認訂單", "detail": "WhatsApp 訊息自動轉為訂單狀態" },
+          { "time": "11:00", "title": "倉庫入貨", "detail": "系統自動更新庫存與在製品" },
+          { "time": "15:00", "title": "催收過期帳", "detail": "AR 帳齡報表自動發 WhatsApp 提醒" },
+          { "time": "18:00", "title": "下班前", "detail": "Dashboard 一眼看完今日成交" }
+        ]
+      }
+    },
+    "professionalServices": {
+      "headline": "專業服務",
+      "sub": "會計師、法律、顧問公司 — 客戶、專案、時間、發票統一管理。",
+      "pain": {
+        "title": "合夥人的挑戰",
+        "items": [
+          "客戶名單在 3 個合夥人各自的 Notebook",
+          "時間表、發票、收款週期對不上",
+          "專案進度散落於 Excel 與 Email",
+          "客戶滿意度永遠事後才知道"
+        ]
+      },
+      "solution": {
+        "title": "LegionOne 怎樣解決",
+        "items": [
+          "統一客戶主檔，合夥人共享一個視角",
+          "時間追蹤 → 發票 → 收款，自動流轉",
+          "專案看板、甘特圖，進度全透明",
+          "客戶回饋自動收集與分析"
+        ]
+      },
+      "dayFlow": {
+        "title": "典型一天",
+        "steps": [
+          { "time": "09:30", "title": "客戶來電查詢", "detail": "CRM 自動彈出過往紀錄與發票狀態" },
+          { "time": "11:00", "title": "專案進度更新", "detail": "團隊成員於 Kanban 即時更新" },
+          { "time": "14:00", "title": "月度發票批次", "detail": "時間追蹤一鍵生成發票並寄出" },
+          { "time": "17:00", "title": "合夥人會議", "detail": "Dashboard 報告客戶健康度" }
+        ]
+      }
+    },
+    "comingSoon": {
+      "retail": "零售與電商",
+      "manufacturing": "輕工製造"
+    }
+  },
+  "partners": {
+    "headline": "與 LegionOne 同行。",
+    "sub": "我們尋找理念相近的合作夥伴，一起把更好的工具帶給香港中小企。",
+    "philosophy": {
+      "title": "合作理念",
+      "body": "我們不是要分銷商，是要找共同創新、互相成就的夥伴。LegionOne 提供平台、技術、培訓，你帶來行業 know-how 與在地客戶。"
+    },
+    "models": {
+      "title": "三種合作模式",
+      "items": [
+        {
+          "title": "推薦夥伴",
+          "desc": "推薦客戶，獲得持續佣金分成",
+          "icon": "Share2"
+        },
+        {
+          "title": "實施夥伴",
+          "desc": "為客戶提供導入、培訓、客製服務",
+          "icon": "Wrench"
+        },
+        {
+          "title": "解決方案夥伴",
+          "desc": "深度整合，聯合推出行業方案",
+          "icon": "Puzzle"
+        }
+      ]
+    },
+    "promises": {
+      "title": "我們的三項承諾",
+      "items": [
+        "透明的佣金結構，無隱藏條款",
+        "完整的技術與銷售培訓",
+        "專屬合作夥伴經理支援"
+      ]
+    },
+    "form": {
+      "title": "申請成為合作夥伴",
+      "fields": {
+        "company": "公司名稱",
+        "name": "聯絡人姓名",
+        "role": "職銜",
+        "email": "電郵",
+        "phone": "電話",
+        "model": "合作模式",
+        "background": "背景與經驗"
+      },
+      "submit": "提交申請",
+      "success": "感謝申請！我們將於 3 個工作天內回覆。"
+    }
+  },
+  "pricing": {
+    "headline": "透明定價，隨業務成長。",
+    "sub": "三個方案，覆蓋由一人公司至 200 人團隊。所有方案包含核心四大模組。",
+    "tiers": [
+      {
+        "name": "Starter",
+        "price": "TBC",
+        "period": "/ 月",
+        "desc": "一人公司、剛起步的團隊",
+        "features": [
+          "1–5 用戶",
+          "Dashboard + CRM 模組",
+          "5GB 儲存",
+          "電郵支援"
+        ],
+        "cta": "選擇 Starter"
+      },
+      {
+        "name": "Growth",
+        "price": "TBC",
+        "period": "/ 月",
+        "desc": "成長中的香港中小企",
+        "features": [
+          "5–25 用戶",
+          "全 7 模組",
+          "50GB 儲存",
+          "優先支援 + 培訓",
+          "API 存取"
+        ],
+        "cta": "選擇 Growth",
+        "featured": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "TBC",
+        "period": "/ 月起",
+        "desc": "50+ 用戶、複雜需求",
+        "features": [
+          "無限用戶",
+          "全 7 模組 + 自訂開發",
+          "無限儲存",
+          "專屬客戶經理",
+          "SLA 99.9%",
+          "私有雲部署選項"
+        ],
+        "cta": "聯絡銷售"
+      }
+    ],
+    "faq": {
+      "title": "常見問題",
+      "items": [
+        {
+          "q": "需要簽約嗎？",
+          "a": "月付方案可隨時取消，年付方案享有 20% 折扣。"
+        },
+        {
+          "q": "可以試用嗎？",
+          "a": "預約示範後可獲得 14 天免費試用帳號，無需信用卡。"
+        },
+        {
+          "q": "支援什麼付款方式？",
+          "a": "支援 FPS、信用卡、支票（年付），TBC 最終稅率以合約為準。"
+        },
+        {
+          "q": "資料會儲存在哪裡？",
+          "a": "預設為香港 AWS 區域，Enterprise 方案可選私有雲。"
+        },
+        {
+          "q": "可以從其他系統遷移嗎？",
+          "a": "提供免費的 Excel / CSV 導入工具，進階遷移由合作夥伴協助。"
+        }
+      ]
+    }
+  },
+  "about": {
+    "headline": "關於 LegionOne",
+    "sub": "我們相信，好的工具不應只服務大企業。",
+    "story": {
+      "title": "我們的故事",
+      "body": "LegionOne 由一班香港中小企老闆與技術團隊創立。我們親身經歷過報價單改 8 次、月底 Excel 對數到凌晨的痛楚。今天，我們把這些年累積的 know-how 打包成一個平台，讓更多香港老闆可以專注在真正重要的事 — 客戶與產品。"
+    },
+    "vision": {
+      "title": "願景",
+      "body": "成為香港中小企最受信賴的商務作業系統。"
+    },
+    "mission": {
+      "title": "使命",
+      "body": "以精銳團隊 + 精良工具，幫助香港中小企在亞洲市場站穩腳步。"
+    },
+    "values": {
+      "title": "我們的價值觀 L.E.G.I.O.N.",
+      "items": [
+        { "letter": "L", "title": "Learn always", "desc": "每天學，每天進步。" },
+        { "letter": "E", "title": "Execute with focus", "desc": "聚焦執行，少做多做好。" },
+        { "letter": "G", "title": "Grow together", "desc": "與客戶、夥伴、團隊共成長。" },
+        { "letter": "I", "title": "Innovate responsibly", "desc": "為長期價值而創新。" },
+        { "letter": "O", "title": "Own the outcome", "desc": "對結果負責，沒有藉口。" },
+        { "letter": "N", "title": "Never compromise", "desc": "品質、誠信、客戶信任，永不退讓。" }
+      ]
+    },
+    "team": {
+      "title": "我們的團隊",
+      "subtitle": "6 位核心成員，背景涵蓋 ERP、CRM、會計、顧問。"
+    }
+  },
+  "contact": {
+    "headline": "聯絡我們。",
+    "sub": "我們於 1 個工作天內回覆。",
+    "form": {
+      "name": "姓名",
+      "company": "公司名稱",
+      "phone": "電話",
+      "email": "電郵",
+      "message": "查詢內容",
+      "submit": "送出訊息",
+      "success": "感謝查詢！我們將於 1 個工作天內回覆。"
+    },
+    "info": {
+      "address": "香港",
+      "phone": "+852 0000 0000",
+      "email": "hello@legionone.hk",
+      "whatsapp": "WhatsApp 我們"
+    }
+  },
+  "modal": {
+    "title": "預約免費示範",
+    "sub": "15 分鐘了解 LegionOne 如何配合你的業務。",
+    "fields": {
+      "name": "姓名",
+      "company": "公司名稱",
+      "headcount": "團隊人數",
+      "phone": "電話",
+      "email": "電郵",
+      "painPoints": "想優先解決的痛點（可選多項）",
+      "preferredTime": "偏好示範時間",
+      "notes": "其他備註"
+    },
+    "headcountOptions": ["1–5", "6–20", "21–50", "51–100", "100+"],
+    "painPointOptions": [
+      "報價 / 訂單散亂",
+      "客戶資料分散",
+      "月底對數慢",
+      "庫存不準確",
+      "團隊協作差",
+      "報表 / 數據延遲",
+      "其他"
+    ],
+    "submit": "送出申請",
+    "submitting": "送出中...",
+    "success": "感謝申請！我們將於 1 個工作天內聯絡你預約示範時間。",
+    "error": "送出失敗，請稍後再試或 WhatsApp 我們。",
+    "close": "關閉",
+    "privacy": "提交即代表同意 LegionOne 根據私隱政策處理你的資料。"
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "viewAll": "查看全部",
+    "back": "返回",
+    "loading": "載入中",
+    "comingSoon": "即將推出"
+  }
+}
