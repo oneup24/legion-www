@@ -86,17 +86,27 @@ The 3 product mockups are inline SVG components (`components/brand/mockups/*`) �
 
 ## Deployment
 
-Auto-deploys to **Vercel** on every push to `main`. See [`DEPLOY.md`](./DEPLOY.md) for full setup.
+Default: **GitHub Pages** via `.github/workflows/pages.yml` — see [`GITHUB_PAGES.md`](./GITHUB_PAGES.md).
 
-Quick path: https://vercel.com/new → Import `oneup24/legion-www` → Deploy. ~2 minutes.
+Alternative: **Vercel** for full server features (forms API, dynamic OG) — see [`DEPLOY.md`](./DEPLOY.md).
 
-Required env vars in production (set in Vercel dashboard):
+Local production preview of the static export:
 
-- `RESEND_API_KEY`, `RESEND_FROM`, `RESEND_TO_SALES`, `RESEND_TO_PARTNERS`
-- `GOOGLE_SERVICE_ACCOUNT_JSON` (single-line JSON string), `GOOGLE_SHEETS_ID`
-- `NEXT_PUBLIC_GA_ID`
-- `NEXT_PUBLIC_WHATSAPP_NUMBER`
-- `NEXT_PUBLIC_SITE_URL`
+```bash
+pnpm build:static      # outputs to out/
+pnpm serve:static      # serves out/ at http://localhost:3000
+```
+
+## What works in static export (GitHub Pages)
+
+- All pages render
+- BookDemoModal opens, validates, submits via `mailto:` fallback
+- Bilingual (`/` = zh-HK, `/en/` = EN)
+
+## What requires a backend (Vercel etc.)
+
+- Server-side form capture (email + Sheets archive)
+- Dynamic OG image generation per page
 
 ## Out-of-scope placeholders (post-launch)
 

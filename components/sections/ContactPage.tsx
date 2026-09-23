@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
+import { submitContact } from "@/lib/forms/submit";
 
 export function ContactPage() {
   const t = useTranslations("contact");
@@ -15,12 +16,14 @@ export function ContactPage() {
     setStatus("submitting");
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
     try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, source: "contact_form" }),
+      const result = await submitContact({
+        name: String(data.name),
+        company: data.company ? String(data.company) : undefined,
+        phone: data.phone ? String(data.phone) : undefined,
+        email: String(data.email),
+        notes: String(data.notes),
       });
-      if (!res.ok) throw new Error();
+      if (!result.ok) throw new Error();
       setStatus("success");
     } catch {
       setStatus("error");

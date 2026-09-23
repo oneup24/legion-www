@@ -4,6 +4,7 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 import { Share2, Wrench, Puzzle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { submitPartnerApplication } from "@/lib/forms/submit";
 import { motion } from "framer-motion";
 
 const iconMap = { Share2, Wrench, Puzzle } as const;
@@ -26,13 +27,18 @@ export function PartnersPage() {
     setStatus("submitting");
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
     try {
-      const res = await fetch("/api/partner-application", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+      const result = await submitPartnerApplication({
+        company: String(data.company),
+        name: String(data.name),
+        role: String(data.role),
+        email: String(data.email),
+        phone: String(data.phone),
+        model: String(data.model),
+        background: String(data.background),
       });
-      if (!res.ok) throw new Error();
+      if (!result.ok) throw new Error();
       setStatus("success");
+      if (result.mode === "mailto") setTimeout(() => {}, 600);
     } catch {
       setStatus("error");
     }

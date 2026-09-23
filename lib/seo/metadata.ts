@@ -34,7 +34,7 @@ export function buildMetadata(seo: PageSeo): Metadata {
       type: "website",
       images: [
         {
-          url: `${SITE_URL}/og?title=${encodeURIComponent(seo.title)}`,
+          url: `${SITE_URL}${process.env.NEXT_PUBLIC_BASE_PATH || ""}/og/default.png`,
           width: 1200,
           height: 630,
           alt: seo.title,
@@ -45,6 +45,7 @@ export function buildMetadata(seo: PageSeo): Metadata {
       card: "summary_large_image",
       title: `${seo.title} — LegionOne`,
       description: seo.description,
+      images: [`${SITE_URL}${process.env.NEXT_PUBLIC_BASE_PATH || ""}/og/default.png`],
     },
   };
 }

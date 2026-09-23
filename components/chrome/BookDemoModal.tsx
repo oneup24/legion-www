@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useBookDemo } from "./useBookDemo";
 import { Button } from "@/components/ui/Button";
+import { submitLead } from "@/lib/forms/submit";
 import { z } from "zod";
 
 const leadSchema = z.object({
@@ -69,20 +70,18 @@ export function BookDemoModal() {
 
     setStatus("submitting");
     try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...parsed.data, source }),
-      });
-      const json = (await res.json().catch(() => ({}))) as { ok?: boolean };
-      if (!res.ok || !json.ok) throw new Error("failed");
+      const result = await submitLead({ ...parsed.data, source });
+      if (!result.ok) throw new Error("failed");
       setStatus("success");
-      // GA4 conversion
+      if (result.mode === "mailto") {
+        // Give the mail client a moment to open, then close the modal.
+        setTimeout(() => setOpen(false), 600);
+      }
       if (typeof window !== "undefined" && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
           "event",
           "lead_submitted",
-          { source },
+          { source, mode: result.mode },
         );
       }
     } catch {
