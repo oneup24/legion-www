@@ -4,6 +4,7 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { useBookDemo } from "@/components/chrome/useBookDemo";
+import { ProductIntegrations } from "@/components/sections/ProductIntegrations";
 
 type TileProps = {
   bg: "canvas" | "parchment" | "tile-dark-1" | "tile-dark-2" | "tile-dark-3";
@@ -123,6 +124,8 @@ export function ProductPage() {
           mockup={s.mockup}
         />
       ))}
+
+      <ProductIntegrations />
 
       {/* Bottom CTA */}
       <section className="bg-canvas">

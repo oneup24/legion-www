@@ -12,63 +12,87 @@ export function Hero() {
   const { setOpen: setBookOpen, setSource } = useBookDemo();
 
   return (
-    <section className="relative bg-canvas">
-      <div className="mx-auto max-w-[1024px] px-4 sm:px-6 pt-12 sm:pt-20 pb-12 sm:pb-24 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-caption text-ink-muted-48 mb-4 tracking-wide"
-        >
-          {t("eyebrow")}
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.05 }}
-          className="text-hero-display text-ink"
-        >
-          {t("headline")}
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="text-lead text-ink-muted-80 mt-5 max-w-2xl mx-auto text-body-cjk"
-        >
-          {t("sub")}
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
-          className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3"
-        >
-          <Button
-            variant="primary"
-            size="lg"
-            data-cta-id="hero_book_demo"
-            onClick={() => {
-              setSource("hero");
-              setBookOpen(true);
-            }}
-          >
-            {t("primaryCta")}
-          </Button>
-          <a
-            href="#product"
-            data-cta-id="hero_secondary"
-            className="text-button text-primary hover:text-primary-focus inline-flex items-center gap-1 h-12 px-2"
-          >
-            {t("secondaryCta")} →
-          </a>
-        </motion.div>
+    <section className="bg-canvas">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-20 pb-10 sm:pb-16 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* LEFT — copy */}
+          <div className="text-center lg:text-left">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="text-caption text-ink-muted-48 mb-4 tracking-wide"
+            >
+              {t("eyebrow")}
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+              className="text-hero-display text-ink"
+            >
+              {t("headline")}
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="text-lead text-ink-muted-80 mt-5 max-w-xl mx-auto lg:mx-0 text-body-cjk"
+            >
+              {t("sub")}
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
+              className="mt-7 flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center gap-3"
+            >
+              <Button
+                variant="primary"
+                size="lg"
+                data-cta-id="hero_book_demo"
+                onClick={() => {
+                  setSource("hero");
+                  setBookOpen(true);
+                }}
+              >
+                {t("primaryCta")}
+              </Button>
+              <a
+                href="#product"
+                data-cta-id="hero_secondary"
+                className="text-button text-primary hover:text-primary-focus inline-flex items-center gap-1 h-12 px-2"
+              >
+                {t("secondaryCta")} →
+              </a>
+            </motion.div>
+            <p className="text-caption text-ink-muted-48 mt-4 lg:hidden">
+              {t("mockupCaption")}
+            </p>
+          </div>
 
+          {/* RIGHT — mockup (≥1024px only) */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="hidden lg:block"
+          >
+            <div className="relative rounded-xl overflow-hidden product-shadow bg-canvas-pearl">
+              <DashboardOverviewMockup className="w-full h-auto block" />
+            </div>
+            <p className="text-caption text-ink-muted-48 mt-3 text-center">
+              {t("mockupCaption")}
+            </p>
+          </motion.div>
+        </div>
+
+        {/* BELOW — mockup on smaller screens */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="mt-12 sm:mt-16"
+          className="lg:hidden mt-10 sm:mt-12"
         >
           <div className="relative rounded-xl overflow-hidden product-shadow bg-canvas-pearl">
             <DashboardOverviewMockup className="w-full h-auto block" />

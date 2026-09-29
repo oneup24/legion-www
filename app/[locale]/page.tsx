@@ -1,9 +1,11 @@
 import { Hero } from "@/components/sections/home/Hero";
-import { PainPoints } from "@/components/sections/home/PainPoints";
+import { LogoStrip } from "@/components/sections/home/LogoStrip";
+import { Comparison } from "@/components/sections/home/Comparison";
 import { Capabilities } from "@/components/sections/home/Capabilities";
 import { ProductPreview } from "@/components/sections/home/ProductPreview";
 import { SocialProof } from "@/components/sections/home/SocialProof";
 import { PartnerCTA } from "@/components/sections/home/PartnerCTA";
+import { SecurityBadges } from "@/components/sections/home/SecurityBadges";
 import { FinalCTA } from "@/components/sections/home/FinalCTA";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { organizationJsonLd } from "@/lib/seo/jsonld";
@@ -23,11 +25,13 @@ export default function HomePage() {
     <>
       <JsonLdScript data={organizationJsonLd()} />
       <Hero />
-      <PainPoints />
+      <LogoStrip />
+      <Comparison />
       <Capabilities />
       <ProductPreview />
       <SocialProof />
       <PartnerCTA />
+      <SecurityBadges />
       <FinalCTA />
     </>
   );
