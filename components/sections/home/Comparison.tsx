@@ -79,7 +79,7 @@ export function Comparison() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 sm:gap-7 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-4 -mx-4 px-4 md:mx-0 md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pb-2">
           {rows.map((row, i) => {
             const Icon = iconMap[row.icon] ?? Puzzle;
             const Mockup = mockupMap[row.mockup];
@@ -91,7 +91,7 @@ export function Comparison() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="group rounded-2xl overflow-hidden flex flex-col bg-canvas-pearl"
+                className="group rounded-2xl overflow-hidden flex flex-col bg-canvas-pearl min-w-[78vw] sm:min-w-[320px] md:min-w-0 snap-center shrink-0"
               >
                 <Link
                   href="/product"
