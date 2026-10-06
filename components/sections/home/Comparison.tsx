@@ -9,19 +9,31 @@ import {
   Briefcase,
   Bell,
   Database,
-  X,
-  Check,
+  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/lib/i18n/navigation";
+import { DashboardOverviewMockup } from "@/components/brand/mockups/DashboardOverview";
+import { FinanceModuleMockup } from "@/components/brand/mockups/FinanceModule";
+import { CrmModuleMockup } from "@/components/brand/mockups/CrmModule";
+
+type MockupKey = "dashboard" | "finance" | "crm";
+const mockupMap: Record<MockupKey, React.ComponentType<{ className?: string }>> = {
+  dashboard: DashboardOverviewMockup,
+  finance: FinanceModuleMockup,
+  crm: CrmModuleMockup,
+};
 
 type Row = {
+  number: string;
   icon: string;
   title: string;
-  before: string;
-  beforeState: string;
-  after: string;
-  afterState: string;
+  pain: string;
+  painTag: string;
+  solution: string;
+  solutionTag: string;
+  mockup: MockupKey;
 };
 
 const iconMap: Record<string, LucideIcon> = {
@@ -33,19 +45,28 @@ const iconMap: Record<string, LucideIcon> = {
   Database,
 };
 
+const cardGradients = [
+  "bg-[linear-gradient(135deg,#003a8c_0%,#0066cc_100%)]",
+  "bg-[linear-gradient(180deg,#0066cc_0%,#1e40af_100%)]",
+  "bg-[linear-gradient(45deg,#2997ff_0%,#0066cc_100%)]",
+  "bg-[linear-gradient(225deg,#1e40af_0%,#2997ff_100%)]",
+  "bg-[linear-gradient(135deg,#0071e3_0%,#003a8c_100%)]",
+  "bg-[linear-gradient(180deg,#003a8c_0%,#2997ff_100%)]",
+] as const;
+
 export function Comparison() {
   const t = useTranslations("home.comparison");
   const rows = t.raw("rows") as Row[];
 
   return (
-    <section className="bg-canvas-parchment">
-      <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16 sm:py-24">
+    <section className="bg-canvas">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 py-16 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="text-center mb-12"
+          className="text-center mb-12 sm:mb-16"
         >
           <p className="text-caption text-ink-muted-48 mb-3 tracking-wide">
             {t("eyebrow")}
@@ -58,87 +79,59 @@ export function Comparison() {
           </p>
         </motion.div>
 
-        {/* Column headers (desktop) */}
-        <div className="hidden sm:grid grid-cols-[1fr_auto_1fr] gap-4 mb-4 pb-3 border-b border-divider-soft">
-          <div className="text-caption font-semibold text-ink-muted-48 uppercase tracking-wide">
-            {t("before")}
-          </div>
-          <div className="w-10" />
-          <div className="text-caption font-semibold text-primary uppercase tracking-wide">
-            {t("after")}
-          </div>
-        </div>
-
-        <div className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {rows.map((row, i) => {
             const Icon = iconMap[row.icon] ?? Puzzle;
+            const Mockup = mockupMap[row.mockup];
+            const gradient = cardGradients[i % cardGradients.length];
             return (
-              <motion.div
+              <motion.article
                 key={row.title}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-canvas rounded-xl overflow-hidden"
+                className="group rounded-2xl overflow-hidden flex flex-col bg-canvas-pearl"
               >
-                <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 p-5 sm:p-6">
-                  {/* BEFORE */}
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2 mb-2 sm:hidden">
-                      <Icon
-                        size={16}
-                        strokeWidth={1.5}
-                        className="text-ink-muted-48"
-                      />
-                      <span className="text-caption font-semibold text-ink-muted-48 uppercase tracking-wide">
-                        {row.title}
-                      </span>
-                    </div>
-                    <p className="text-body text-ink-muted-48 text-body-cjk line-through decoration-error/30 decoration-1">
-                      {row.before}
-                    </p>
-                    <div className="flex items-center gap-2 mt-3">
-                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-error/10">
-                        <X size={12} className="text-error" strokeWidth={2.5} />
-                      </span>
-                      <span className="text-caption text-error font-medium">
-                        {row.beforeState}
-                      </span>
-                    </div>
-                  </div>
+                <Link
+                  href="/product"
+                  data-cta-id={`comparison_learn_${row.number}`}
+                  className={`${gradient} relative p-6 sm:p-8 text-on-dark flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70`}
+                >
+                  <div className="absolute inset-x-0 top-0 h-px bg-white/15" aria-hidden />
 
-                  {/* ICON DIVIDER */}
-                  <div className="hidden sm:flex flex-col items-center justify-center px-2">
+                  <header className="flex items-start justify-between mb-5">
                     <Icon
-                      size={20}
+                      size={32}
                       strokeWidth={1.5}
-                      className="text-ink-muted-48"
+                      className="text-white"
+                      aria-hidden
                     />
-                    <span className="text-caption font-semibold text-ink-muted-80 mt-1.5">
-                      {row.title}
-                    </span>
-                  </div>
+                    <ArrowRight
+                      size={20}
+                      strokeWidth={2}
+                      className="text-white/70 transition-transform group-hover:translate-x-1"
+                      aria-hidden
+                    />
+                  </header>
 
-                  {/* AFTER */}
-                  <div className="flex flex-col sm:border-l sm:border-divider-soft sm:pl-4">
-                    <p className="text-body text-ink text-body-cjk">
-                      {row.after}
-                    </p>
-                    <div className="flex items-center gap-2 mt-3">
-                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-success/10">
-                        <Check
-                          size={12}
-                          className="text-success"
-                          strokeWidth={2.5}
-                        />
-                      </span>
-                      <span className="text-caption text-success font-medium">
-                        {row.afterState}
-                      </span>
-                    </div>
+                  <h3 className="text-tagline text-white font-semibold mb-2">
+                    {row.title}
+                  </h3>
+                  <p className="text-body text-white/85 text-body-cjk">
+                    {row.solution}
+                  </p>
+
+                  <div className="mt-6 flex items-center gap-2 text-caption tracking-wide uppercase text-white/70">
+                    <span>{row.solutionTag}</span>
+                    <span className="h-px flex-1 bg-white/15" aria-hidden />
                   </div>
+                </Link>
+
+                <div className="bg-canvas-pearl product-shadow">
+                  <Mockup className="w-full h-auto block" />
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>

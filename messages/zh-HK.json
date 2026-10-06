@@ -46,59 +46,72 @@
       ]
     },
     "comparison": {
-      "eyebrow": "現況 vs. 用 LegionOne 之後",
+      "eyebrow": "六大常見痛點",
       "headline": "同一日工時，截然不同的結局。",
       "lead": "六個香港老闆每天踩中的痛點，用 LegionOne 之後會怎樣。",
-      "before": "現況",
-      "after": "用 LegionOne 之後",
+      "painLabel": "現況",
+      "solutionLabel": "用 LegionOne 之後",
+      "learnMore": "了解怎樣解決",
       "rows": [
         {
+          "number": "01",
           "icon": "Puzzle",
           "title": "工具四散",
-          "before": "Excel、WhatsApp、銀行 App、CRM 各自為政，永遠對不上。",
-          "beforeState": "Disconnected",
-          "after": "報價、訂單、發票、收款同一資料源，零人手對數。",
-          "afterState": "Unified"
+          "pain": "Excel、WhatsApp、銀行 App、CRM 各自為政，永遠對不上。",
+          "painTag": "Disconnected",
+          "solution": "報價、訂單、發票、收款同一資料源，零人手對數。",
+          "solutionTag": "Unified",
+          "mockup": "dashboard"
         },
         {
+          "number": "02",
           "icon": "EyeOff",
           "title": "客戶失聯",
-          "before": "客戶資料散落於 4 個同事的私人 WhatsApp 名單。",
-          "beforeState": "Flying blind",
-          "after": "客戶 360° 主檔，聯絡紀錄、報價、發票一鍵翻查。",
-          "afterState": "Full visibility"
+          "pain": "客戶資料散落於 4 個同事的私人 WhatsApp 名單。",
+          "painTag": "Flying blind",
+          "solution": "客戶 360° 主檔，聯絡紀錄、報價、發票一鍵翻查。",
+          "solutionTag": "Full visibility",
+          "mockup": "crm"
         },
         {
+          "number": "03",
           "icon": "Calculator",
           "title": "月底趕數",
-          "before": "對數動輒 3 日，毛利數字永遠是「大概」。",
-          "beforeState": "Outdated",
-          "after": "AR/AP 帳齡、即時毛利，月底一日內完成。",
-          "afterState": "Real-time"
+          "pain": "對數動輒 3 日，毛利數字永遠是「大概」。",
+          "painTag": "Outdated",
+          "solution": "AR/AP 帳齡、即時毛利，月底一日內完成。",
+          "solutionTag": "Real-time",
+          "mockup": "finance"
         },
         {
+          "number": "04",
           "icon": "Briefcase",
           "title": "出差失聯",
-          "before": "老闆出差，財務、跟單、倉存完全失聯。",
-          "beforeState": "Inefficient",
-          "after": "雲端即時同步，手機、平板、桌面無縫銜接。",
-          "afterState": "Effortless"
+          "pain": "老闆出差，財務、跟單、倉存完全失聯。",
+          "painTag": "Inefficient",
+          "solution": "雲端即時同步，手機、平板、桌面無縫銜接。",
+          "solutionTag": "Effortless",
+          "mockup": "dashboard"
         },
         {
+          "number": "05",
           "icon": "Bell",
           "title": "催收漏接",
-          "before": "過期帳單無人跟，要逐個 WhatsApp 客人提醒。",
-          "beforeState": "Revenue lost",
-          "after": "AR 帳齡報表自動發催收，逾期 7 日內跟進率提升 60%。",
-          "afterState": "Proactive"
+          "pain": "過期帳單無人跟，要逐個 WhatsApp 客人提醒。",
+          "painTag": "Revenue lost",
+          "solution": "AR 帳齡報表自動發催收，逾期 7 日內跟進率提升 60%。",
+          "solutionTag": "Proactive",
+          "mockup": "finance"
         },
         {
+          "number": "06",
           "icon": "Database",
           "title": "報表延遲",
-          "before": "週報、月報要人手 Excel 整，老闆永遠看到「上週」數字。",
-          "beforeState": "Reactive",
-          "after": "Dashboard 即時刷新，今日成交、待辦應收一眼看清。",
-          "afterState": "Live data"
+          "pain": "週報、月報要人手 Excel 整，老闆永遠看到「上週」數字。",
+          "painTag": "Reactive",
+          "solution": "Dashboard 即時刷新，今日成交、待辦應收一眼看清。",
+          "solutionTag": "Live data",
+          "mockup": "dashboard"
         }
       ]
     },
