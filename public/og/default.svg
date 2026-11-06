@@ -1,28 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1d1d1f"/>
-      <stop offset="1" stop-color="#272729"/>
+    <pattern id="hex" width="72" height="83.1" patternUnits="userSpaceOnUse">
+      <polygon points="36,0 72,20.8 72,62.4 36,83.1 0,62.4 0,20.8" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0166e6" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#0166e6" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <!-- Logo mark -->
-  <g transform="translate(80, 100)" stroke="#2997ff" stroke-width="2.5" fill="none" stroke-linejoin="round">
-    <polygon points="40,0 78,22 78,66 40,88 2,66 2,22"/>
-    <polygon points="40,16 65,30 65,58 40,72 15,58 15,30" opacity="0.55"/>
-    <polygon points="40,28 53,36 53,52 40,60 27,52 27,36" opacity="0.3"/>
+  <rect width="1200" height="630" fill="#1d1d1f"/>
+  <rect width="1200" height="630" fill="url(#hex)"/>
+  <rect x="0" y="0" width="1200" height="6" fill="url(#edge)"/>
+
+  <g transform="translate(80 66) scale(0.085)">
+    <g fill="#ffffff"><path d="M249.19 8.00 L258.73 8.00 L272.35 14.81 L441.32 108.84 L460.40 119.74 L461.76 127.91 L363.65 186.51 L260.09 129.27 L251.91 129.27 L235.56 137.45 L156.53 183.78 L145.63 193.32 L144.26 314.59 L52.97 369.10 L40.70 371.82 L37.98 367.74 L37.98 138.81 L42.07 129.27 Z"/>
+    <path d="M465.85 140.18 L474.02 142.90 L474.02 375.91 L463.12 388.18 L264.18 504.00 L253.27 504.00 L239.65 497.19 L51.60 390.90 L50.24 386.81 L54.33 381.36 L149.71 325.49 L164.70 330.95 L249.19 380.00 L261.45 380.00 L359.56 322.77 L367.74 310.51 L366.37 198.77 Z"/></g>
+    <g fill="#0166e6"><path d="M156.53 200.13 L157.89 197.41 L250.55 142.90 L254.64 141.54 L260.09 142.90 L347.30 191.96 L354.11 197.41 L355.47 302.33 L354.11 311.87 L352.75 313.23 L258.73 367.74 L249.19 366.37 L157.89 314.59 L156.53 311.87 Z"/></g>
   </g>
-  <circle cx="180" cy="122" r="6" fill="#2997ff"/>
-  <!-- Wordmark -->
-  <text x="220" y="80" fill="#ffffff" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="36" font-weight="600" letter-spacing="-0.04em">LegionOne</text>
-  <line x1="220" y1="86" x2="350" y2="86" stroke="#0066cc" stroke-width="3"/>
-  <!-- Headline -->
-  <text x="80" y="320" fill="#ffffff" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="84" font-weight="600" letter-spacing="-0.02em">少數精銳，全力出擊。</text>
-  <text x="80" y="420" fill="#cccccc" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="36" font-weight="400">為香港中小企而設的 ERP + CRM 平台</text>
-  <!-- Footer pill -->
-  <rect x="80" y="490" width="220" height="56" rx="28" fill="#0066cc"/>
-  <text x="190" y="525" fill="#ffffff" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="500" text-anchor="middle">預約免費示範</text>
-  <!-- Domain -->
-  <text x="1120" y="580" fill="#7a7a7a" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" text-anchor="end">legionone.hk</text>
+  <text x="132" y="108" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="34" font-weight="500" letter-spacing="-0.035em">LegionOne</text>
+  <rect x="132" y="120" width="44" height="3" fill="#0166e6"/>
+  <text x="80" y="176" fill="#3d9bff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500" letter-spacing="0.22em">LEGIONONE · BUSINESS OPERATING SYSTEM</text>
+
+  <text x="80" y="236" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="58.0" font-weight="500" letter-spacing="-0.02em">ONE SYSTEM.</text>
+    <text x="80" y="306" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="58.0" font-weight="500" letter-spacing="-0.02em">EVERY TEAM.</text>
+    <text x="80" y="376" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="58.0" font-weight="500" letter-spacing="-0.02em">THE SAME NUMBERS.</text>
+  <text x="80" y="466" fill="#87868b" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="400">The ERP + CRM platform built for Hong Kong SMEs.</text>
+
+  <rect x="80" y="500" width="272" height="54" fill="#0166e6"/>
+  <text x="216" y="534" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="500" letter-spacing="0.12em" text-anchor="middle">BOOK A FREE DEMO</text>
+
+  <line x1="760" y1="176" x2="760" y2="554" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  <g>
+        <text x="790" y="214" fill="#3d9bff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500" letter-spacing="0.04em">01</text>
+        <text x="836" y="214" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400">Revenue</text>
+        <line x1="790" y1="240" x2="1120" y2="240" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+      </g>
+    <g>
+        <text x="790" y="276" fill="#3d9bff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500" letter-spacing="0.04em">02</text>
+        <text x="836" y="276" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400">Finance</text>
+        <line x1="790" y1="302" x2="1120" y2="302" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+      </g>
+    <g>
+        <text x="790" y="338" fill="#3d9bff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500" letter-spacing="0.04em">03</text>
+        <text x="836" y="338" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400">Customers</text>
+        <line x1="790" y1="364" x2="1120" y2="364" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+      </g>
+    <g>
+        <text x="790" y="400" fill="#3d9bff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500" letter-spacing="0.04em">04</text>
+        <text x="836" y="400" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400">Inventory</text>
+        <line x1="790" y1="426" x2="1120" y2="426" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+      </g>
+    <g>
+        <text x="790" y="462" fill="#3d9bff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500" letter-spacing="0.04em">05</text>
+        <text x="836" y="462" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400">Quotation</text>
+        <line x1="790" y1="488" x2="1120" y2="488" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+      </g>
+    <g>
+        <text x="790" y="524" fill="#3d9bff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500" letter-spacing="0.04em">06</text>
+        <text x="836" y="524" fill="#ffffff" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400">Invoice</text>
+        <line x1="790" y1="550" x2="1120" y2="550" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+      </g>
+
+  <text x="1120" y="596" fill="#ffffff" fill-opacity="0.42" font-family="Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif" font-size="17" letter-spacing="0.1em" text-anchor="end">legionone.hk</text>
 </svg>

@@ -8,10 +8,12 @@
     "contact": "聯絡我們",
     "bookDemo": "預約示範",
     "openMenu": "開啟選單",
-    "closeMenu": "關閉選單"
+    "closeMenu": "關閉選單",
+    "menu": "選單"
   },
   "footer": {
     "tagline": "少數精銳，全力出擊。",
+    "eyebrow": "LegionOne",
     "company": "公司",
     "product": "產品",
     "resources": "資源",
@@ -20,135 +22,104 @@
     "address": "香港",
     "privacy": "私隱政策",
     "terms": "使用條款",
-    "sitemap": "網站地圖"
+    "sitemap": "網站地圖",
+    "industry": "行業",
+    "security": "資訊安全",
+    "contact": "聯絡我們",
+    "brochure": "產品手冊",
+    "backToTop": "回到頂部"
   },
   "home": {
     "hero": {
       "eyebrow": "LegionOne · 商務作業系統",
-      "headline": "少數精銳，全力出擊。",
+      "tagline": "少數精銳，全力出擊。",
+      "headline": "一個系統。每個部門。同一個數。",
       "sub": "為香港中小企而設的 ERP + CRM 平台。一個系統，統一營收、財務、客戶與庫存。",
       "primaryCta": "預約免費示範",
       "secondaryCta": "了解產品功能",
-      "mockupCaption": "畫面為開發中版本"
+      "mockupCaption": "畫面為開發中版本",
+      "tickerLabel": "一個系統，統一",
+      "ticker": [
+        "統一營收",
+        "統一財務",
+        "統一客戶",
+        "統一庫存",
+        "報價",
+        "訂單",
+        "發票",
+        "收款",
+        "對賬"
+      ],
+      "nav": [
+        {
+          "label": "產品功能",
+          "href": "/product"
+        },
+        {
+          "label": "應用場景",
+          "href": "/use-cases"
+        },
+        {
+          "label": "定價",
+          "href": "/pricing"
+        },
+        {
+          "label": "合作夥伴",
+          "href": "/partners"
+        },
+        {
+          "label": "關於我們",
+          "href": "/about"
+        },
+        {
+          "label": "聯絡我們",
+          "href": "/contact"
+        }
+      ]
     },
     "customerLogos": {
       "eyebrow": "受香港各行業信賴",
       "subtitle": "貿易 · 專業服務 · 零售 · 製造",
       "items": [
-        { "name": "嘉信貿易", "industry": "進出口貿易" },
-        { "name": "明華會計師事務所", "industry": "會計" },
-        { "name": "立信設計", "industry": "設計" },
-        { "name": "鴻圖工程", "industry": "建築工程" },
-        { "name": "永勝物流", "industry": "物流" },
-        { "name": "新世紀科技", "industry": "科技" },
-        { "name": "中興食品", "industry": "食品" },
-        { "name": "華聯集團", "industry": "零售" }
-      ]
-    },
-    "comparison": {
-      "eyebrow": "六大常見痛點",
-      "headline": "同一日工時，截然不同的結局。",
-      "lead": "六個香港老闆每天踩中的痛點，用 LegionOne 之後會怎樣。",
-      "painLabel": "現況",
-      "solutionLabel": "用 LegionOne 之後",
-      "learnMore": "了解怎樣解決",
-      "rows": [
         {
-          "number": "01",
-          "icon": "Puzzle",
-          "title": "工具四散",
-          "pain": "Excel、WhatsApp、銀行 App、CRM 各自為政，永遠對不上。",
-          "painTag": "Disconnected",
-          "solution": "報價、訂單、發票、收款同一資料源，零人手對數。",
-          "solutionTag": "Unified",
-          "mockup": "dashboard"
+          "name": "嘉信貿易",
+          "industry": "進出口貿易"
         },
         {
-          "number": "02",
-          "icon": "EyeOff",
-          "title": "客戶失聯",
-          "pain": "客戶資料散落於 4 個同事的私人 WhatsApp 名單。",
-          "painTag": "Flying blind",
-          "solution": "客戶 360° 主檔，聯絡紀錄、報價、發票一鍵翻查。",
-          "solutionTag": "Full visibility",
-          "mockup": "crm"
+          "name": "明華會計師事務所",
+          "industry": "會計"
         },
         {
-          "number": "03",
-          "icon": "Calculator",
-          "title": "月底趕數",
-          "pain": "對數動輒 3 日，毛利數字永遠是「大概」。",
-          "painTag": "Outdated",
-          "solution": "AR/AP 帳齡、即時毛利，月底一日內完成。",
-          "solutionTag": "Real-time",
-          "mockup": "finance"
+          "name": "立信設計",
+          "industry": "設計"
         },
         {
-          "number": "04",
-          "icon": "Briefcase",
-          "title": "出差失聯",
-          "pain": "老闆出差，財務、跟單、倉存完全失聯。",
-          "painTag": "Inefficient",
-          "solution": "雲端即時同步，手機、平板、桌面無縫銜接。",
-          "solutionTag": "Effortless",
-          "mockup": "dashboard"
+          "name": "鴻圖工程",
+          "industry": "建築工程"
         },
         {
-          "number": "05",
-          "icon": "Bell",
-          "title": "催收漏接",
-          "pain": "過期帳單無人跟，要逐個 WhatsApp 客人提醒。",
-          "painTag": "Revenue lost",
-          "solution": "AR 帳齡報表自動發催收，逾期 7 日內跟進率提升 60%。",
-          "solutionTag": "Proactive",
-          "mockup": "finance"
+          "name": "永勝物流",
+          "industry": "物流"
         },
         {
-          "number": "06",
-          "icon": "Database",
-          "title": "報表延遲",
-          "pain": "週報、月報要人手 Excel 整，老闆永遠看到「上週」數字。",
-          "painTag": "Reactive",
-          "solution": "Dashboard 即時刷新，今日成交、待辦應收一眼看清。",
-          "solutionTag": "Live data",
-          "mockup": "dashboard"
+          "name": "新世紀科技",
+          "industry": "科技"
+        },
+        {
+          "name": "中興食品",
+          "industry": "食品"
+        },
+        {
+          "name": "華聯集團",
+          "industry": "零售"
         }
       ]
     },
-    "securityBadges": {
-      "eyebrow": "企業級資訊安全",
-      "items": [
-        { "label": "ISO 27001", "desc": "資訊安全管理" },
-        { "label": "GDPR Ready", "desc": "私隱合規" },
-        { "label": "AWS Hong Kong", "desc": "本港資料中心" },
-        { "label": "Cyber Trust Mark", "desc": "網絡安全認證" }
-      ]
-    },
-    "capabilities": {
-      "eyebrow": "四大核心能力",
-      "headline": "一個系統，四個維度，全面掌控。",
-      "items": [
-        {
-          "title": "統一資料源",
-          "desc": "報價、訂單、發票、收款、庫存，全部互聯互通。",
-          "icon": "Layers"
-        },
-        {
-          "title": "智能自動化",
-          "desc": "對賬、開單、催收、補貨提醒自動執行，告別人手操作。",
-          "icon": "Sparkles"
-        },
-        {
-          "title": "即時決策儀表板",
-          "desc": "營收、毛利、待辦應收一眼看清，月底不再趕死線。",
-          "icon": "Gauge"
-        },
-        {
-          "title": "無限擴展",
-          "desc": "從一人公司到 200 人團隊，模組化隨業務節奏成長。",
-          "icon": "Maximize2"
-        }
-      ]
+    "manifesto": {
+      "label": "我們相信",
+      "quote": "香港中小企唔係唔識用工具，係工具太多，每個都講緊唔同語言。",
+      "body": "所以 LegionOne 由第一日就係一個系統 — 報價、訂單、發票、收款、庫存、客戶，全部用同一份資料，每個部門睇到嘅都係同一個數。",
+      "cta": "看看系統點行"
     },
     "productPreview": {
       "eyebrow": "產品預覽",
@@ -161,25 +132,265 @@
       },
       "descriptions": {
         "dashboard": "KPI 卡片、營收趨勢圖、近期活動 — 一頁掌握公司全局。",
-        "finance": "AR/AP 帳齡、發票管理、現金流預測，財務健康一目了然。",
+        "finance": "AR／AP 帳齡、發票管理、現金流預測，財務健康一目了然。",
         "crm": "銷售管道看板、客戶名單、聯絡人抽屜，跟進不漏接。"
       }
     },
-    "socialProof": {
-      "headline": "數據說明一切。",
-      "stats": [
-        { "value": "5", "suffix": "+", "label": "行業模板" },
-        { "value": "40", "suffix": "%", "label": "行政時間減省" },
-        { "value": "50", "suffix": "+", "label": "合作夥伴" },
-        { "value": "7", "suffix": "天", "label": "平均上線時間" }
+    "services": {
+      "label": "服務",
+      "headline": "七大模組，一個平台。",
+      "lead": "每個模組處理一件事，交完畀下一個 — 由第一張報價到最後一次對賬，一氣呵成。",
+      "items": [
+        {
+          "index": "01",
+          "title": "Dashboard",
+          "desc": "公司全局一頁掌握：營收、毛利、待辦應收、庫存值，即時刷新。"
+        },
+        {
+          "index": "02",
+          "title": "財務管理",
+          "desc": "AR／AP 帳齡、開票、催收、現金流預測，月底唔再係趕死線。"
+        },
+        {
+          "index": "03",
+          "title": "CRM",
+          "desc": "銷售管道、客戶主檔、聯絡紀錄集中管理，跟進唔會漏接。"
+        },
+        {
+          "index": "04",
+          "title": "庫存管理",
+          "desc": "多倉庫即時庫存，批次、序號、保質期追蹤，自動補貨提醒。"
+        },
+        {
+          "index": "05",
+          "title": "銷售與報價",
+          "desc": "拖拉式報價單、客戶線上簽署、一鍵轉訂單或發票。"
+        },
+        {
+          "index": "06",
+          "title": "人力資源",
+          "desc": "員工主檔、出勤、假期、薪酬一次過處理，連 MPF 都包。"
+        },
+        {
+          "index": "07",
+          "title": "自動化工作流",
+          "desc": "規則引擎接手重複工作：條件觸發、自動通知、API 串接。"
+        }
+      ],
+      "cta": "更多關於我哋嘅模組"
+    },
+    "work": {
+      "label": "精選案例",
+      "headline": "同一套系統，兩種行業的讀法。",
+      "lead": "流程可以通用，細節一定要貼住行業先做得成。以下兩條線，係 LegionOne 現時最熟的兩種做法。",
+      "items": [
+        {
+          "index": "01",
+          "key": "trading",
+          "title": "貿易公司",
+          "role": "進出口貿易 · 供應鏈 · 庫存",
+          "desc": "由報價、訂單、船務到收款，每個狀態自己行。"
+        },
+        {
+          "index": "02",
+          "key": "professionalServices",
+          "title": "專業服務",
+          "role": "會計 · 法律 · 顧問",
+          "desc": "客戶、專案、時間、發票統一管理，合夥人共享一個視角。"
+        }
+      ],
+      "cta": "睇全部案例"
+    },
+    "pains": {
+      "label": "六大日常痛點",
+      "headline": "同一日工時，截然不同的結局。",
+      "lead": "六個香港老闆每天踩中的痛點，用 LegionOne 之後會怎樣。",
+      "painLabel": "現況",
+      "solutionLabel": "用 LegionOne 之後",
+      "rows": [
+        {
+          "number": "01",
+          "title": "工具四散",
+          "pain": "Excel、WhatsApp、銀行 App、CRM 各自為政，永遠對不上。",
+          "solution": "報價、訂單、發票、收款同一資料源，零人手對數。"
+        },
+        {
+          "number": "02",
+          "title": "客戶失聯",
+          "pain": "客戶資料散落於 4 個同事的私人 WhatsApp 名單。",
+          "solution": "客戶 360° 主檔，聯絡紀錄、報價、發票一鍵翻查。"
+        },
+        {
+          "number": "03",
+          "title": "月底趕數",
+          "pain": "對數動輒 3 日，毛利數字永遠是「大概」。",
+          "solution": "AR／AP 帳齡、即時毛利，月底一日內完成。"
+        },
+        {
+          "number": "04",
+          "title": "出差失聯",
+          "pain": "老闆出差，財務、跟單、倉存完全失聯。",
+          "solution": "雲端即時同步，手機、平板、桌面無縫銜接。"
+        },
+        {
+          "number": "05",
+          "title": "催收漏接",
+          "pain": "過期帳單無人跟，要逐個 WhatsApp 客人提醒。",
+          "solution": "AR 帳齡報表自動排催收清單，逾期七日內跟進率提升。"
+        },
+        {
+          "number": "06",
+          "title": "報表延遲",
+          "pain": "週報、月報要人手 Excel 整，老闆永遠看到「上週」數字。",
+          "solution": "Dashboard 即時刷新，今日成交、待辦應收一眼看清。"
+        }
       ]
     },
-    "partnerCta": {
-      "headline": "成為 LegionOne 合作夥伴。",
+    "day": {
+      "label": "一個交易日",
+      "headline": "一日之內，五個原本要對數的決定。",
+      "lead": "同一日工時，唔同做法，結果差一截。以下係 LegionOne 上，一間中小企由報價到對賬的完整動線。",
+      "steps": [
+        {
+          "number": "01",
+          "time": "09:00",
+          "title": "報價 — 一份就夠",
+          "desc": "客戶要貨，公司先在系統內拉齊成本、稅項同交期，出一份報價。改到第幾多次，都係同一個版本。",
+          "modules": [
+            "銷售與報價"
+          ]
+        },
+        {
+          "number": "02",
+          "time": "10:30",
+          "title": "訂單 — 一落，四邊同步",
+          "desc": "客戶確認，報價直接轉做訂單；庫存扣減、採購單開立、跟進事項同時寫入客戶主檔。",
+          "modules": [
+            "銷售與報價",
+            "庫存管理",
+            "CRM"
+          ]
+        },
+        {
+          "number": "03",
+          "time": "14:00",
+          "title": "發票 — 帳齡即時更新",
+          "desc": "發票由訂單開出，AR／AP 帳齡即時刷新，唔使再等埋月底先知道邊一筆未收。",
+          "modules": [
+            "財務管理"
+          ]
+        },
+        {
+          "number": "04",
+          "time": "16:00",
+          "title": "收款 — 催收自動排",
+          "desc": "帳齡報表自動排好催收清單跟進，現金流預測同步更新，唔使逐個 WhatsApp 客人提醒。",
+          "modules": [
+            "財務管理"
+          ]
+        },
+        {
+          "number": "05",
+          "time": "月結",
+          "title": "對賬 — 差異逐項標示",
+          "desc": "銀行月結匯入，帳目自動對，差異逐項標示；月底對數唔再係逐格核對 Excel。",
+          "modules": [
+            "財務管理",
+            "Dashboard"
+          ]
+        }
+      ]
+    },
+    "methodology": {
+      "kicker": "導入三步",
+      "headline": "唔叫你由零開始，亦唔叫你迁就系統。",
+      "lead": "上線唔係換一套軟件咁簡。我哋分三步做，每一步都係先睇你現況，再決定點改。",
+      "steps": [
+        {
+          "number": "01",
+          "title": "盤點現狀",
+          "desc": "先對一次你現時用緊嘅工具同流程，睇清楚邊度重複做、邊度對唔上。",
+          "tags": [
+            "流程盤點",
+            "工具整合"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "配對模板",
+          "desc": "由行業模板起步，唔使由零開始逐個模組砌，逐項對返你實際點做。",
+          "tags": [
+            "行業模板",
+            "按需調整"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "落地同優化",
+          "desc": "按你實際運作再調整流程同報表。系統要貼住你，唔係你迁就系統。",
+          "tags": [
+            "流程調整",
+            "報表優化"
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "label": "數據",
+      "headline": "數據說明一切。",
+      "stats": [
+        {
+          "value": "5",
+          "suffix": "+",
+          "label": "行業模板"
+        },
+        {
+          "value": "40",
+          "suffix": "%",
+          "label": "行政時間減省"
+        },
+        {
+          "value": "50",
+          "suffix": "+",
+          "label": "合作夥伴"
+        },
+        {
+          "value": "7",
+          "suffix": " 天",
+          "label": "平均上線時間"
+        }
+      ]
+    },
+    "security": {
+      "label": "企業級資訊安全",
+      "headline": "企業級資訊安全，由架構開始。",
+      "items": [
+        {
+          "label": "ISO 27001",
+          "desc": "資訊安全管理"
+        },
+        {
+          "label": "GDPR Ready",
+          "desc": "私隱合規"
+        },
+        {
+          "label": "AWS Hong Kong",
+          "desc": "本港資料中心"
+        },
+        {
+          "label": "Cyber Trust Mark",
+          "desc": "網絡安全認證"
+        }
+      ]
+    },
+    "partner": {
+      "label": "合作夥伴",
+      "headline": "同 LegionOne 一起行落去。",
       "sub": "會計師事務所、ERP 顧問、IT 公司 — 與我們一起服務香港中小企。",
       "cta": "了解合作模式"
     },
-    "finalCta": {
+    "final": {
+      "label": "開始使用",
       "headline": "用 LegionOne，少對三晚 Excel。",
       "sub": "免費 15 分鐘示範，親眼看看能否省下你每個月底的加班。",
       "primaryCta": "預約免費示範",
@@ -204,7 +415,7 @@
         "title": "財務管理",
         "tagline": "從發票到帳齡，告別月底趕數。",
         "bullets": [
-          "AR/AP 帳齡分析",
+          "AR／AP 帳齡分析",
           "發票開立、寄送、催收一條龍",
           "現金流預測",
           "多幣別、多稅制支援"
@@ -277,31 +488,87 @@
         "automation": "自動化與整合"
       },
       "items": [
-        { "name": "WhatsApp Cloud API", "group": "comms" },
-        { "name": "Slack", "group": "comms" },
-        { "name": "Microsoft Teams", "group": "comms" },
-        { "name": "Gmail", "group": "comms" },
-        { "name": "Xero", "group": "finance" },
-        { "name": "QuickBooks", "group": "finance" },
-        { "name": "Stripe", "group": "finance" },
-        { "name": "PayMe / FPS", "group": "finance" },
-        { "name": "Shopify", "group": "commerce" },
-        { "name": "SHOPLINE", "group": "commerce" },
-        { "name": "Eats365 POS", "group": "commerce" },
-        { "name": "Zapier", "group": "automation" },
-        { "name": "Make.com", "group": "automation" },
-        { "name": "n8n", "group": "automation" },
-        { "name": "Webhooks", "group": "automation" },
-        { "name": "REST API", "group": "automation" }
+        {
+          "name": "WhatsApp Cloud API",
+          "group": "comms"
+        },
+        {
+          "name": "Slack",
+          "group": "comms"
+        },
+        {
+          "name": "Microsoft Teams",
+          "group": "comms"
+        },
+        {
+          "name": "Gmail",
+          "group": "comms"
+        },
+        {
+          "name": "Xero",
+          "group": "finance"
+        },
+        {
+          "name": "QuickBooks",
+          "group": "finance"
+        },
+        {
+          "name": "Stripe",
+          "group": "finance"
+        },
+        {
+          "name": "PayMe / FPS",
+          "group": "finance"
+        },
+        {
+          "name": "Shopify",
+          "group": "commerce"
+        },
+        {
+          "name": "SHOPLINE",
+          "group": "commerce"
+        },
+        {
+          "name": "Eats365 POS",
+          "group": "commerce"
+        },
+        {
+          "name": "Zapier",
+          "group": "automation"
+        },
+        {
+          "name": "Make.com",
+          "group": "automation"
+        },
+        {
+          "name": "n8n",
+          "group": "automation"
+        },
+        {
+          "name": "Webhooks",
+          "group": "automation"
+        },
+        {
+          "name": "REST API",
+          "group": "automation"
+        }
       ],
       "cta": "查看完整整合清單 →"
+    },
+    "sections": {
+      "modulesKicker": "七大模組",
+      "ctaKicker": "下一步",
+      "modulesTitle": "每個模組，處理一件事。"
     }
   },
   "useCases": {
     "hub": {
       "headline": "為不同行業而生。",
       "sub": "我們選擇先深入兩個行業：貿易與專業服務。其他行業陸續推出。",
-      "comingSoon": "即將推出"
+      "comingSoon": "即將推出",
+      "sectionsKicker": "行業",
+      "viewCase": "睇完整案例",
+      "sectionsTitle": "由呢兩個開始。"
     },
     "trading": {
       "headline": "貿易公司",
@@ -320,17 +587,33 @@
         "items": [
           "報價 → 訂單 → 入貨單 → 發票，狀態全自動同步",
           "船務排期與庫存聯動，逾期自動通知",
-          "AR/AP 即時對賬，銀行月結一鍵導入",
+          "AR／AP 即時對賬，銀行月結一鍵導入",
           "雲端即時同步，老闆出差也可批單"
         ]
       },
       "dayFlow": {
         "title": "典型一天",
         "steps": [
-          { "time": "09:00", "title": "客戶確認訂單", "detail": "WhatsApp 訊息自動轉為訂單狀態" },
-          { "time": "11:00", "title": "倉庫入貨", "detail": "系統自動更新庫存與在製品" },
-          { "time": "15:00", "title": "催收過期帳", "detail": "AR 帳齡報表自動發 WhatsApp 提醒" },
-          { "time": "18:00", "title": "下班前", "detail": "Dashboard 一眼看完今日成交" }
+          {
+            "time": "09:00",
+            "title": "客戶確認訂單",
+            "detail": "WhatsApp 訊息自動轉為訂單狀態"
+          },
+          {
+            "time": "11:00",
+            "title": "倉庫入貨",
+            "detail": "系統自動更新庫存與在製品"
+          },
+          {
+            "time": "15:00",
+            "title": "催收過期帳",
+            "detail": "AR 帳齡報表自動發 WhatsApp 提醒"
+          },
+          {
+            "time": "18:00",
+            "title": "下班前",
+            "detail": "Dashboard 一眼看完今日成交"
+          }
         ]
       }
     },
@@ -358,16 +641,37 @@
       "dayFlow": {
         "title": "典型一天",
         "steps": [
-          { "time": "09:30", "title": "客戶來電查詢", "detail": "CRM 自動彈出過往紀錄與發票狀態" },
-          { "time": "11:00", "title": "專案進度更新", "detail": "團隊成員於 Kanban 即時更新" },
-          { "time": "14:00", "title": "月度發票批次", "detail": "時間追蹤一鍵生成發票並寄出" },
-          { "time": "17:00", "title": "合夥人會議", "detail": "Dashboard 報告客戶健康度" }
+          {
+            "time": "09:30",
+            "title": "客戶來電查詢",
+            "detail": "CRM 自動彈出過往紀錄與發票狀態"
+          },
+          {
+            "time": "11:00",
+            "title": "專案進度更新",
+            "detail": "團隊成員於 Kanban 即時更新"
+          },
+          {
+            "time": "14:00",
+            "title": "月度發票批次",
+            "detail": "時間追蹤一鍵生成發票並寄出"
+          },
+          {
+            "time": "17:00",
+            "title": "合夥人會議",
+            "detail": "Dashboard 報告客戶健康度"
+          }
         ]
       }
     },
     "comingSoon": {
       "retail": "零售與電商",
       "manufacturing": "輕工製造"
+    },
+    "sectionKickers": {
+      "pain": "現況",
+      "solution": "做法",
+      "dayFlow": "流程"
     }
   },
   "partners": {
@@ -481,7 +785,7 @@
         },
         {
           "q": "支援什麼付款方式？",
-          "a": "支援 FPS、信用卡、支票（年付），TBC 最終稅率以合約為準。"
+          "a": "支援 FPS、信用卡、支票（年付），最終稅率待定，以合約為準。"
         },
         {
           "q": "資料會儲存在哪裡？",
@@ -492,7 +796,11 @@
           "a": "提供免費的 Excel / CSV 導入工具，進階遷移由合作夥伴協助。"
         }
       ]
-    }
+    },
+    "tiersKicker": "定價方案",
+    "tiersTitle": "三個方案，隨住你成長。",
+    "pricePending": "定價待公布",
+    "priceNote": "三個方案的具體收費會在正式開放時一併公布。如需了解收費，歡迎預約示範時直接查詢。"
   },
   "about": {
     "headline": "關於 LegionOne",
@@ -512,18 +820,44 @@
     "values": {
       "title": "我們的價值觀 L.E.G.I.O.N.",
       "items": [
-        { "letter": "L", "title": "Learn always", "desc": "每天學，每天進步。" },
-        { "letter": "E", "title": "Execute with focus", "desc": "聚焦執行，少做多做好。" },
-        { "letter": "G", "title": "Grow together", "desc": "與客戶、夥伴、團隊共成長。" },
-        { "letter": "I", "title": "Innovate responsibly", "desc": "為長期價值而創新。" },
-        { "letter": "O", "title": "Own the outcome", "desc": "對結果負責，沒有藉口。" },
-        { "letter": "N", "title": "Never compromise", "desc": "品質、誠信、客戶信任，永不退讓。" }
+        {
+          "letter": "L",
+          "title": "Learn always",
+          "desc": "每天學，每天進步。"
+        },
+        {
+          "letter": "E",
+          "title": "Execute with focus",
+          "desc": "聚焦執行，少做多做好。"
+        },
+        {
+          "letter": "G",
+          "title": "Grow together",
+          "desc": "與客戶、夥伴、團隊共成長。"
+        },
+        {
+          "letter": "I",
+          "title": "Innovate responsibly",
+          "desc": "為長期價值而創新。"
+        },
+        {
+          "letter": "O",
+          "title": "Own the outcome",
+          "desc": "對結果負責，沒有藉口。"
+        },
+        {
+          "letter": "N",
+          "title": "Never compromise",
+          "desc": "品質、誠信、客戶信任，永不退讓。"
+        }
       ]
     },
     "team": {
       "title": "我們的團隊",
-      "subtitle": "6 位核心成員，背景涵蓋 ERP、CRM、會計、顧問。"
-    }
+      "subtitle": "6 位核心成員，背景涵蓋 ERP、CRM、會計、顧問。",
+      "pendingNote": "團隊成員資料待更新 — 以下為版面示例，正式履歷會由公司確認後填寫。"
+    },
+    "pillarsTitle": "方向一致，先講清楚。"
   },
   "contact": {
     "headline": "聯絡我們。",
@@ -542,7 +876,10 @@
       "phone": "+852 0000 0000",
       "email": "hello@legionone.hk",
       "whatsapp": "WhatsApp 我們"
-    }
+    },
+    "channelsKicker": "聯絡方式",
+    "formTitle": "直接同我哋講你嘅情況。",
+    "channelsTitle": "其他聯絡方式。"
   },
   "modal": {
     "title": "預約免費示範",
@@ -557,7 +894,13 @@
       "preferredTime": "偏好示範時間",
       "notes": "其他備註"
     },
-    "headcountOptions": ["1–5", "6–20", "21–50", "51–100", "100+"],
+    "headcountOptions": [
+      "1–5",
+      "6–20",
+      "21–50",
+      "51–100",
+      "100+"
+    ],
     "painPointOptions": [
       "報價 / 訂單散亂",
       "客戶資料分散",
@@ -568,11 +911,17 @@
       "其他"
     ],
     "submit": "送出申請",
-    "submitting": "送出中...",
+    "submitting": "送出中…",
     "success": "感謝申請！我們將於 1 個工作天內聯絡你預約示範時間。",
     "error": "送出失敗，請稍後再試或 WhatsApp 我們。",
     "close": "關閉",
-    "privacy": "提交即代表同意 LegionOne 根據私隱政策處理你的資料。"
+    "privacy": "提交即代表同意 LegionOne 根據私隱政策處理你的資料。",
+    "kicker": "預約示範",
+    "errors": {
+      "required": "必填",
+      "phone": "電話格式不正確",
+      "email": "電郵格式不正確"
+    }
   },
   "common": {
     "learnMore": "了解更多",
@@ -580,5 +929,88 @@
     "back": "返回",
     "loading": "載入中",
     "comingSoon": "即將推出"
+  },
+  "notFound": {
+    "kicker": "404 · 頁面不存在",
+    "title": "這一頁，已經搬去別處。",
+    "lead": "你要找的內容可能已被移動、重新命名，或者從未存在。以下是主要的入口。",
+    "backHome": "返回首頁",
+    "destinations": "主要入口"
+  },
+  "errorPage": {
+    "kicker": "發生錯誤",
+    "title": "系統遇到一個問題。",
+    "body": "頁面未能正常載入。你可以重新嘗試，或者返回首頁再開始。",
+    "retry": "重新載入",
+    "backHome": "返回首頁"
+  },
+  "loading": {
+    "label": "載入中"
+  },
+  "security": {
+    "kicker": "資訊安全",
+    "headline": "企業級資訊安全，由架構開始。",
+    "sub": "四項認證，涵蓋資訊安全管理、私隱合規、本港資料中心與網絡安全。",
+    "badgesKicker": "四項認證",
+    "badgesTitle": "我們持有的四張牌照。",
+    "dataKicker": "資料存放",
+    "dataTitle": "資料留在香港。",
+    "dataBody": "預設為香港 AWS 區域，Enterprise 方案可選私有雲。",
+    "docsKicker": "深入資料",
+    "docsTitle": "想看更細的？",
+    "docsBody": "完整的資訊安全文件、數據處理細節與私隱政策，會在正式合作前交予你手上。歡迎預約示範時一併查詢。",
+    "ctaKicker": "下一步",
+    "ctaTitle": "想了解平台如何處理你的資料？",
+    "ctaBody": "預約一次示範，我們會按你的行業與團隊規模，實際行一遍流程。"
+  },
+  "legal": {
+    "kicker": "法律",
+    "status": "定稿中",
+    "statusBody": "完整條文會由法律顧問審核後正式公布。以下是現階段的摘要，讓你知道我們現時的實際做法。",
+    "privacy": {
+      "title": "私隱政策",
+      "lead": "我們只收集回覆你查詢所需的資料，並把它們放在香港。",
+      "sections": [
+        {
+          "title": "我們收集什麼",
+          "body": "當你透過預約示範表單、聯絡表單或電郵與我們聯絡時，我們會收到你主動提供的資料：姓名、公司名稱、團隊人數、電話、電郵，以及你想優先解決的痛點與備註。"
+        },
+        {
+          "title": "資料用在哪裡",
+          "body": "這些資料用於回覆你的查詢、安排示範時段，以及跟進你的需求。"
+        },
+        {
+          "title": "資料存在哪裡",
+          "body": "預設為香港 AWS 區域，Enterprise 方案可選私有雲。"
+        },
+        {
+          "title": "查詢與更正",
+          "body": "如需查閱、更正或刪除你在本網站提交的資料，請電郵至 hello@legionone.hk。"
+        }
+      ]
+    },
+    "terms": {
+      "title": "使用條款",
+      "lead": "本網站介紹 LegionOne 平台；使用平台本身，另有正式服務條款。",
+      "sections": [
+        {
+          "title": "本網站的內容",
+          "body": "本網站介紹 LegionOne 平台的功能、應用場景與定價方向。產品仍在開發中，頁面上的畫面示範為開發中版本。"
+        },
+        {
+          "title": "示範預約",
+          "body": "預約示範屬諮詢性質，讓我們了解你的業務需要，並不構成任何合約、報價或承諾。"
+        },
+        {
+          "title": "聯絡",
+          "body": "如對本網站或條款有查詢，請電郵至 hello@legionone.hk。"
+        }
+      ]
+    },
+    "contact": {
+      "title": "有任何查詢？",
+      "body": "歡迎直接電郵，我們會盡快回覆。"
+    },
+    "summaryTitle": "現時做法摘要"
   }
 }

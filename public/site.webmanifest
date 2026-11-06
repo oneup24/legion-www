@@ -1,0 +1,25 @@
+{
+  "name": "LegionOne — 少數精銳，全力出擊。",
+  "short_name": "LegionOne",
+  "description": "為香港中小企而設的 ERP + CRM 平台。一個系統，統一營收、財務、客戶與庫存。",
+  "lang": "zh-HK",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066cc",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

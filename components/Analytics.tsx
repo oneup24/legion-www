@@ -2,22 +2,21 @@
 
 import * as React from "react";
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   React.useEffect(() => {
     if (!gaId || typeof window === "undefined") return;
-    const url = pathname + (searchParams?.toString() ? `?${searchParams}` : "");
+    const url = pathname + window.location.search;
     (window as unknown as { gtag: (...args: unknown[]) => void }).gtag?.(
       "config",
       gaId,
       { page_path: url },
     );
-  }, [pathname, searchParams, gaId]);
+  }, [pathname, gaId]);
 
   if (!gaId) return null;
 

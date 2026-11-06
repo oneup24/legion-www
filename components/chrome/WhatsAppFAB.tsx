@@ -11,9 +11,9 @@ export function WhatsAppFAB() {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="WhatsApp 我們"
+      aria-label="WhatsApp"
       data-cta-id="whatsapp_fab"
-      className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-30 w-12 h-12 rounded-pill bg-[#25D366] text-white shadow-lg flex items-center justify-center hover:scale-105 transition-transform"
+      className="fixed bottom-20 right-4 z-30 flex h-12 w-12 items-center justify-center bg-[#25D366] text-white transition-colors hover:bg-[#1ebd5a] md:bottom-6 md:right-6"
     >
       <svg
         viewBox="0 0 24 24"

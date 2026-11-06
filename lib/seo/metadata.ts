@@ -1,56 +1,59 @@
 import type { Metadata } from "next";
+import { PAGE_SEO, type PageKey, type SeoLocale } from "./pages";
+import { assetUrl, localeUrl } from "./site";
 
-type PageSeo = {
-  title: string;
-  description: string;
-  path: string; // e.g. "/product"
+export { assetUrl, SITE_URL, localeUrl } from "./site";
+
+const OG_LOCALE: Record<SeoLocale, string> = {
+  en: "en_US",
+  "zh-HK": "zh_HK",
 };
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://legionone.vercel.app";
-const LOCALE = "zh-HK";
-const OG_TITLE_DEFAULT = "LegionOne — 少數精銳，全力出擊。";
-const OG_DESC_DEFAULT =
-  "為香港中小企而設的 ERP + CRM 平台。一個系統，統一營收、財務、客戶與庫存。";
+export function buildMetadata(
+  key: PageKey,
+  locale: SeoLocale = "en",
+): Metadata {
+  const entry = PAGE_SEO[key];
+  const copy = entry[locale] ?? entry.en;
+  const url = localeUrl(locale, entry.path);
+  const image = assetUrl(`og/${entry.og ?? "default"}.png`);
 
-export function buildMetadata(seo: PageSeo): Metadata {
-  const url = `${SITE_URL}/${LOCALE}${seo.path}`;
   return {
-    title: `${seo.title} — LegionOne`,
-    description: seo.description,
+    title: `${copy.title} — LegionOne`,
+    description: copy.description,
     alternates: {
       canonical: url,
       languages: {
-        "zh-HK": `${SITE_URL}/zh-HK${seo.path}`,
-        en: `${SITE_URL}/en${seo.path}`,
+        en: localeUrl("en", entry.path),
+        "zh-HK": localeUrl("zh-HK", entry.path),
       },
     },
     openGraph: {
-      title: `${seo.title} — LegionOne`,
-      description: seo.description,
+      title: `${copy.title} — LegionOne`,
+      description: copy.description,
       url,
       siteName: "LegionOne",
-      locale: "zh_HK",
+      locale: OG_LOCALE[locale],
       type: "website",
       images: [
         {
-          url: `${SITE_URL}${process.env.NEXT_PUBLIC_BASE_PATH || ""}/og/default.png`,
+          url: image,
           width: 1200,
           height: 630,
-          alt: seo.title,
+          alt: copy.title,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${seo.title} — LegionOne`,
-      description: seo.description,
-      images: [`${SITE_URL}${process.env.NEXT_PUBLIC_BASE_PATH || ""}/og/default.png`],
+      title: `${copy.title} — LegionOne`,
+      description: copy.description,
+      images: [image],
     },
   };
 }
 
 export const SITE_DEFAULTS = {
-  title: OG_TITLE_DEFAULT,
-  description: OG_DESC_DEFAULT,
+  title: "LegionOne",
+  description: PAGE_SEO.home.en.description,
 };

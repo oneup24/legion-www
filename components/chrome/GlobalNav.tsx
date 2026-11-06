@@ -10,96 +10,130 @@ import { LogoMark } from "@/components/brand/LogoMark";
 
 type NavItem = {
   href: string;
-  key: "products" | "useCases" | "partners" | "pricing" | "about" | "contact";
+  key: "products" | "useCases" | "pricing" | "partners" | "about";
 };
 
+/**
+ * Five-item nav — the agency-site rule of fewer, clearer destinations.
+ * Contact is intentionally not a top-level item: it is reached from the
+ * footer, the demo modal and the closing CTA.
+ */
 const items: NavItem[] = [
   { href: "/product", key: "products" },
   { href: "/use-cases", key: "useCases" },
-  { href: "/partners", key: "partners" },
   { href: "/pricing", key: "pricing" },
+  { href: "/partners", key: "partners" },
   { href: "/about", key: "about" },
-  { href: "/contact", key: "contact" },
 ];
 
+/**
+ * Fixed header that floats over the page.
+ *
+ * Over the dark hero it is invisible; once the page scrolls it gains a
+ * solid black bar with a hairline underneath. There is no visible nav
+ * container at the top of the page — the marks float in the dark, the way
+ * they do on the reference site.
+ */
 export function GlobalNav({ locale: _locale }: { locale: string }) {
   const t = useTranslations("nav");
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
   const { setOpen: setBookOpen, setSource } = useBookDemo();
 
   React.useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
-  return (
-    <header className="sticky top-0 z-40 h-11 bg-surface-black text-body-on-dark">
-      <div className="mx-auto max-w-[1024px] h-full px-4 sm:px-6 flex items-center justify-between">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-white hover:opacity-80"
-          aria-label="LegionOne home"
-        >
-          <LogoMark size={20} className="text-white" />
-          <Wordmark className="text-white text-[15px]" />
-        </Link>
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
-          {items.map((item) => {
-            const active =
-              pathname === item.href ||
-              (item.href !== "/" && pathname.startsWith(item.href));
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`px-3 py-2 text-nav-link transition-colors ${
-                  active ? "text-white" : "text-body-muted hover:text-white"
-                }`}
-              >
-                {t(item.key)}
-              </Link>
-            );
-          })}
+  return (
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
+          scrolled || mobileOpen
+            ? "bg-void/92 backdrop-blur-md border-b border-white/10"
+            : "border-b border-transparent"
+        }`}
+      >
+        <div className="shell h-[68px] flex items-center justify-between">
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-white hover:opacity-70 transition-opacity"
+            aria-label="LegionOne home"
+          >
+            <LogoMark size={26} tone="light" />
+            <Wordmark size="sm" />
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {items.map((item) => {
+              const active =
+                pathname === item.href ||
+                (item.href !== "/" && pathname.startsWith(item.href));
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`t-label transition-colors ${
+                    active ? "text-white" : "text-ash hover:text-white"
+                  }`}
+                >
+                  {t(item.key)}
+                </Link>
+              );
+            })}
+            <button
+              type="button"
+              onClick={() => {
+                setSource("nav");
+                setBookOpen(true);
+              }}
+              data-cta-id="nav_book_demo"
+              className="btn btn-accent btn-sm"
+            >
+              {t("bookDemo")}
+            </button>
+          </nav>
+
+          {/* Mobile toggle */}
           <button
             type="button"
-            onClick={() => {
-              setSource("nav");
-              setBookOpen(true);
-            }}
-            data-cta-id="nav_book_demo"
-            className="ml-3 px-3 py-1.5 text-nav-link text-primary-on-dark hover:text-white"
+            aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
+            aria-expanded={mobileOpen}
+            className="lg:hidden w-11 h-11 flex items-center justify-center text-white -mr-3"
+            onClick={() => setMobileOpen((v) => !v)}
           >
-            {t("bookDemo")}
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
-        </nav>
-
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
-          aria-expanded={mobileOpen}
-          className="md:hidden w-11 h-11 flex items-center justify-center text-white"
-          onClick={() => setMobileOpen((v) => !v)}
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
+        </div>
+      </header>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden absolute top-11 left-0 right-0 bg-surface-black border-t border-white/10">
-          <nav className="flex flex-col px-4 py-2">
+        <div className="lg:hidden fixed inset-x-0 top-[68px] bottom-0 z-30 bg-void overflow-y-auto">
+          <nav className="shell flex flex-col pt-6">
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="py-3 text-nav-link text-body-muted hover:text-white border-b border-white/5"
+                className="t-display-3 text-white/85 hover:text-white py-5 border-b border-white/10"
               >
                 {t(item.key)}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className="t-display-3 text-white/85 hover:text-white py-5 border-b border-white/10"
+            >
+              {t("contact")}
+            </Link>
             <button
               type="button"
               onClick={() => {
@@ -107,13 +141,13 @@ export function GlobalNav({ locale: _locale }: { locale: string }) {
                 setBookOpen(true);
                 setMobileOpen(false);
               }}
-              className="mt-3 mb-2 h-11 bg-primary text-on-primary rounded-pill text-button"
+              className="btn btn-accent w-full mt-8"
             >
               {t("bookDemo")}
             </button>
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }

@@ -2,77 +2,63 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import {
-  Layers,
-  Sparkles,
-  Gauge,
-  Maximize2,
-  type LucideIcon,
-} from "lucide-react";
 import { useTranslations } from "next-intl";
+import { SectionShell } from "@/components/editorial/SectionShell";
+import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { Link } from "@/lib/i18n/navigation";
 
-type Capability = { title: string; desc: string; icon: string };
-
-const iconMap: Record<string, LucideIcon> = {
-  Layers,
-  Sparkles,
-  Gauge,
-  Maximize2,
-};
-
+/**
+ * Services — the module list.
+ *
+ * Built on the monopo pattern: a small label on the left, a large
+ * statement and the full list on the right, closed with a single arrow
+ * link. The list is the argument, so it is set as a list and not as cards.
+ */
 export function Capabilities() {
-  const t = useTranslations("home.capabilities");
-  const items = t.raw("items") as Capability[];
+  const t = useTranslations("home.services");
+  const items = t.raw("items") as {
+    index: string;
+    title: string;
+    desc: string;
+  }[];
 
   return (
-    <section className="tile-dark-1">
-      <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16 sm:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-center mb-12"
-        >
-          <p className="text-caption text-body-muted mb-3 tracking-wide">
-            {t("eyebrow")}
-          </p>
-          <h2 className="text-display-lg text-on-dark">{t("headline")}</h2>
-        </motion.div>
+    <SectionShell tone="void" hexField fieldOpacity={0.03}>
+      <div className="shell section-y">
+        <div className="split-grid">
+          <div>
+            <SectionLabel tone="void">{t("label")}</SectionLabel>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {items.map((item, i) => {
-            const Icon = iconMap[item.icon] ?? Layers;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-white/5 rounded-xl p-8 hover:bg-white/10 transition-colors group"
-              >
-                <Icon
-                  size={28}
-                  strokeWidth={1.5}
-                  className="text-primary-on-dark mb-5"
-                />
-                <h3 className="text-tagline text-on-dark mb-2">{item.title}</h3>
-                <p className="text-body text-body-muted text-body-cjk">
-                  {item.desc}
-                </p>
-                <Link
-                  href="/product"
-                  className="mt-4 inline-block text-caption text-primary-on-dark opacity-0 group-hover:opacity-100 transition-opacity"
+          <div>
+            <h2 className="t-display-1 t-balance text-white max-w-3xl">
+              {t("headline")}
+            </h2>
+            <p className="mt-6 t-lead max-w-2xl text-smoke/70">{t("lead")}</p>
+
+            <ul className="mt-14 border-t border-white/12">
+              {items.map((item, i) => (
+                <motion.li
+                  key={item.index}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-6%" }}
+                  transition={{ duration: 0.4, delay: i * 0.04 }}
+                  className="group grid gap-3 border-b border-white/12 py-7 sm:grid-cols-[88px_220px_minmax(0,1fr)] sm:items-baseline sm:gap-6"
                 >
-                  了解更多 →
-                </Link>
-              </motion.div>
-            );
-          })}
+                  <span className="t-index text-accent">{item.index}</span>
+                  <span className="t-display-3 text-white">{item.title}</span>
+                  <span className="t-body text-smoke/65">{item.desc}</span>
+                </motion.li>
+              ))}
+            </ul>
+
+            <Link href="/product" className="link-arrow mt-10 text-white">
+              {t("cta")}
+            </Link>
+          </div>
         </div>
       </div>
-    </section>
+    </SectionShell>
   );
 }

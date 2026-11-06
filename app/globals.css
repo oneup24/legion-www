@@ -1,64 +1,89 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   LegionOne design system — v3
+   --------------------------------------------------------------------------
+   Built on the Lamborghini-inspired system in DESIGN.md, adapted to the
+   LegionOne brand:
+
+     · true black is the default canvas; light surfaces are the exception
+     · one chromatic colour only — Legion blue #0166e6
+     · depth comes from surface layering, never from shadows
+     · zero border-radius, sharp rectangular geometry
+     · uppercase display type at extreme scale with tight line-heights
+     · the cube / hexagon is the only recurring graphic device
+
+   Reference sites: gaiacommunications.com.hk (look and feel) and
+   monopo.co.jp (body structure).
+   ========================================================================== */
+
 @theme {
-  /* Brand */
-  --color-primary: #0066cc;
-  --color-primary-focus: #0071e3;
-  --color-primary-on-dark: #2997ff;
+  /* ---- surfaces: the darkness ladder ---- */
+  --color-void: #000000;
+  --color-surface-1: #101012;
+  --color-surface-2: #18181b;
+  --color-surface-3: #222226;
+  --color-surface-4: #2c2c31;
+
+  /* ---- light surfaces (rare, deliberate) ---- */
+  --color-paper: #ffffff;
+  --color-paper-2: #f6f6f7;
+  --color-paper-3: #ebebed;
+
+  /* ---- the single accent ---- */
+  --color-accent: #0166e6;
+  --color-accent-hover: #0a52b8;
+  --color-accent-bright: #3d9bff;
+  --color-accent-dim: #0a4a9e;
+  --color-accent-tint: #e8f1fd;
+
+  /* ---- brand ink (the machine black from the brand sheet) ---- */
   --color-ink: #1d1d1f;
-  --color-body: #1d1d1f;
-  --color-body-on-dark: #ffffff;
-  --color-body-muted: #cccccc;
-  --color-ink-muted-80: #333333;
-  --color-ink-muted-48: #7a7a7a;
 
-  /* Surfaces */
-  --color-divider-soft: #f0f0f0;
-  --color-hairline: #e0e0e0;
-  --color-canvas: #ffffff;
-  --color-canvas-parchment: #f5f5f7;
-  --color-surface-pearl: #fafafc;
-  --color-surface-tile-1: #272729;
-  --color-surface-tile-2: #2a2a2c;
-  --color-surface-tile-3: #252527;
-  --color-surface-black: #000000;
-  --color-surface-chip-translucent: #d2d2d7;
+  /* ---- text on dark ---- */
+  --color-white: #ffffff;
+  --color-smoke: #f2f2f4;
+  --color-ash: #87868b;
+  --color-steel: #a1a1a6;
 
-  /* On-colors */
-  --color-on-primary: #ffffff;
-  --color-on-dark: #ffffff;
+  /* ---- text on light ---- */
+  --color-graphite: #494949;
+  --color-ash-light: #87868b;
 
-  /* Status */
+  /* ---- lines ---- */
+  --color-line: rgba(255, 255, 255, 0.12);
+  --color-line-strong: rgba(255, 255, 255, 0.24);
+  --color-line-dark: rgba(0, 0, 0, 0.12);
+  --color-line-accent: rgba(1, 102, 230, 0.28);
+
+  /* ---- status ---- */
   --color-success: #1f8a4c;
   --color-error: #c0392b;
-  --color-warning: #b97c00;
 
-  /* Typography */
-  --font-sans: var(--font-inter), "Noto Sans TC", system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-wordmark: var(--font-inter-tight), var(--font-inter), system-ui,
-    sans-serif;
+  /* ---- typefaces ----
+     Gilroy is a commercial licence and is not bundled. The brand slot
+     `--font-brand` is kept in place so dropping in Gilroy woff2 files is a
+     one-line change; Poppins is the stand-in until then. */
+  --font-display: var(--font-brand, var(--font-poppins)), "Noto Sans TC",
+    system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: var(--font-brand, var(--font-poppins)), "Noto Sans TC",
+    system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* Shadows — only product mockup render uses this */
-  --shadow-product: 3px 5px 30px rgba(0, 0, 0, 0.22);
-
-  /* Radii */
-  --radius-sm: 5px;
-  --radius-md: 8px;
-  --radius-lg: 11px;
-  --radius-xl: 18px;
-  --radius-pill: 9999px;
+  --radius-none: 0px;
 }
 
-/* Base */
+/* ==========================================================================
+   base
+   ========================================================================== */
+
 html,
 body {
-  background: var(--color-canvas);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
-  font-size: 17px;
-  line-height: 1.47;
-  letter-spacing: -0.011em;
+  background: var(--color-void);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -68,92 +93,436 @@ body {
   box-sizing: border-box;
 }
 
-/* Typography utilities */
-.text-hero-display {
-  font-size: clamp(28px, 5.6vw, 56px);
-  line-height: 1.07;
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   type scale
+   --------------------------------------------------------------------------
+   Extreme scale range, from 132px display down to 10px micro labels. Weight
+   500 carries the display type so the size does the shouting, not the weight.
+   ========================================================================== */
+
+.t-display-hero {
+  font-size: clamp(44px, 8.6vw, 132px);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.t-display-1 {
+  font-size: clamp(34px, 6vw, 84px);
+  line-height: 1.02;
   letter-spacing: -0.02em;
-  font-weight: 600;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.text-display-lg {
-  font-size: clamp(28px, 3.6vw, 40px);
+.t-display-2 {
+  font-size: clamp(26px, 3.8vw, 54px);
   line-height: 1.1;
-  letter-spacing: -0.015em;
-  font-weight: 600;
+  letter-spacing: -0.016em;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.text-display-md {
-  font-size: clamp(24px, 3vw, 34px);
-  line-height: 1.47;
-  letter-spacing: -0.011em;
-  font-weight: 600;
+.t-display-3 {
+  font-size: clamp(20px, 2.4vw, 34px);
+  line-height: 1.18;
+  letter-spacing: -0.012em;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.text-lead {
-  font-size: clamp(20px, 2.4vw, 28px);
-  line-height: 1.14;
-  letter-spacing: 0;
+.t-statement {
+  font-size: clamp(22px, 2.9vw, 42px);
+  line-height: 1.16;
+  letter-spacing: -0.014em;
   font-weight: 400;
 }
 
-.text-tagline {
-  font-size: 21px;
-  line-height: 1.19;
-  letter-spacing: 0.011em;
-  font-weight: 600;
+.t-lead {
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.52;
+  font-weight: 400;
 }
 
-.text-body {
-  font-size: 17px;
-  line-height: 1.47;
-  letter-spacing: -0.011em;
+.t-body {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-.text-body-cjk {
-  font-size: 17px;
-  line-height: 1.7;
-  letter-spacing: 0;
+.t-body-cjk {
+  font-size: 16px;
+  line-height: 1.78;
 }
 
-.text-caption {
+.t-caption {
   font-size: 14px;
-  line-height: 1.43;
-  letter-spacing: -0.013em;
+  line-height: 1.45;
 }
 
-.text-button {
-  font-size: 17px;
-  letter-spacing: -0.011em;
-}
-
-.text-button-large {
-  font-size: 18px;
-  line-height: 1;
-  font-weight: 300;
-}
-
-.text-fine-print {
+.t-fine {
   font-size: 12px;
-  line-height: 1;
-  letter-spacing: -0.01em;
+  line-height: 1.4;
 }
 
-.text-nav-link {
+.t-label {
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.t-micro {
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.t-index {
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The giant section number — GAIA's oversized numerals, in brand blue. */
+.t-giant-index {
+  font-size: clamp(56px, 9vw, 132px);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.t-balance {
+  text-wrap: balance;
+}
+
+/* Chinese display type keeps the uppercase rule out of the way. */
+:lang(zh-HK) .t-display-hero,
+:lang(zh-HK) .t-display-1,
+:lang(zh-HK) .t-display-2,
+:lang(zh-HK) .t-display-3 {
+  text-transform: none;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   layout primitives
+   ========================================================================== */
+
+.shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1440px;
+  padding-inline: 20px;
+}
+
+@media (min-width: 768px) {
+  .shell {
+    padding-inline: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .shell {
+    padding-inline: 48px;
+  }
+}
+
+.shell-narrow {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 880px;
+  padding-inline: 20px;
+}
+
+@media (min-width: 768px) {
+  .shell-narrow {
+    padding-inline: 32px;
+  }
+}
+
+/* Section rhythm — 8px base unit, per the design system. */
+.section-y {
+  padding-block: 72px;
+}
+
+@media (min-width: 768px) {
+  .section-y {
+    padding-block: 112px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-y {
+    padding-block: 144px;
+  }
+}
+
+.section-y-tight {
+  padding-block: 48px;
+}
+
+@media (min-width: 768px) {
+  .section-y-tight {
+    padding-block: 72px;
+  }
+}
+
+/* ==========================================================================
+   rules
+   ========================================================================== */
+
+.rule {
+  border-top: 1px solid var(--color-line);
+}
+
+.rule-strong {
+  border-top: 1px solid var(--color-line-strong);
+}
+
+.rule-accent {
+  border-top: 1px solid var(--color-line-accent);
+}
+
+.rule-dark {
+  border-top: 1px solid var(--color-line-dark);
+}
+
+/* ==========================================================================
+   buttons — sharp rectangles, colour-only hover
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 17px 26px;
+  min-height: 50px;
+  transition: background-color 0.18s ease, color 0.18s ease,
+    border-color 0.18s ease;
+  cursor: pointer;
+}
+
+.btn-accent {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-accent:hover {
+  background: var(--color-accent-hover);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.btn-white:hover {
+  background: var(--color-smoke);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.btn-ghost:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-ghost-dark {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid rgba(0, 0, 0, 0.28);
+}
+
+.btn-ghost-dark:hover {
+  border-color: var(--color-ink);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.btn-sm {
+  padding: 13px 18px;
+  min-height: 42px;
   font-size: 12px;
-  line-height: 1;
-  letter-spacing: -0.01em;
-  font-weight: 400;
 }
 
-/* Focus ring */
+/* The monopo-style text link: a rule that grows on hover. */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding-bottom: 8px;
+  border-bottom: 1px solid currentColor;
+  transition: gap 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.link-arrow:hover {
+  gap: 16px;
+}
+
+.link-arrow-muted {
+  color: var(--color-ash);
+}
+
+.link-arrow-muted:hover {
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   surfaces
+   ========================================================================== */
+
+.surface-1 {
+  background: var(--color-surface-1);
+}
+
+.surface-2 {
+  background: var(--color-surface-2);
+}
+
+.surface-3 {
+  background: var(--color-surface-3);
+}
+
+.surface-4 {
+  background: var(--color-surface-4);
+}
+
+.surface-paper {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.surface-paper-2 {
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+}
+
+.surface-accent {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* ==========================================================================
+   hexagon device
+   --------------------------------------------------------------------------
+   The cube mark is the brand's own geometry, so the hexagon is the one
+   shape the interface is allowed to repeat.
+   ========================================================================== */
+
+.clip-hex {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.clip-hex-flat {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* A hex outline used as a framing device. */
+.hex-frame {
+  position: relative;
+}
+
+.hex-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: currentColor;
+  opacity: 0.16;
+}
+
+/* ==========================================================================
+   marquee
+   ========================================================================== */
+
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration, 46s) linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   focus + motion
+   ========================================================================== */
+
 :focus-visible {
-  outline: 2px solid var(--color-primary-focus);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline: 2px solid var(--color-accent-bright);
+  outline-offset: 3px;
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -165,63 +534,27 @@ body {
   }
 }
 
-/* Skip link */
 .skip-link {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--color-ink);
-  color: var(--color-on-dark);
-  padding: 8px 16px;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 12px 18px;
   z-index: 100;
-  border-radius: 0 0 8px 0;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .skip-link:focus {
   left: 0;
 }
 
-/* Tile surfaces */
-.tile-dark-1 {
-  background: var(--color-surface-tile-1);
-  color: var(--color-on-dark);
-}
+/* ==========================================================================
+   form + dialog
+   ========================================================================== */
 
-.tile-dark-2 {
-  background: var(--color-surface-tile-2);
-  color: var(--color-on-dark);
-}
-
-.tile-dark-3 {
-  background: var(--color-surface-tile-3);
-  color: var(--color-on-dark);
-}
-
-.tile-parchment {
-  background: var(--color-canvas-parchment);
-}
-
-.tile-pearl {
-  background: var(--color-surface-pearl);
-}
-
-/* Product shadow — exclusive use on product renders */
-.product-shadow {
-  box-shadow: var(--shadow-product);
-}
-
-/* Buttons focus rest */
-button {
-  cursor: pointer;
-}
-
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-/* Form basics */
 input,
 textarea,
 select {
@@ -229,12 +562,16 @@ select {
   color: inherit;
 }
 
-/* Radix Dialog overlay */
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-ash);
+}
+
 [data-overlay] {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(6px);
   z-index: 50;
 }
 
@@ -244,7 +581,104 @@ select {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 51;
-  width: min(560px, calc(100vw - 32px));
+  width: min(600px, calc(100vw - 32px));
   max-height: calc(100vh - 32px);
   overflow-y: auto;
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-line);
+  border-radius: 0;
+}
+
+/* ==========================================================================
+   hero navigation strip (GAIA)
+   --------------------------------------------------------------------------
+   A row of uppercase links pinned to the bottom of the hero.
+   ========================================================================== */
+
+.hero-nav-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--color-line);
+}
+
+@media (min-width: 768px) {
+  .hero-nav-strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-nav-strip {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.hero-nav-strip a {
+  padding: 20px 16px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-steel);
+  border-right: 1px solid var(--color-line);
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+
+.hero-nav-strip a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hero-nav-strip a:last-child {
+  border-right: 0;
+}
+
+/* ==========================================================================
+   section label — the small uppercase index above a heading
+   ========================================================================== */
+
+.sec-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sec-label::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   grid helpers used by the monopo-style two column layout
+   ========================================================================== */
+
+.split-grid {
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .split-grid {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 64px;
+  }
+}
+
+.split-grid-wide {
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .split-grid-wide {
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 80px;
+  }
 }

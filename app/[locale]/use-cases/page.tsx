@@ -1,14 +1,14 @@
 import { UseCasesHubPage } from "@/components/sections/UseCasesHubPage";
 import { buildMetadata } from "@/lib/seo/metadata";
 
-export function generateMetadata() {
-  return buildMetadata({
-    title: "應用場景",
-    description: "LegionOne 為貿易與專業服務行業度身訂造，其他行業陸續推出。",
-    path: "/use-cases",
-  });
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return buildMetadata("useCases", locale as "en" | "zh-HK");
 }
-
 export default function Page() {
   return <UseCasesHubPage />;
 }

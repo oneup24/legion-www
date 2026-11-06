@@ -1,15 +1,14 @@
 import { PartnersPage } from "@/components/sections/PartnersPage";
 import { buildMetadata } from "@/lib/seo/metadata";
 
-export function generateMetadata() {
-  return buildMetadata({
-    title: "合作夥伴",
-    description:
-      "與 LegionOne 同行——推薦夥伴、實施夥伴、解決方案夥伴三種合作模式。",
-    path: "/partners",
-  });
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return buildMetadata("partners", locale as "en" | "zh-HK");
 }
-
 export default function Page() {
   return <PartnersPage />;
 }

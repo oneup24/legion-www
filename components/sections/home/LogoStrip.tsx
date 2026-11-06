@@ -2,43 +2,39 @@
 
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 
-type LogoItem = { name: string; industry: string };
-
+/**
+ * Ticker — the brand blue band that runs under the hero.
+ *
+ * It is the only full-bleed colour block on the page, so it carries the
+ * accent on its own: one line of shared nouns, moving.
+ */
 export function LogoStrip() {
-  const t = useTranslations("home.customerLogos");
-  const items = t.raw("items") as LogoItem[];
+  const t = useTranslations("home.hero");
+  const items = t.raw("ticker") as string[];
 
   return (
-    <section className="bg-canvas border-y border-divider-soft">
-      <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-10 sm:py-14">
-        <p className="text-caption text-ink-muted-48 text-center mb-6 tracking-wide">
-          {t("eyebrow")}
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-          {items.map((logo, i) => (
-            <motion.div
-              key={logo.name}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.04 }}
-              className="group flex flex-col items-center justify-center h-20 px-3 rounded-md bg-canvas-parchment hover:bg-surface-chip-translucent transition-colors"
-              aria-label={logo.name}
-            >
-              <span className="text-caption font-semibold text-ink-muted-80 group-hover:text-ink text-center leading-tight">
-                {logo.name}
-              </span>
-              <span className="text-fine-print text-ink-muted-48 mt-1">
-                {logo.industry}
-              </span>
-            </motion.div>
-          ))}
+    <section className="relative overflow-hidden bg-accent">
+      <div className="shell flex items-center gap-6 py-4">
+        <span className="t-label text-white/80 hidden sm:inline shrink-0">
+          {t("tickerLabel")}
+        </span>
+        <div className="marquee flex-1">
+          <div className="marquee-track">
+            {[0, 1].map((copy) => (
+              <div key={copy} className="flex shrink-0" aria-hidden={copy === 1}>
+                {items.map((item) => (
+                  <span
+                    key={`${copy}-${item}`}
+                    className="t-display-3 text-white/95 px-6 whitespace-nowrap"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-        <p className="text-fine-print text-ink-muted-48 text-center mt-6">
-          {t("subtitle")}
-        </p>
       </div>
     </section>
   );

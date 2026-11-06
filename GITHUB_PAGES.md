@@ -26,22 +26,31 @@ Once deployed, the site lives at:
 https://oneup24.github.io/legion-www/
 ```
 
-EN at: `https://oneup24.github.io/legion-www/en/`
+EN at: `https://oneup24.github.io/legion-www/` (default locale, served from the root)
+
+HK Chinese at: `https://oneup24.github.io/legion-www/zh-HK/`
+
+The canonical host is defined once in `lib/seo/site.ts` and drives the canonical
+tags, the sitemap, robots.txt and every asset URL. It currently points at the
+GitHub Pages address above, because that is the only host serving traffic —
+`legionone.vercel.app` has no deployment behind it. Set
+`NEXT_PUBLIC_SITE_URL=https://legionone.hk` and rebuild once the custom domain
+is provisioned.
 
 ## What works on GitHub Pages
 
-- ✅ All 11 pages render
+- ✅ All 11 pages render, in both languages (English at the root, zh-HK under `/zh-HK/`)
 - ✅ BookDemoModal opens (focus-trapped, ESC + backdrop close)
 - ✅ Inline SVG mockups (Dashboard, Finance, CRM)
 - ✅ Brand assets (Wordmark, LogoMark)
 - ✅ Animations + reduced-motion gating
-- ✅ Bilingual routing (`/` = zh-HK, `/en/` = EN fallback)
+- ✅ Bilingual routing (`/` = EN, `/zh-HK/` = HK Chinese)
 
 ## What doesn't work (static-only host)
 
 - ❌ `/api/lead` and `/api/partner-application` — **forms open the user's mail client via `mailto:`** instead. All fields are pre-filled in the email body. Customers reply to `sales@legionone.hk` and it works end-to-end.
-- ❌ Dynamic OG image generation — a single static `og/default.png` is used for all pages.
-- ❌ Locale auto-detection from `Accept-Language` header — visitor must manually visit `/en/` for English.
+- ✅ OG images are static, but per page — `og/default`, `og/product`, `og/pricing`, `og/use-cases` and `og/security` are generated at build time from the brand mark.
+- ❌ Locale auto-detection from `Accept-Language` header — English is the default at the root, so it is served without a redirect.
 
 ## Going to a real backend later
 

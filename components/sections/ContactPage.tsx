@@ -4,9 +4,18 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { submitContact } from "@/lib/forms/submit";
+import { PageHero } from "@/components/editorial/PageHero";
+import { SectionHeader } from "@/components/editorial/SectionHeader";
+import { SectionShell } from "@/components/editorial/SectionShell";
+import { HexBadge } from "@/components/brand/Hex";
+
+const FIELD =
+  "w-full h-12 px-4 border border-white/20 bg-transparent text-white outline-none transition-colors focus:border-accent";
 
 export function ContactPage() {
   const t = useTranslations("contact");
+  const tNav = useTranslations("nav");
+  const tModal = useTranslations("modal");
   const [status, setStatus] = React.useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
@@ -34,88 +43,106 @@ export function ContactPage() {
 
   return (
     <>
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 pt-12 sm:pt-20 pb-8 text-center">
-          <h1 className="text-hero-display text-ink">{t("headline")}</h1>
-          <p className="text-lead text-ink-muted-80 mt-4 max-w-2xl mx-auto text-body-cjk">
-            {t("sub")}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        tone="void"
+        kicker={tNav("contact")}
+        title={t("headline")}
+        lead={t("sub")}
+      />
 
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+        <div className="shell section-y">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
             {/* Form */}
-            <div>
-              {status === "success" ? (
-                <div className="p-8 rounded-xl bg-success/10 text-center">
-                  <p className="text-body text-ink">{t("form.success")}</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <Field name="name" label={t("form.name")} required />
-                  <Field name="company" label={t("form.company")} />
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Field name="phone" label={t("form.phone")} type="tel" />
-                    <Field
-                      name="email"
-                      label={t("form.email")}
-                      type="email"
-                      required
-                    />
+            <div className="lg:col-span-7">
+              <SectionHeader
+                index="01"
+                kicker={tNav("contact")}
+                title={t("formTitle")}
+                tone="surface"
+              />
+
+              <div className="mt-10">
+                {status === "success" ? (
+                  <div className="border border-accent/40 bg-accent/10 p-8 text-center">
+                    <p className="t-body text-white">{t("form.success")}</p>
                   </div>
-                  <div>
-                    <label className="text-caption text-ink-muted-80 mb-1 block font-medium">
-                      {t("form.message")} *
-                    </label>
-                    <textarea
-                      name="notes"
-                      rows={5}
-                      required
-                      className="w-full px-4 py-3 rounded-md border border-hairline bg-canvas resize-none"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    size="lg"
-                    className="w-full"
-                    disabled={status === "submitting"}
-                  >
-                    {status === "submitting" ? "送出中..." : t("form.submit")}
-                  </Button>
-                  {status === "error" && (
-                    <p className="text-caption text-error text-center">
-                      送出失敗，請稍後再試。
-                    </p>
-                  )}
-                </form>
-              )}
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                      <Field name="name" label={t("form.name")} required />
+                      <Field name="company" label={t("form.company")} />
+                    </div>
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                      <Field name="phone" label={t("form.phone")} type="tel" />
+                      <Field
+                        name="email"
+                        label={t("form.email")}
+                        type="email"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="t-label mb-2 block text-ash">
+                        {t("form.message")} *
+                      </label>
+                      <textarea
+                        name="notes"
+                        rows={5}
+                        required
+                        className={`${FIELD} h-auto resize-none py-3`}
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      variant="accent"
+                      size="lg"
+                      className="w-full"
+                      disabled={status === "submitting"}
+                    >
+                      {status === "submitting" ? tModal("submitting") : t("form.submit")}
+                    </Button>
+                    {status === "error" && (
+                      <p className="t-caption text-center text-error">{tModal("error")}</p>
+                    )}
+                  </form>
+                )}
+              </div>
             </div>
 
-            {/* Info */}
-            <div className="space-y-6">
-              <InfoRow label="地址" value={t("info.address")} />
-              <InfoRow label="電話" value={t("info.phone")} />
-              <InfoRow
-                label="電郵"
-                value={t("info.email")}
-                href={`mailto:${t("info.email")}`}
+            {/* Channels */}
+            <div className="lg:col-span-5">
+              <SectionHeader
+                index="02"
+                kicker={t("channelsKicker")}
+                title={t("channelsTitle")}
+                tone="surface"
               />
+
+              <div className="mt-10 border-t border-white/12">
+                <InfoRow index="01" label={t("info.address")} value={t("info.address")} />
+                <InfoRow index="02" label={t("form.phone")} value={t("info.phone")} />
+                <InfoRow
+                  index="03"
+                  label={t("form.email")}
+                  value={t("info.email")}
+                  href={`mailto:${t("info.email")}`}
+                />
+              </div>
+
               <a
                 href={`https://wa.me/${wa}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cta-id="contact_whatsapp"
-                className="inline-flex items-center gap-2 h-11 px-5 bg-[#25D366] text-white rounded-pill text-button hover:bg-[#1ebd5a]"
+                className="btn mt-6 bg-[#25D366] text-white hover:bg-[#1ebd5a]"
               >
                 {t("info.whatsapp")}
               </a>
             </div>
           </div>
         </div>
-      </section>
+      </SectionShell>
     </>
   );
 }
@@ -133,39 +160,43 @@ function Field({
 }) {
   return (
     <div>
-      <label className="text-caption text-ink-muted-80 mb-1 block font-medium">
+      <label className="t-label mb-2 block text-ash">
         {label}
-        {required && " *"}
+        {required ? " *" : ""}
       </label>
-      <input
-        name={name}
-        type={type}
-        required={required}
-        className="w-full h-11 px-4 rounded-md border border-hairline bg-canvas"
-      />
+      <input name={name} type={type} required={required} className={FIELD} />
     </div>
   );
 }
 
 function InfoRow({
+  index,
   label,
   value,
   href,
 }: {
+  index: string;
   label: string;
   value: string;
   href?: string;
 }) {
   const content = (
     <>
-      <div className="text-caption text-ink-muted-48">{label}</div>
-      <div className="text-body text-ink mt-1">{value}</div>
+      <div className="flex items-center gap-3">
+        <HexBadge size={24} tone="legion">
+          {index}
+        </HexBadge>
+        <div className="t-label text-ash">{label}</div>
+      </div>
+      <div className="mt-3 t-body text-white">{value}</div>
     </>
   );
   return (
-    <div className="border-b border-divider-soft pb-4">
+    <div className="border-b border-white/12 py-5">
       {href ? (
-        <a href={href}>{content}</a>
+        <a href={href} className="block hover:opacity-70">
+          {content}
+        </a>
       ) : (
         content
       )}

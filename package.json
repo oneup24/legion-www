@@ -8,8 +8,14 @@
     "build:static": "BUILD_MODE=static NEXT_PUBLIC_BASE_PATH=/legion-www next build && node scripts/postbuild.mjs",
     "start": "next start",
     "serve:static": "npx --yes serve out -l 3000",
+    "assets": "node scripts/generate-assets.mjs",
+    "assets:check": "node scripts/generate-assets.mjs --check",
+    "brand:detect": "node scripts/detect-logo-regions.mjs",
+    "brand:trace": "node scripts/trace-logo.mjs",
+    "brand:split": "node scripts/trace-logo.mjs && node scripts/split-logo.mjs",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "i18n:check": "node scripts/check-i18n.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

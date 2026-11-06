@@ -8,10 +8,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       ? requested
       : routing.defaultLocale;
 
-  // For locales whose translations are not yet populated, load the default
-  // locale's messages so pages can still prerender without crashing.
-  const sourceLocale = locale === "en" ? routing.defaultLocale : locale;
-  const messages = (await import(`../../messages/${sourceLocale}.json`)).default;
+  const messages = (await import(`../../messages/${locale}.json`)).default;
   return {
     locale,
     messages,

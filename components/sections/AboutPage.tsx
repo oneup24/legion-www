@@ -3,12 +3,17 @@
 import * as React from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import { PageHero } from "@/components/editorial/PageHero";
+import { SectionHeader } from "@/components/editorial/SectionHeader";
+import { SectionShell } from "@/components/editorial/SectionShell";
+import { HexAvatar, HexIcon, HexOutline } from "@/components/brand/Hex";
 
 type Value = { letter: string; title: string; desc: string };
 type TeamMember = { name: string; role: string; initials: string; bio: string };
 
 export function AboutPage() {
   const t = useTranslations("about");
+  const tNav = useTranslations("nav");
   const values = t.raw("values.items") as Value[];
   const team = (t.has("team.members") ? t.raw("team.members") : []) as TeamMember[];
 
@@ -26,104 +31,146 @@ export function AboutPage() {
 
   return (
     <>
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 pt-12 sm:pt-20 pb-8 text-center">
-          <h1 className="text-hero-display text-ink">{t("headline")}</h1>
-          <p className="text-lead text-ink-muted-80 mt-4 max-w-2xl mx-auto text-body-cjk">
-            {t("sub")}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        kicker={tNav("about")}
+        title={t("headline")}
+        lead={t("sub")}
+        tone="void"
+      />
 
       {/* Story */}
-      <section className="bg-canvas-parchment">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-          <h2 className="text-display-md text-ink">{t("story.title")}</h2>
-          <p className="text-body text-ink-muted-80 text-body-cjk md:col-span-2">
-            {t("story.body")}
-          </p>
+      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+        <div className="shell section-y">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <SectionHeader
+                index="01"
+                kicker={tNav("about")}
+                title={t("story.title")}
+                tone="surface"
+              />
+            </div>
+            <div className="lg:col-span-8">
+              <p className="t-lead text-smoke/70">{t("story.body")}</p>
+            </div>
+          </div>
         </div>
-      </section>
+      </SectionShell>
 
       {/* Vision + Mission */}
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-canvas-parchment rounded-xl p-8">
-            <h3 className="text-tagline text-ink">{t("vision.title")}</h3>
-            <p className="text-body text-ink-muted-80 mt-3 text-body-cjk">
-              {t("vision.body")}
-            </p>
-          </div>
-          <div className="bg-canvas-parchment rounded-xl p-8">
-            <h3 className="text-tagline text-ink">{t("mission.title")}</h3>
-            <p className="text-body text-ink-muted-80 mt-3 text-body-cjk">
-              {t("mission.body")}
-            </p>
+      <SectionShell tone="void">
+        <div className="shell section-y">
+          <SectionHeader
+            index="02"
+            kicker={tNav("about")}
+            title={t("pillarsTitle")}
+            tone="void"
+          />
+          <div className="mt-12 grid grid-cols-1 gap-x-14 gap-y-10 border-t border-white/12 pt-10 lg:grid-cols-2">
+            <div>
+              <HexIcon size={44} tone="legion">
+                <span className="t-micro text-white">01</span>
+              </HexIcon>
+              <h3 className="mt-6 t-display-3 text-white">{t("vision.title")}</h3>
+              <p className="mt-4 t-body text-smoke/65">{t("vision.body")}</p>
+            </div>
+            <div className="lg:border-l lg:border-white/12 lg:pl-14">
+              <HexIcon size={44} tone="legion">
+                <span className="t-micro text-white">02</span>
+              </HexIcon>
+              <h3 className="mt-6 t-display-3 text-white">{t("mission.title")}</h3>
+              <p className="mt-4 t-body text-smoke/65">{t("mission.body")}</p>
+            </div>
           </div>
         </div>
-      </section>
+      </SectionShell>
 
-      {/* Values */}
-      <section className="tile-dark-1">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16">
-          <h2 className="text-display-lg text-on-dark text-center mb-10">
-            {t("values.title")}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {values.map((v, i) => (
-              <motion.div
-                key={v.letter}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-white/5 rounded-xl p-8"
-              >
-                <div className="text-display-lg text-primary-on-dark font-wordmark">
-                  {v.letter}
-                </div>
-                <h3 className="text-tagline text-on-dark mt-3">{v.title}</h3>
-                <p className="text-body text-body-muted mt-2 text-body-cjk">
-                  {v.desc}
-                </p>
-              </motion.div>
-            ))}
+      {/* Values — L.E.G.I.O.N. as hexagon letter tiles */}
+      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+        <div className="shell relative section-y">
+          <HexOutline
+            size={460}
+            strokePx={1}
+            className="pointer-events-none absolute -right-32 -top-32 text-accent"
+            style={{ opacity: 0.26 }}
+          />
+          <div className="relative">
+            <SectionHeader
+              index="03"
+              kicker={tNav("about")}
+              title={t("values.title")}
+              tone="surface"
+            />
+            <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-white/12 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+              {values.map((v, i) => (
+                <motion.div
+                  key={v.letter}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-8%" }}
+                  transition={{ duration: 0.45, delay: i * 0.05 }}
+                >
+                  <div className="flex items-center gap-4">
+                    <HexIcon size={56} tone="legion">
+                      <span className="text-[22px] font-medium leading-none text-white">
+                        {v.letter}
+                      </span>
+                    </HexIcon>
+                    <span className="t-index text-ash">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 t-display-3 text-white">{v.title}</h3>
+                  <p className="mt-3 t-body text-smoke/65">{v.desc}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
-      </section>
+      </SectionShell>
 
       {/* Team */}
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16">
-          <div className="text-center mb-10">
-            <h2 className="text-display-lg text-ink">{t("team.title")}</h2>
-            <p className="text-body text-ink-muted-80 mt-3 text-body-cjk">
-              {t("team.subtitle")}
+      <SectionShell tone="void">
+        <div className="shell section-y">
+          <SectionHeader
+            index="04"
+            kicker={tNav("about")}
+            title={t("team.title")}
+            lead={t("team.subtitle")}
+            tone="void"
+          />
+
+          {team.length === 0 ? (
+            <p className="mt-8 max-w-2xl border-l-2 border-accent pl-5 t-body text-smoke/70">
+              {t("team.pendingNote")}
             </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          ) : null}
+
+          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-white/12 pt-10 sm:grid-cols-2 lg:grid-cols-3">
             {teamData.map((m, i) => (
-              <motion.div
+              <motion.article
                 key={i}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-canvas-parchment rounded-xl p-6 text-center"
+                viewport={{ once: true, margin: "-8%" }}
+                transition={{ duration: 0.45, delay: i * 0.05 }}
               >
-                <div className="w-20 h-20 mx-auto rounded-pill bg-canvas flex items-center justify-center text-tagline text-ink-muted-80">
-                  {m.initials}
+                <div className="flex items-start gap-4">
+                  <HexAvatar initials={m.initials} size={56} tone="legion" />
+                  <div className="pt-1">
+                    <span className="t-index text-accent tabular-nums">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-1 t-body text-white">{m.name}</h3>
+                    <p className="t-caption text-accent mt-1">{m.role}</p>
+                  </div>
                 </div>
-                <h3 className="text-body-strong text-ink mt-4">{m.name}</h3>
-                <p className="text-caption text-primary">{m.role}</p>
-                <p className="text-caption text-ink-muted-80 mt-3 text-body-cjk">
-                  {m.bio}
-                </p>
-              </motion.div>
+                <p className="mt-4 t-body text-smoke/65">{m.bio}</p>
+              </motion.article>
             ))}
           </div>
         </div>
-      </section>
+      </SectionShell>
     </>
   );
 }

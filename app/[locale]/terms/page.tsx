@@ -1,27 +1,24 @@
+import { LegalPage } from "@/components/sections/LegalPage";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { setRequestLocale } from "next-intl/server";
 
-export function generateMetadata() {
-  return buildMetadata({
-    title: "使用條款",
-    description: "LegionOne 使用條款。",
-    path: "/terms",
-  });
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return buildMetadata("terms", locale as "en" | "zh-HK");
 }
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  // Static export cannot read request headers, so the locale has to be
+  // resolved from the route params and put into the static message store.
+  setRequestLocale(locale);
 
-export default function TermsPage() {
-  return (
-    <div className="mx-auto max-w-[768px] px-4 sm:px-6 py-16">
-      <h1 className="text-display-lg text-ink mb-6">使用條款</h1>
-      <p className="text-body text-ink-muted-80 text-body-cjk mb-4">
-        本頁為使用條款占位文本，正式條款將於上線前由法律顧問審核並替換。
-      </p>
-      <p className="text-body text-ink-muted-80 text-body-cjk">
-        如有任何查詢，請電郵至{" "}
-        <a href="mailto:hello@legionone.hk" className="text-primary">
-          hello@legionone.hk
-        </a>
-        。
-      </p>
-    </div>
-  );
+  return <LegalPage doc="terms" />;
 }

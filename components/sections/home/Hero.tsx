@@ -3,105 +3,127 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/Button";
 import { useBookDemo } from "@/components/chrome/useBookDemo";
 import { DashboardOverviewMockup } from "@/components/brand/mockups/DashboardOverview";
+import { HexField, HexOutline } from "@/components/brand/Hex";
+import { LogoMark } from "@/components/brand/LogoMark";
+import { Link } from "@/lib/i18n/navigation";
 
+/**
+ * Hero — the first impression.
+ *
+ * Black is the canvas, the statement is set at the top of the type scale,
+ * and the navigation sits in a strip along the bottom edge, the way the
+ * reference site carries its section menu. The product render is the only
+ * bright thing on the page.
+ */
 export function Hero() {
   const t = useTranslations("home.hero");
+  const nav = t.raw("nav") as { label: string; href: string }[];
   const { setOpen: setBookOpen, setSource } = useBookDemo();
 
   return (
-    <section className="bg-canvas">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-20 pb-10 sm:pb-16 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* LEFT — copy */}
-          <div className="text-center lg:text-left">
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
+    <section className="relative flex flex-col overflow-hidden bg-void">
+      <HexField
+        className="pointer-events-none absolute inset-0 h-full w-full text-white"
+        style={{ opacity: 0.04 }}
+      />
+      <HexOutline
+        size={760}
+        strokePx={1}
+        className="pointer-events-none absolute -right-52 top-[-10%] text-accent"
+        style={{ opacity: 0.28 }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-40 bottom-[-18%] opacity-[0.06]"
+      >
+        <LogoMark size={520} tone="light" />
+      </div>
+
+      <div className="shell relative flex-1 flex flex-col justify-center pt-[112px] pb-10 sm:pt-[132px] lg:pt-[150px] lg:pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Statement — 7 of 12 columns */}
+          <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-caption text-ink-muted-48 mb-4 tracking-wide"
+              className="flex items-center gap-3"
             >
-              {t("eyebrow")}
-            </motion.p>
+              <span className="t-label text-accent">{t("tagline")}</span>
+            </motion.div>
+
             <motion.h1
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.05 }}
-              className="text-hero-display text-ink"
+              transition={{ duration: 0.5, delay: 0.06 }}
+              className="mt-7 t-display-hero t-balance text-white"
             >
               {t("headline")}
             </motion.h1>
+
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="text-lead text-ink-muted-80 mt-5 max-w-xl mx-auto lg:mx-0 text-body-cjk"
+              transition={{ duration: 0.5, delay: 0.12 }}
+              className="mt-7 t-lead max-w-xl text-smoke/70"
             >
               {t("sub")}
             </motion.p>
+
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.15 }}
-              className="mt-7 flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center gap-3"
+              transition={{ duration: 0.5, delay: 0.18 }}
+              className="mt-9 flex flex-wrap gap-4"
             >
-              <Button
-                variant="primary"
-                size="lg"
-                data-cta-id="hero_book_demo"
+              <button
+                type="button"
                 onClick={() => {
                   setSource("hero");
                   setBookOpen(true);
                 }}
+                data-cta-id="hero_book_demo"
+                className="btn btn-accent"
               >
                 {t("primaryCta")}
-              </Button>
-              <a
-                href="#product"
-                data-cta-id="hero_secondary"
-                className="text-button text-primary hover:text-primary-focus inline-flex items-center gap-1 h-12 px-2"
-              >
-                {t("secondaryCta")} →
-              </a>
+              </button>
+              <Link href="/product" className="btn btn-ghost">
+                {t("secondaryCta")}
+              </Link>
             </motion.div>
-            <p className="text-caption text-ink-muted-48 mt-4 lg:hidden">
-              {t("mockupCaption")}
-            </p>
           </div>
 
-          {/* RIGHT — mockup (≥1024px only) */}
+          {/* Product render — 5 of 12 columns */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="hidden lg:block"
+            transition={{ duration: 0.6, delay: 0.14 }}
+            className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-xl overflow-hidden product-shadow bg-canvas-pearl">
-              <DashboardOverviewMockup className="w-full h-auto block" />
+            <div
+              aria-hidden
+              className="absolute -inset-6 bg-accent/10 clip-hex hidden lg:block"
+            />
+            <div className="relative border border-white/12 bg-white">
+              <DashboardOverviewMockup className="block w-full h-auto" />
             </div>
-            <p className="text-caption text-ink-muted-48 mt-3 text-center">
-              {t("mockupCaption")}
-            </p>
+            <p className="mt-3 t-micro text-ash">{t("mockupCaption")}</p>
           </motion.div>
         </div>
-
-        {/* BELOW — mockup on smaller screens */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.25 }}
-          className="lg:hidden mt-10 sm:mt-12"
-        >
-          <div className="relative rounded-xl overflow-hidden product-shadow bg-canvas-pearl">
-            <DashboardOverviewMockup className="w-full h-auto block" />
-          </div>
-          <p className="text-caption text-ink-muted-48 mt-3 text-center">
-            {t("mockupCaption")}
-          </p>
-        </motion.div>
       </div>
+
+      {/* Section menu pinned to the bottom edge, as on the reference site */}
+      <nav className="relative border-t border-white/10">
+        <div className="hero-nav-strip">
+          {nav.map((item) => (
+            <Link key={item.href} href={item.href as never}>
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
     </section>
   );
 }

@@ -2,19 +2,28 @@ import { ProductPage } from "@/components/sections/ProductPage";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { productJsonLd } from "@/lib/seo/jsonld";
 import { JsonLdScript } from "@/components/JsonLdScript";
+import type { SeoLocale } from "@/lib/seo/pages";
 
-export function generateMetadata() {
-  return buildMetadata({
-    title: "七大模組",
-    description: "Dashboard、財務、CRM、庫存、銷售、HR、自動化——一個平台覆蓋你整條作業流程。",
-    path: "/product",
-  });
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return buildMetadata("product", locale as "en" | "zh-HK");
 }
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  // Read the locale from the route params rather than next-intl's
+  // getLocale(), which reads request headers and cannot be prerendered.
+  const { locale } = await params;
 
-export default function Page() {
   return (
     <>
-      <JsonLdScript data={productJsonLd()} />
+      <JsonLdScript data={productJsonLd(locale as SeoLocale)} />
       <ProductPage />
     </>
   );

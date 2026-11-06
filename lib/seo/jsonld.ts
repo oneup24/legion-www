@@ -1,14 +1,16 @@
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://legionone.vercel.app";
+import { PAGE_SEO, type SeoLocale } from "./pages";
+import { SITE_URL } from "./site";
 
-export function organizationJsonLd() {
+export function organizationJsonLd(locale: SeoLocale = "en") {
+  const home = PAGE_SEO.home[locale] ?? PAGE_SEO.home.en;
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "LegionOne",
     url: SITE_URL,
-    logo: `${SITE_URL}/images/wordmark.svg`,
-    description: "為香港中小企而設的 ERP + CRM 平台。",
+    logo: `${SITE_URL}/brand/legionone-mark.svg`,
+    description: home.description,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Hong Kong",
@@ -17,14 +19,17 @@ export function organizationJsonLd() {
   };
 }
 
-export function productJsonLd() {
+export function productJsonLd(locale: SeoLocale = "en") {
+  const product = PAGE_SEO.product[locale] ?? PAGE_SEO.product.en;
+
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "LegionOne",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    description: "為香港中小企而設的 ERP + CRM 平台。",
+    url: `${SITE_URL}/product/`,
+    description: product.description,
     offers: {
       "@type": "Offer",
       priceCurrency: "HKD",

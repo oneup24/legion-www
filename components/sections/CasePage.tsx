@@ -5,6 +5,10 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 import { useBookDemo } from "@/components/chrome/useBookDemo";
 import { motion } from "framer-motion";
+import { PageHero } from "@/components/editorial/PageHero";
+import { SectionHeader } from "@/components/editorial/SectionHeader";
+import { SectionShell } from "@/components/editorial/SectionShell";
+import { HexBadge, HexIcon } from "@/components/brand/Hex";
 
 type CasePageProps = {
   namespace: "trading" | "professionalServices";
@@ -12,6 +16,9 @@ type CasePageProps = {
 
 export function CasePage({ namespace }: CasePageProps) {
   const t = useTranslations(`useCases.${namespace}`);
+  const tKickers = useTranslations("useCases.sectionKickers");
+  const tNav = useTranslations("nav");
+  const tFinal = useTranslations("home.final");
   const painItems = t.raw("pain.items") as string[];
   const solutionItems = t.raw("solution.items") as string[];
   const dayFlow = t.raw("dayFlow.steps") as Array<{
@@ -23,90 +30,120 @@ export function CasePage({ namespace }: CasePageProps) {
 
   return (
     <>
-      {/* Hero */}
-      <section className="tile-dark-1">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-20 sm:py-32 text-center">
-          <h1 className="text-hero-display text-on-dark">{t("headline")}</h1>
-          <p className="text-lead text-body-muted mt-4 max-w-2xl mx-auto text-body-cjk">
-            {t("sub")}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        tone="void"
+        kicker={tNav("useCases")}
+        title={t("headline")}
+        lead={t("sub")}
+      />
 
       {/* Pain */}
-      <section className="bg-canvas-parchment">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16">
-          <h2 className="text-display-lg text-ink mb-8">{t("pain.title")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+        <div className="shell section-y">
+          <SectionHeader
+            index="01"
+            kicker={tKickers("pain")}
+            title={t("pain.title")}
+            tone="surface"
+          />
+
+          <ul className="mt-14 border-t border-white/12">
             {painItems.map((item, i) => (
-              <motion.div
+              <motion.li
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-8%" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-canvas rounded-xl p-6"
+                className="grid grid-cols-1 gap-4 border-b border-white/12 py-6 lg:grid-cols-12 lg:gap-8"
               >
-                <p className="text-body text-ink text-body-cjk">{item}</p>
-              </motion.div>
+                <span className="lg:col-span-1">
+                  <HexBadge size={28} tone="onDark">
+                    {String(i + 1).padStart(2, "0")}
+                  </HexBadge>
+                </span>
+                <span className="lg:col-span-11 t-body text-smoke/60">{item}</span>
+              </motion.li>
             ))}
-          </div>
+          </ul>
         </div>
-      </section>
+      </SectionShell>
 
       {/* Solution */}
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16">
-          <h2 className="text-display-lg text-ink mb-8">{t("solution.title")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {solutionItems.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-canvas-parchment rounded-xl p-6 border-l-4 border-primary"
-              >
-                <p className="text-body text-ink text-body-cjk">{item}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SectionShell tone="void">
+        <div className="shell section-y">
+          <SectionHeader
+            index="02"
+            kicker={tKickers("solution")}
+            title={t("solution.title")}
+            tone="void"
+          />
 
-      {/* Day Flow */}
-      <section className="bg-canvas-parchment">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16">
-          <h2 className="text-display-lg text-ink mb-10 text-center">
-            {t("dayFlow.title")}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {dayFlow.map((step, i) => (
-              <motion.div
+          <ul className="mt-14 border-t border-white/12">
+            {solutionItems.map((item, i) => (
+              <motion.li
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-8%" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-canvas rounded-xl p-6"
+                className="grid grid-cols-1 gap-4 border-b border-white/12 py-6 lg:grid-cols-12 lg:gap-8"
               >
-                <div className="text-tagline text-primary">{step.time}</div>
-                <h3 className="text-body-strong text-ink mt-2">{step.title}</h3>
-                <p className="text-caption text-ink-muted-80 mt-2 text-body-cjk">
-                  {step.detail}
-                </p>
-              </motion.div>
+                <span className="lg:col-span-1">
+                  <HexIcon size={28} tone="legion">
+                    <span className="t-micro text-white">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </HexIcon>
+                </span>
+                <span className="lg:col-span-11 t-body text-white/90">{item}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </SectionShell>
+
+      {/* Day flow — numbered spine */}
+      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+        <div className="shell section-y">
+          <SectionHeader
+            index="03"
+            kicker={tKickers("dayFlow")}
+            title={t("dayFlow.title")}
+            tone="surface"
+          />
+
+          <div className="mt-14 border-t border-white/12">
+            {dayFlow.map((step, i) => (
+              <motion.article
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-8%" }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="grid grid-cols-1 gap-4 border-b border-white/12 py-8 lg:grid-cols-12 lg:gap-8 lg:py-10"
+              >
+                <div className="flex items-center gap-4 lg:col-span-2">
+                  <HexBadge size={32} tone="legion">
+                    {String(i + 1).padStart(2, "0")}
+                  </HexBadge>
+                  <span className="t-label text-accent">{step.time}</span>
+                </div>
+                <div className="lg:col-span-10">
+                  <h3 className="t-display-3 text-white">{step.title}</h3>
+                  <p className="mt-3 t-body max-w-xl text-smoke/65">{step.detail}</p>
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>
-      </section>
+      </SectionShell>
 
       {/* CTA */}
-      <section className="tile-dark-2">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16 text-center">
+      <SectionShell tone="accent" hexField fieldOpacity={0.12}>
+        <div className="shell section-y flex justify-center">
           <Button
-            variant="primary"
+            variant="white"
             size="lg"
             data-cta-id={`case_${namespace}_book_demo`}
             onClick={() => {
@@ -114,10 +151,10 @@ export function CasePage({ namespace }: CasePageProps) {
               setOpen(true);
             }}
           >
-            預約免費示範
+            {tFinal("primaryCta")}
           </Button>
         </div>
-      </section>
+      </SectionShell>
     </>
   );
 }

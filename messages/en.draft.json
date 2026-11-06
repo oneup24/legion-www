@@ -1,0 +1,212 @@
+{
+  "hero": {
+    "tickerLabel": "One system",
+    "ticker": [
+      "Unified revenue",
+      "Unified finance",
+      "Unified customers",
+      "Unified inventory",
+      "Quotes",
+      "Orders",
+      "Invoices",
+      "Collections",
+      "Reconciliation"
+    ]
+  },
+  "belief": {
+    "kicker": "What we believe",
+    "quote": "Hong Kong SMEs don't lack tools — they have too many, and every one of them speaks a different language.",
+    "body": "So LegionOne was built as one system from day one: quotes, orders, invoices, collections, inventory and customers, all running on the same source of truth. Every department reads the same number.",
+    "cta": "See how the system runs"
+  },
+  "dayFlow": {
+    "kicker": "One working day",
+    "headline": "Five decisions a day that would otherwise eat your evenings.",
+    "lead": "Same hours, different habits, different outcome. This is a full trading day inside LegionOne — from quote to reconciliation.",
+    "steps": [
+      {
+        "number": "01",
+        "time": "09:00",
+        "title": "Quotes — one version",
+        "desc": "A customer wants stock. Costs, tax and lead time are pulled from the same system, so every revision of the quote stays on one version.",
+        "modules": [
+          "Sales & Quoting"
+        ]
+      },
+      {
+        "number": "02",
+        "time": "10:30",
+        "title": "Orders — one entry, four places",
+        "desc": "Once the customer confirms, the quote becomes an order; stock, purchase orders and follow-ups all update together.",
+        "modules": [
+          "Sales & Quoting",
+          "Inventory",
+          "CRM"
+        ]
+      },
+      {
+        "number": "03",
+        "time": "14:00",
+        "title": "Invoices — ageing updates live",
+        "desc": "Invoices issue straight from the order and AR/AP ageing refreshes immediately, so you know what is outstanding before month-end.",
+        "modules": [
+          "Finance"
+        ]
+      },
+      {
+        "number": "04",
+        "time": "16:00",
+        "title": "Collections — the list builds itself",
+        "desc": "Ageing reports generate the collection list and the cash-flow forecast updates with it — no more WhatsApp reminders.",
+        "modules": [
+          "Finance"
+        ]
+      },
+      {
+        "number": "05",
+        "time": "Month-end",
+        "title": "Reconciliation — variances itemised",
+        "desc": "Bank statements import and accounts reconcile automatically, so variances are itemised instead of checked cell by cell in Excel.",
+        "modules": [
+          "Finance",
+          "Dashboard"
+        ]
+      }
+    ]
+  },
+  "comparison": {
+    "painColumnLabel": "Common pain",
+    "previewLabel": "Screen preview"
+  },
+  "capabilities_tags": [
+    [
+      "Quotes",
+      "Orders",
+      "Invoices",
+      "Collections",
+      "Inventory"
+    ],
+    [
+      "Reconciliation",
+      "Invoicing",
+      "Collections",
+      "Reorder alerts"
+    ],
+    [
+      "Revenue",
+      "Margin",
+      "Outstanding"
+    ],
+    [
+      "One-person teams",
+      "200-person teams",
+      "Modular"
+    ]
+  ],
+  "industryCases": {
+    "kicker": "By industry",
+    "headline": "One system, two ways of working.",
+    "lead": "The workflow can be shared, but the details have to match the trade. These are the two lines LegionOne knows best.",
+    "cta": "Read the full case",
+    "items": [
+      {
+        "key": "trading",
+        "index": "01",
+        "tags": [
+          "Import & export",
+          "Supply chain",
+          "Inventory"
+        ]
+      },
+      {
+        "key": "professionalServices",
+        "index": "02",
+        "tags": [
+          "Accounting",
+          "Legal",
+          "Consulting"
+        ]
+      }
+    ]
+  },
+  "methodology": {
+    "kicker": "Three steps to launch",
+    "headline": "We won't start from zero. We won't ask you to bend either.",
+    "lead": "Going live isn't just swapping software. We work in three steps, and each one starts by looking at how you actually operate today.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Map what you have",
+        "desc": "We map the tools and processes you use today, and mark where work is duplicated or the numbers stop matching.",
+        "tags": [
+          "Process mapping",
+          "Tool consolidation"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Start from a template",
+        "desc": "You begin from an industry template instead of assembling every module, then we match it to how you actually work.",
+        "tags": [
+          "Industry templates",
+          "Tailored setup"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "Live and tune",
+        "desc": "We tune the workflow and the reports against real operations. The system should fit you, not the other way around.",
+        "tags": [
+          "Workflow tuning",
+          "Report refinement"
+        ]
+      }
+    ]
+  },
+  "socialProof": {
+    "eyebrow": "By the numbers"
+  },
+  "securityBadges": {
+    "headline": "Enterprise-grade security, built in from the start."
+  },
+  "partnerCta": {
+    "kicker": "Partners"
+  },
+  "finalCta": {
+    "kicker": "Get started"
+  },
+  "footer": {
+    "industry": "Industries"
+  },
+  "product": {
+    "sections": {
+      "modulesKicker": "Seven modules",
+      "ctaKicker": "Next step",
+      "modulesTitle": "One module, one job."
+    }
+  },
+  "useCases": {
+    "hub": {
+      "sectionsKicker": "Industries",
+      "viewCase": "Read the full case",
+      "sectionsTitle": "Start with these two."
+    },
+    "sectionKickers": {
+      "pain": "Today",
+      "solution": "With LegionOne",
+      "dayFlow": "One day"
+    }
+  },
+  "pricing": {
+    "tiersKicker": "Plans",
+    "tiersTitle": "Three plans that grow with you."
+  },
+  "contact": {
+    "channelsKicker": "Reach us",
+    "formTitle": "Tell us about your situation.",
+    "channelsTitle": "Other ways to reach us."
+  },
+  "about": {
+    "pillarsTitle": "One direction, stated first."
+  }
+}

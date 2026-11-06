@@ -1,86 +1,98 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { SectionShell } from "@/components/editorial/SectionShell";
+import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { DashboardOverviewMockup } from "@/components/brand/mockups/DashboardOverview";
 import { FinanceModuleMockup } from "@/components/brand/mockups/FinanceModule";
 import { CrmModuleMockup } from "@/components/brand/mockups/CrmModule";
 
 type TabKey = "dashboard" | "finance" | "crm";
-const mockups: Record<TabKey, React.ComponentType<{ className?: string }>> = {
-  dashboard: DashboardOverviewMockup,
-  finance: FinanceModuleMockup,
-  crm: CrmModuleMockup,
-};
 
+/**
+ * Product preview — the three modules, one at a time.
+ *
+ * The product render is the brightest object on the page, so the panel is
+ * left clear of ornament and the tab strip is set above it as a row of
+ * index links rather than as pills.
+ */
 export function ProductPreview() {
   const t = useTranslations("home.productPreview");
-  const [active, setActive] = React.useState<TabKey>("dashboard");
-  const Active = mockups[active];
-  const tabs: { key: TabKey; label: string }[] = [
-    { key: "dashboard", label: t("tabs.dashboard") },
-    { key: "finance", label: t("tabs.finance") },
-    { key: "crm", label: t("tabs.crm") },
-  ];
+  const [tab, setTab] = React.useState<TabKey>("dashboard");
+
+  const tabs: TabKey[] = ["dashboard", "finance", "crm"];
 
   return (
-    <section id="product" className="bg-canvas">
-      <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16 sm:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-center mb-10"
-        >
-          <p className="text-caption text-ink-muted-48 mb-3 tracking-wide">
-            {t("eyebrow")}
-          </p>
-          <h2 className="text-display-lg text-ink">{t("headline")}</h2>
-          <p className="text-lead text-ink-muted-80 mt-3">{t("sub")}</p>
-        </motion.div>
+    <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <div className="shell section-y">
+        <div className="split-grid">
+          <div>
+            <SectionLabel tone="surface">{t("eyebrow")}</SectionLabel>
+          </div>
 
-        <div
-          role="tablist"
-          aria-label="Product modules"
-          className="flex items-center justify-center gap-1 mb-8 bg-canvas-parchment rounded-pill p-1 max-w-md mx-auto"
-        >
-          {tabs.map((tab) => {
-            const isActive = active === tab.key;
-            return (
-              <button
-                key={tab.key}
-                role="tab"
-                aria-selected={isActive}
-                onClick={() => setActive(tab.key)}
-                data-cta-id={`preview_tab_${tab.key}`}
-                className={`flex-1 h-10 rounded-pill text-button transition-all ${
-                  isActive
-                    ? "bg-canvas text-ink shadow-sm"
-                    : "text-ink-muted-80 hover:text-ink"
-                }`}
-              >
-                {tab.label}
-              </button>
-            );
-          })}
+          <div>
+            <h2 className="t-display-1 t-balance text-white max-w-3xl">
+              {t("headline")}
+            </h2>
+            <p className="mt-6 t-lead max-w-2xl text-smoke/70">{t("sub")}</p>
+
+            <div
+              role="tablist"
+              aria-label={t("eyebrow")}
+              className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-b border-white/12"
+            >
+              {tabs.map((key) => (
+                <button
+                  key={key}
+                  role="tab"
+                  type="button"
+                  aria-selected={tab === key}
+                  onClick={() => setTab(key)}
+                  className={`t-label pb-4 -mb-px border-b-2 transition-colors ${
+                    tab === key
+                      ? "border-accent text-white"
+                      : "border-transparent text-ash hover:text-white"
+                  }`}
+                >
+                  {t(`tabs.${key}`)}
+                </button>
+              ))}
+            </div>
+
+            <p className="mt-6 t-body text-smoke/65 max-w-2xl">
+              {t(`descriptions.${tab}`)}
+            </p>
+
+            <div className="mt-10 relative">
+              <div
+                aria-hidden
+                className="absolute -inset-5 bg-accent/10 clip-hex hidden lg:block"
+              />
+              <div className="relative border border-white/12 bg-white">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={tab}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    {tab === "dashboard" ? (
+                      <DashboardOverviewMockup className="block w-full h-auto" />
+                    ) : tab === "finance" ? (
+                      <FinanceModuleMockup className="block w-full h-auto" />
+                    ) : (
+                      <CrmModuleMockup className="block w-full h-auto" />
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <motion.div
-          key={active}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="rounded-xl overflow-hidden product-shadow bg-canvas-pearl"
-        >
-          <Active className="w-full h-auto block" />
-        </motion.div>
-
-        <p className="text-body text-ink-muted-80 text-body-cjk text-center mt-6 max-w-2xl mx-auto">
-          {t(`descriptions.${active}` as never)}
-        </p>
       </div>
-    </section>
+    </SectionShell>
   );
 }

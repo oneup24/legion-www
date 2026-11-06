@@ -1,1 +1,1016 @@
-{}
+{
+  "nav": {
+    "products": "Product",
+    "useCases": "Industries",
+    "partners": "Partners",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "bookDemo": "Book a demo",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu"
+  },
+  "footer": {
+    "tagline": "PEOPLE. SYSTEM. PROGRESS.",
+    "eyebrow": "LegionOne",
+    "company": "Company",
+    "product": "Product",
+    "resources": "Resources",
+    "legal": "Legal",
+    "rights": "All rights reserved",
+    "address": "Hong Kong",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "sitemap": "Sitemap",
+    "industry": "Industries",
+    "security": "Security",
+    "contact": "Contact",
+    "brochure": "Brochure",
+    "backToTop": "Back to top"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "LegionOne · Business operating system",
+      "tagline": "PEOPLE. SYSTEM. PROGRESS.",
+      "headline": "One system. Every team. The same numbers.",
+      "sub": "The ERP + CRM platform built for Hong Kong SMEs. One system for revenue, finance, customers and inventory.",
+      "primaryCta": "Book a free demo",
+      "secondaryCta": "Explore the product",
+      "mockupCaption": "Screens shown are from a work-in-progress build",
+      "tickerLabel": "One system for",
+      "ticker": [
+        "Revenue",
+        "Finance",
+        "Customers",
+        "Inventory",
+        "Quotation",
+        "Order",
+        "Invoice",
+        "Payment",
+        "Reconciliation"
+      ],
+      "nav": [
+        {
+          "label": "Product",
+          "href": "/product"
+        },
+        {
+          "label": "Industries",
+          "href": "/use-cases"
+        },
+        {
+          "label": "Pricing",
+          "href": "/pricing"
+        },
+        {
+          "label": "Partners",
+          "href": "/partners"
+        },
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
+      ]
+    },
+    "customerLogos": {
+      "eyebrow": "Trusted across Hong Kong industries",
+      "subtitle": "Trading · Professional services · Retail · Manufacturing",
+      "items": [
+        {
+          "name": "嘉信貿易",
+          "industry": "Import & export trading"
+        },
+        {
+          "name": "明華會計師事務所",
+          "industry": "Accounting"
+        },
+        {
+          "name": "立信設計",
+          "industry": "Design"
+        },
+        {
+          "name": "鴻圖工程",
+          "industry": "Construction & engineering"
+        },
+        {
+          "name": "永勝物流",
+          "industry": "Logistics"
+        },
+        {
+          "name": "新世紀科技",
+          "industry": "Technology"
+        },
+        {
+          "name": "中興食品",
+          "industry": "Food & beverage"
+        },
+        {
+          "name": "華聯集團",
+          "industry": "Retail"
+        }
+      ]
+    },
+    "manifesto": {
+      "label": "What we believe",
+      "quote": "Hong Kong SMEs are not short of tools. They are short of tools that speak the same language.",
+      "body": "So LegionOne was built as one system from day one — quotation, order, invoice, payment, inventory and customers all run on the same data, so every department is reading the same numbers.",
+      "cta": "See how the system runs"
+    },
+    "productPreview": {
+      "eyebrow": "Product preview",
+      "headline": "See the LegionOne interface.",
+      "sub": "Three modules — dashboard, finance and CRM — one click apart.",
+      "tabs": {
+        "dashboard": "Dashboard",
+        "finance": "Finance",
+        "crm": "CRM"
+      },
+      "descriptions": {
+        "dashboard": "KPI cards, a revenue trend and recent activity — the whole company on one page.",
+        "finance": "AR and AP ageing, invoice handling and cash-flow forecast — financial health at a glance.",
+        "crm": "Pipeline board, customer list and a contact drawer, so no follow-up slips."
+      }
+    },
+    "services": {
+      "label": "Services",
+      "headline": "Seven modules. One platform.",
+      "lead": "Each module handles one job, and hands straight over to the next — from the first quotation to the final reconciliation.",
+      "items": [
+        {
+          "index": "01",
+          "title": "Dashboard",
+          "desc": "The whole company on one page: revenue, gross margin, receivables due and stock value, live."
+        },
+        {
+          "index": "02",
+          "title": "Finance",
+          "desc": "AR and AP ageing, invoicing, collection and cash-flow forecast — so month-end stops being a fire drill."
+        },
+        {
+          "index": "03",
+          "title": "CRM",
+          "desc": "Pipeline, customer records and every contact in one place, so follow-ups never fall through."
+        },
+        {
+          "index": "04",
+          "title": "Inventory",
+          "desc": "Live stock across warehouses, with batch, serial and expiry tracking plus automatic reorder alerts."
+        },
+        {
+          "index": "05",
+          "title": "Sales & Quotation",
+          "desc": "Drag-and-drop quotations, online customer sign-off, and one-click conversion to order or invoice."
+        },
+        {
+          "index": "06",
+          "title": "HR",
+          "desc": "Employee records, attendance, leave and payroll, including MPF handling, in one system."
+        },
+        {
+          "index": "07",
+          "title": "Automation",
+          "desc": "A rules engine that handles the repetitive work: triggers, notifications and API connections."
+        }
+      ],
+      "cta": "More about our modules"
+    },
+    "work": {
+      "label": "Featured work",
+      "headline": "Two industries, read differently.",
+      "lead": "The process can be shared. The details have to speak your industry. These are the two we know best.",
+      "items": [
+        {
+          "index": "01",
+          "key": "trading",
+          "title": "Trading company",
+          "role": "Import & export, supply chain, inventory",
+          "desc": "From quotation through shipping and payment, every status moves on its own."
+        },
+        {
+          "index": "02",
+          "key": "professionalServices",
+          "title": "Professional services",
+          "role": "Accounting, legal, consulting",
+          "desc": "Clients, projects, time and invoices held together, so partners share one view."
+        }
+      ],
+      "cta": "See all work"
+    },
+    "pains": {
+      "label": "Six daily pains",
+      "headline": "The same working day. A completely different outcome.",
+      "lead": "Six problems Hong Kong owners hit every day — and what they look like once LegionOne is in place.",
+      "painLabel": "Today",
+      "solutionLabel": "With LegionOne",
+      "rows": [
+        {
+          "number": "01",
+          "title": "Tools scattered everywhere",
+          "pain": "Excel, WhatsApp, the banking app and the CRM each keep their own version. Nothing ever matches.",
+          "solution": "Quotations, orders, invoices and payments share one source of truth. Nobody reconciles by hand."
+        },
+        {
+          "number": "02",
+          "title": "Customers go quiet",
+          "pain": "Client records are scattered across four colleagues' personal WhatsApp lists.",
+          "solution": "A 360° customer record: contact history, quotations and invoices, one search away."
+        },
+        {
+          "number": "03",
+          "title": "Month-end is a sprint",
+          "pain": "Reconciliation takes three days and the margin figure is always an approximation.",
+          "solution": "Live AR and AP ageing and live gross margin. Month-end finishes inside a day."
+        },
+        {
+          "number": "04",
+          "title": "Out of reach while travelling",
+          "pain": "The boss is on a trip and finance, orders and stock are all out of contact.",
+          "solution": "Cloud sync across phone, tablet and desktop, so approvals happen wherever you are."
+        },
+        {
+          "number": "05",
+          "title": "Collections get missed",
+          "pain": "Overdue invoices sit there and someone has to chase each customer by WhatsApp.",
+          "solution": "AR ageing reports trigger the collection list automatically, and follow-up rates improve within seven days."
+        },
+        {
+          "number": "06",
+          "title": "Reports arrive late",
+          "pain": "Weekly and monthly reports are hand-built in Excel, so the boss is always reading last week's numbers.",
+          "solution": "The dashboard refreshes live: today's sales and every outstanding receivable, in one view."
+        }
+      ]
+    },
+    "day": {
+      "label": "One working day",
+      "headline": "Five decisions a day that used to need reconciling.",
+      "lead": "The same hours, done differently, end very differently. This is how a trading SME moves from quotation to reconciliation on LegionOne.",
+      "steps": [
+        {
+          "number": "01",
+          "time": "09:00",
+          "title": "Quotation — one version is enough",
+          "desc": "The customer wants goods, so costs, tax and lead time are pulled together inside the system before a single quotation goes out. Revise it as often as you like; it is still the same version.",
+          "modules": [
+            "Sales & Quotation"
+          ]
+        },
+        {
+          "number": "02",
+          "time": "10:30",
+          "title": "Order — one action, four updates",
+          "desc": "Once the customer confirms, the quotation becomes an order. Stock is decremented, a purchase order is raised and the follow-up is written onto the customer record — at the same time.",
+          "modules": [
+            "Sales & Quotation",
+            "Inventory",
+            "CRM"
+          ]
+        },
+        {
+          "number": "03",
+          "time": "14:00",
+          "title": "Invoice — ageing updates instantly",
+          "desc": "Invoices are raised from the order and AR and AP ageing refresh straight away, so you know which payment is outstanding without waiting for month-end.",
+          "modules": [
+            "Finance"
+          ]
+        },
+        {
+          "number": "04",
+          "time": "16:00",
+          "title": "Payment — collections queue themselves",
+          "desc": "Ageing reports build the collection list for you and the cash-flow forecast updates in step, so nobody has to message each customer by hand.",
+          "modules": [
+            "Finance"
+          ]
+        },
+        {
+          "number": "05",
+          "time": "Month end",
+          "title": "Reconciliation — differences itemised",
+          "desc": "The bank statement is imported, accounts match automatically, and each difference is flagged. Month-end is no longer a cell-by-cell check of an Excel sheet.",
+          "modules": [
+            "Finance",
+            "Dashboard"
+          ]
+        }
+      ]
+    },
+    "methodology": {
+      "kicker": "Onboarding in three steps",
+      "headline": "We will not make you start from zero, and we will not make you work around the system.",
+      "lead": "Going live is not a matter of swapping one piece of software for another. We work in three steps, and each one starts by looking at how you operate today.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Map what you have",
+          "desc": "We start with the tools and the processes you already run, so we can see exactly where the duplication is and where the numbers disagree.",
+          "tags": [
+            "Process mapping",
+            "Tool consolidation"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Match a template",
+          "desc": "We begin from an industry template, so you are not assembling modules from nothing — each one is checked against how your business really works.",
+          "tags": [
+            "Industry template",
+            "Adjusted to fit"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Go live and tune",
+          "desc": "We adjust the flows and the reports against how you actually operate. The system has to fit you, not the other way round.",
+          "tags": [
+            "Process tuning",
+            "Report tuning"
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "label": "By the numbers",
+      "headline": "The numbers say it for us.",
+      "stats": [
+        {
+          "value": "5",
+          "suffix": "+",
+          "label": "Industry templates"
+        },
+        {
+          "value": "40",
+          "suffix": "%",
+          "label": "Less administrative time"
+        },
+        {
+          "value": "50",
+          "suffix": "+",
+          "label": "Partners"
+        },
+        {
+          "value": "7",
+          "suffix": " days",
+          "label": "Average time to go live"
+        }
+      ]
+    },
+    "security": {
+      "label": "Enterprise security",
+      "headline": "Enterprise-grade security, built into the architecture.",
+      "items": [
+        {
+          "label": "ISO 27001",
+          "desc": "Information security management"
+        },
+        {
+          "label": "GDPR Ready",
+          "desc": "Privacy compliance"
+        },
+        {
+          "label": "AWS Hong Kong",
+          "desc": "Local data centre"
+        },
+        {
+          "label": "Cyber Trust Mark",
+          "desc": "Cybersecurity certification"
+        }
+      ]
+    },
+    "partner": {
+      "label": "Partners",
+      "headline": "Build the next chapter with LegionOne.",
+      "sub": "Accounting firms, ERP consultants and IT companies — together we can give Hong Kong SMEs better tools.",
+      "cta": "See how partnership works"
+    },
+    "final": {
+      "label": "Get started",
+      "headline": "Three fewer evenings with Excel.",
+      "sub": "A free 15-minute demo, so you can see for yourself whether it saves your month-end overtime.",
+      "primaryCta": "Book a free demo",
+      "secondaryCta": "Contact us"
+    }
+  },
+  "product": {
+    "headline": "Seven modules. One platform.",
+    "sub": "From quotation to payment, from prospect to loyal customer — all on one screen.",
+    "section": {
+      "dashboard": {
+        "title": "Dashboard",
+        "tagline": "The whole company, on one page.",
+        "bullets": [
+          "KPI cards: revenue, gross margin, receivables due, stock value",
+          "Revenue trend chart (year / month / day)",
+          "Recent activity timeline",
+          "Custom dashboards with drag-and-drop layout"
+        ]
+      },
+      "finance": {
+        "title": "Finance",
+        "tagline": "From invoice to ageing, say goodbye to month-end sprints.",
+        "bullets": [
+          "AR and AP ageing analysis",
+          "Invoice issue, delivery and collection in one flow",
+          "Cash-flow forecasting",
+          "Multi-currency and multi-tax support"
+        ]
+      },
+      "crm": {
+        "title": "CRM",
+        "tagline": "Customer records, pipeline and contact history, together.",
+        "bullets": [
+          "Sales pipeline board (drag stages)",
+          "360° customer record",
+          "Linked contact history, quotations and invoices",
+          "WhatsApp and email integration"
+        ]
+      },
+      "inventory": {
+        "title": "Inventory",
+        "tagline": "Live stock — no more stockouts or overstocking.",
+        "bullets": [
+          "Multiple warehouses, live stock counts",
+          "Automatic reorder alerts",
+          "Batch, serial and expiry tracking",
+          "Sync with POS and e-commerce platforms"
+        ]
+      },
+      "sales": {
+        "title": "Sales & Quotation",
+        "tagline": "Quotation, order and invoice without a break.",
+        "bullets": [
+          "Drag-and-drop quotation builder",
+          "Online customer sign-off",
+          "One-click conversion to order or invoice",
+          "Discount, tax and multi-currency handling"
+        ]
+      },
+      "hr": {
+        "title": "HR",
+        "tagline": "Staff records, attendance, leave and payroll, in one place.",
+        "bullets": [
+          "Employee records and org structure",
+          "Clock-in, attendance and leave requests",
+          "Payroll calculation and MPF handling",
+          "Performance and promotion records"
+        ]
+      },
+      "automation": {
+        "title": "Automation",
+        "tagline": "A rules engine that takes the repetition off your team.",
+        "bullets": [
+          "Drag-and-drop workflow builder",
+          "Triggers by time, amount or status change",
+          "Automatic email and WhatsApp notifications",
+          "API connections to external systems"
+        ]
+      }
+    },
+    "bottomCta": {
+      "headline": "See the full walkthrough. Fifteen minutes.",
+      "primaryCta": "Book a free demo",
+      "secondaryCta": "Download the product sheet"
+    },
+    "integrations": {
+      "eyebrow": "Integrations",
+      "headline": "Connects to what you already use.",
+      "sub": "LegionOne ships with API, webhooks and file import/export, so it slots into the tools you have today.",
+      "groups": {
+        "comms": "Communication",
+        "finance": "Accounting & finance",
+        "commerce": "Commerce & POS",
+        "automation": "Automation & integration"
+      },
+      "items": [
+        {
+          "name": "WhatsApp Cloud API",
+          "group": "comms"
+        },
+        {
+          "name": "Slack",
+          "group": "comms"
+        },
+        {
+          "name": "Microsoft Teams",
+          "group": "comms"
+        },
+        {
+          "name": "Gmail",
+          "group": "comms"
+        },
+        {
+          "name": "Xero",
+          "group": "finance"
+        },
+        {
+          "name": "QuickBooks",
+          "group": "finance"
+        },
+        {
+          "name": "Stripe",
+          "group": "finance"
+        },
+        {
+          "name": "PayMe / FPS",
+          "group": "finance"
+        },
+        {
+          "name": "Shopify",
+          "group": "commerce"
+        },
+        {
+          "name": "SHOPLINE",
+          "group": "commerce"
+        },
+        {
+          "name": "Eats365 POS",
+          "group": "commerce"
+        },
+        {
+          "name": "Zapier",
+          "group": "automation"
+        },
+        {
+          "name": "Make.com",
+          "group": "automation"
+        },
+        {
+          "name": "n8n",
+          "group": "automation"
+        },
+        {
+          "name": "Webhooks",
+          "group": "automation"
+        },
+        {
+          "name": "REST API",
+          "group": "automation"
+        }
+      ],
+      "cta": "View the full integration list →"
+    },
+    "sections": {
+      "modulesKicker": "Seven modules",
+      "ctaKicker": "Next",
+      "modulesTitle": "Each module handles one job."
+    }
+  },
+  "useCases": {
+    "hub": {
+      "headline": "Built for different industries.",
+      "sub": "We chose to go deep on two industries first: trading and professional services. More to follow.",
+      "comingSoon": "Coming soon",
+      "sectionsKicker": "Industries",
+      "viewCase": "View the full case",
+      "sectionsTitle": "Starting with these two."
+    },
+    "trading": {
+      "headline": "Trading company",
+      "sub": "From quotation, order and shipping through to payment — LegionOne keeps the whole supply chain in step.",
+      "pain": {
+        "title": "A trading owner's day",
+        "items": [
+          "The quotation changed eight times and only after the customer confirmed on WhatsApp did anyone notice it was stale",
+          "The shipping date moved, the warehouse had already received the goods, and the customer was still waiting",
+          "At month-end, Excel and the bank statement never quite matched",
+          "A sales rep travels and the whole company goes quiet"
+        ]
+      },
+      "solution": {
+        "title": "How LegionOne handles it",
+        "items": [
+          "Quotation → order → goods receipt → invoice, with every status synced automatically",
+          "Shipping schedule and inventory move together, with alerts on overdue shipments",
+          "Live AR and AP reconciliation, with one-click bank statement import",
+          "Live cloud sync, so approvals can be signed off while travelling"
+        ]
+      },
+      "dayFlow": {
+        "title": "A typical day",
+        "steps": [
+          {
+            "time": "09:00",
+            "title": "Customer confirms the order",
+            "detail": "The WhatsApp message becomes the order status automatically"
+          },
+          {
+            "time": "11:00",
+            "title": "Goods arrive at the warehouse",
+            "detail": "Stock and work-in-progress update themselves"
+          },
+          {
+            "time": "15:00",
+            "title": "Chase overdue invoices",
+            "detail": "AR ageing reports send WhatsApp reminders"
+          },
+          {
+            "time": "18:00",
+            "title": "End of day",
+            "detail": "Today's sales, all in one glance on the dashboard"
+          }
+        ]
+      }
+    },
+    "professionalServices": {
+      "headline": "Professional services",
+      "sub": "Accounting, legal and consulting firms — clients, projects, time and invoices under one roof.",
+      "pain": {
+        "title": "A partner's challenge",
+        "items": [
+          "The client list lives in three partners' own notebooks",
+          "Time sheets, invoices and payment cycles never line up",
+          "Project progress is scattered across Excel and email",
+          "Client satisfaction is always something you learn about afterwards"
+        ]
+      },
+      "solution": {
+        "title": "How LegionOne handles it",
+        "items": [
+          "One customer record, so every partner shares the same view",
+          "Time tracking → invoice → payment, flowing on their own",
+          "Project boards and Gantt charts keep progress fully visible",
+          "Client feedback collected and analysed automatically"
+        ]
+      },
+      "dayFlow": {
+        "title": "A typical day",
+        "steps": [
+          {
+            "time": "09:30",
+            "title": "A client calls to check",
+            "detail": "CRM pulls up past history and invoice status"
+          },
+          {
+            "time": "11:00",
+            "title": "Project update",
+            "detail": "The team updates the Kanban board as they work"
+          },
+          {
+            "time": "14:00",
+            "title": "Monthly invoice run",
+            "detail": "Time entries become invoices in one step, and go out"
+          },
+          {
+            "time": "17:00",
+            "title": "Partner meeting",
+            "detail": "The dashboard reports client health"
+          }
+        ]
+      }
+    },
+    "comingSoon": {
+      "retail": "Retail & e-commerce",
+      "manufacturing": "Light manufacturing"
+    },
+    "sectionKickers": {
+      "pain": "Today",
+      "solution": "How it works",
+      "dayFlow": "The flow"
+    }
+  },
+  "partners": {
+    "headline": "Walk alongside LegionOne.",
+    "sub": "We are looking for partners who share the same idea — bringing better tools to Hong Kong SMEs together.",
+    "philosophy": {
+      "title": "Our philosophy",
+      "body": "We are not looking for resellers. We are looking for partners who want to build and succeed together. LegionOne brings the platform, the technology and the training; you bring industry know-how and local clients."
+    },
+    "models": {
+      "title": "Three ways to partner",
+      "items": [
+        {
+          "title": "Referral partner",
+          "desc": "Refer clients and earn an ongoing commission share",
+          "icon": "Share2"
+        },
+        {
+          "title": "Implementation partner",
+          "desc": "Handle onboarding, training and configuration for clients",
+          "icon": "Wrench"
+        },
+        {
+          "title": "Solution partner",
+          "desc": "Build deep integrations and launch industry solutions together",
+          "icon": "Puzzle"
+        }
+      ]
+    },
+    "promises": {
+      "title": "Our three promises",
+      "items": [
+        "A transparent commission structure with no hidden clauses",
+        "Complete technical and sales training",
+        "A dedicated partner manager for support"
+      ]
+    },
+    "form": {
+      "title": "Apply to become a partner",
+      "fields": {
+        "company": "Company name",
+        "name": "Contact name",
+        "role": "Role",
+        "email": "Email",
+        "phone": "Phone",
+        "model": "Partnership model",
+        "background": "Background and experience"
+      },
+      "submit": "Submit application",
+      "success": "Thank you — we will reply within three working days."
+    }
+  },
+  "pricing": {
+    "headline": "Transparent pricing that grows with you.",
+    "sub": "Three plans, covering a one-person company through to a 200-person team. Every plan includes the four core modules.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "price": "TBC",
+        "period": "/ month",
+        "desc": "One-person companies and early teams",
+        "features": [
+          "1–5 users",
+          "Dashboard + CRM modules",
+          "5GB storage",
+          "Email support"
+        ],
+        "cta": "Choose Starter"
+      },
+      {
+        "name": "Growth",
+        "price": "TBC",
+        "period": "/ month",
+        "desc": "Growing Hong Kong SMEs",
+        "features": [
+          "5–25 users",
+          "All 7 modules",
+          "50GB storage",
+          "Priority support + training",
+          "API access"
+        ],
+        "cta": "Choose Growth",
+        "featured": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "TBC",
+        "period": "/ month, from",
+        "desc": "50+ users, complex requirements",
+        "features": [
+          "Unlimited users",
+          "All 7 modules + custom development",
+          "Unlimited storage",
+          "Dedicated account manager",
+          "99.9% SLA",
+          "Private cloud deployment option"
+        ],
+        "cta": "Talk to sales"
+      }
+    ],
+    "faq": {
+      "title": "Common questions",
+      "items": [
+        {
+          "q": "Is there a contract?",
+          "a": "Monthly plans can be cancelled at any time; annual plans carry a 20% discount."
+        },
+        {
+          "q": "Can I try it first?",
+          "a": "Book a demo and you will get a 14-day free trial account, with no credit card required."
+        },
+        {
+          "q": "Which payment methods do you accept?",
+          "a": "FPS, credit card, or cheque for annual plans. The final tax rate is TBC and will be stated in the contract."
+        },
+        {
+          "q": "Where is the data stored?",
+          "a": "By default in the AWS Hong Kong region; the Enterprise plan can also run on a private cloud."
+        },
+        {
+          "q": "Can we migrate from another system?",
+          "a": "Free Excel and CSV import tools are included, and advanced migrations are handled with a partner."
+        }
+      ]
+    },
+    "tiersKicker": "Plans",
+    "tiersTitle": "Three plans, growing with you.",
+    "pricePending": "Pricing to be announced",
+    "priceNote": "The exact charges for all three plans will be published when we open for business. If you want to know the numbers, ask during a demo."
+  },
+  "about": {
+    "headline": "About LegionOne",
+    "sub": "We believe good tools should not only serve large enterprises.",
+    "story": {
+      "title": "Our story",
+      "body": "LegionOne was founded by Hong Kong SME owners and a technical team who had lived through it — the quotation revised eight times, the month-end Excel reconciliation that ran past midnight. Today we package that hard-won know-how into one platform, so more Hong Kong owners can spend their time on the things that actually matter: customers and product."
+    },
+    "vision": {
+      "title": "Vision",
+      "body": "To become the most trusted business operating system for Hong Kong SMEs."
+    },
+    "mission": {
+      "title": "Mission",
+      "body": "To help Hong Kong SMEs hold their ground in Asian markets with an elite team and sharp tools."
+    },
+    "values": {
+      "title": "Our values — L.E.G.I.O.N.",
+      "items": [
+        {
+          "letter": "L",
+          "title": "Learn always",
+          "desc": "Learn every day, improve every day."
+        },
+        {
+          "letter": "E",
+          "title": "Execute with focus",
+          "desc": "Focus on execution; do fewer things, do them well."
+        },
+        {
+          "letter": "G",
+          "title": "Grow together",
+          "desc": "Grow alongside clients, partners and the team."
+        },
+        {
+          "letter": "I",
+          "title": "Innovate responsibly",
+          "desc": "Innovate for long-term value."
+        },
+        {
+          "letter": "O",
+          "title": "Own the outcome",
+          "desc": "Own the result — no excuses."
+        },
+        {
+          "letter": "N",
+          "title": "Never compromise",
+          "desc": "On quality, integrity and client trust — never."
+        }
+      ]
+    },
+    "team": {
+      "title": "Our team",
+      "subtitle": "Six core members, with backgrounds across ERP, CRM, accounting and consulting.",
+      "pendingNote": "Team profiles are pending — what follows is a layout sample, and the official biographies will be confirmed by the company before publication."
+    },
+    "pillarsTitle": "Direction first, stated plainly."
+  },
+  "contact": {
+    "headline": "Contact us.",
+    "sub": "We reply within one working day.",
+    "form": {
+      "name": "Name",
+      "company": "Company name",
+      "phone": "Phone",
+      "email": "Email",
+      "message": "How can we help",
+      "submit": "Send message",
+      "success": "Thank you — we will reply within one working day."
+    },
+    "info": {
+      "address": "Hong Kong",
+      "phone": "+852 0000 0000",
+      "email": "hello@legionone.hk",
+      "whatsapp": "WhatsApp us"
+    },
+    "channelsKicker": "Channels",
+    "formTitle": "Tell us about your situation.",
+    "channelsTitle": "Other ways to reach us."
+  },
+  "modal": {
+    "title": "Book a free demo",
+    "sub": "Fifteen minutes to see how LegionOne fits your business.",
+    "fields": {
+      "name": "Name",
+      "company": "Company name",
+      "headcount": "Team size",
+      "phone": "Phone",
+      "email": "Email",
+      "painPoints": "What do you want to fix first? (optional, multiple)",
+      "preferredTime": "Preferred demo time",
+      "notes": "Anything else"
+    },
+    "headcountOptions": [
+      "1–5",
+      "6–20",
+      "21–50",
+      "51–100",
+      "100+"
+    ],
+    "painPointOptions": [
+      "Scattered quotations and orders",
+      "Customer data in too many places",
+      "Slow month-end reconciliation",
+      "Inaccurate inventory",
+      "Weak team collaboration",
+      "Delayed reporting and data",
+      "Something else"
+    ],
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "success": "Thank you — we will contact you within one working day to arrange a demo time.",
+    "error": "That did not go through. Please try again or message us on WhatsApp.",
+    "close": "Close",
+    "privacy": "By submitting, you agree to LegionOne handling your data under our privacy policy.",
+    "kicker": "Book a demo",
+    "errors": {
+      "required": "Required",
+      "phone": "Enter a valid phone number",
+      "email": "Enter a valid email address"
+    }
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "back": "Back",
+    "loading": "Loading",
+    "comingSoon": "Coming soon"
+  },
+  "notFound": {
+    "kicker": "404 · Page not found",
+    "title": "This page has moved on.",
+    "lead": "What you are looking for may have been moved, renamed, or never existed. Here are the main entrances.",
+    "backHome": "Back to the homepage",
+    "destinations": "Main entrances"
+  },
+  "errorPage": {
+    "kicker": "Something went wrong",
+    "title": "The system hit a problem.",
+    "body": "This page did not load properly. You can try again, or head back to the homepage and start again.",
+    "retry": "Reload",
+    "backHome": "Back to the homepage"
+  },
+  "loading": {
+    "label": "Loading"
+  },
+  "security": {
+    "kicker": "Security",
+    "headline": "Enterprise-grade security, built into the architecture.",
+    "sub": "Four certifications covering information security management, privacy compliance, a local data centre and cybersecurity.",
+    "badgesKicker": "Four certifications",
+    "badgesTitle": "The four we hold.",
+    "dataKicker": "Data residency",
+    "dataTitle": "Your data stays in Hong Kong.",
+    "dataBody": "By default in the AWS Hong Kong region; the Enterprise plan can also run on a private cloud.",
+    "docsKicker": "Further information",
+    "docsTitle": "Want the detail?",
+    "docsBody": "The full security documentation, data-processing details and privacy policy will be handed to you before we work together. Ask for a copy during a demo.",
+    "ctaKicker": "Next",
+    "ctaTitle": "Want to know how the platform handles your data?",
+    "ctaBody": "Book a demo and we will walk through the flow for your industry and team size."
+  },
+  "legal": {
+    "kicker": "Legal",
+    "status": "In review",
+    "statusBody": "The full text will be published once our legal advisers have signed it off. Below is a summary of how we operate today.",
+    "privacy": {
+      "title": "Privacy policy",
+      "lead": "We collect only what we need to answer your enquiry, and we keep it in Hong Kong.",
+      "sections": [
+        {
+          "title": "What we collect",
+          "body": "When you reach us through the demo booking form, the contact form or email, we receive the details you choose to give us: name, company name, team size, phone, email, and the pain points and notes you share."
+        },
+        {
+          "title": "What we use it for",
+          "body": "We use it to reply to your enquiry, arrange a demo slot, and follow up on your requirements."
+        },
+        {
+          "title": "Where it is stored",
+          "body": "By default in the AWS Hong Kong region; the Enterprise plan can also run on a private cloud."
+        },
+        {
+          "title": "Access and correction",
+          "body": "To access, correct or delete the data you submitted on this website, email hello@legionone.hk."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of use",
+      "lead": "This website introduces the LegionOne platform; using the platform itself is covered by separate service terms.",
+      "sections": [
+        {
+          "title": "Content of this website",
+          "body": "This website introduces the features, use cases and pricing direction of the LegionOne platform. The product is still in development and the screens shown are from a work-in-progress build."
+        },
+        {
+          "title": "Demo bookings",
+          "body": "A demo booking is a consultation so that we can understand your business needs. It forms no contract, quotation or commitment."
+        },
+        {
+          "title": "Contact",
+          "body": "If you have any questions about this website or these terms, email hello@legionone.hk."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Any questions?",
+      "body": "Email us directly and we will reply as soon as we can."
+    },
+    "summaryTitle": "How we operate today"
+  }
+}

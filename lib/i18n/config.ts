@@ -1,8 +1,12 @@
 import { defineRouting } from "next-intl/routing";
 
+/**
+ * English ships first and is the default locale, so `/` is the English site
+ * and `/zh-HK` is the Hong Kong Chinese version.
+ */
 export const routing = defineRouting({
-  locales: ["zh-HK", "en"],
-  defaultLocale: "zh-HK",
+  locales: ["en", "zh-HK"],
+  defaultLocale: "en",
   localePrefix: "as-needed",
 });
 

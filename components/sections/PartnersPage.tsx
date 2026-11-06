@@ -6,11 +6,20 @@ import { Share2, Wrench, Puzzle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { submitPartnerApplication } from "@/lib/forms/submit";
 import { motion } from "framer-motion";
+import { PageHero } from "@/components/editorial/PageHero";
+import { SectionHeader } from "@/components/editorial/SectionHeader";
+import { SectionShell } from "@/components/editorial/SectionShell";
+import { HexBadge, HexIcon } from "@/components/brand/Hex";
 
 const iconMap = { Share2, Wrench, Puzzle } as const;
 
+const FIELD =
+  "w-full h-12 px-4 border border-white/20 bg-transparent text-white outline-none transition-colors focus:border-accent";
+
 export function PartnersPage() {
   const t = useTranslations("partners");
+  const tNav = useTranslations("nav");
+  const tModal = useTranslations("modal");
   const models = t.raw("models.items") as Array<{
     title: string;
     desc: string;
@@ -46,32 +55,41 @@ export function PartnersPage() {
 
   return (
     <>
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 pt-12 sm:pt-20 pb-8 text-center">
-          <h1 className="text-hero-display text-ink">{t("headline")}</h1>
-          <p className="text-lead text-ink-muted-80 mt-4 max-w-2xl mx-auto text-body-cjk">
-            {t("sub")}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        tone="void"
+        kicker={tNav("partners")}
+        title={t("headline")}
+        lead={t("sub")}
+      />
 
       {/* Philosophy */}
-      <section className="bg-canvas-parchment">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-          <h2 className="text-display-md text-ink">{t("philosophy.title")}</h2>
-          <p className="text-body text-ink-muted-80 text-body-cjk md:col-span-2">
-            {t("philosophy.body")}
-          </p>
+      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+        <div className="shell section-y grid grid-cols-1 gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <SectionHeader
+              index="01"
+              kicker={tNav("partners")}
+              title={t("philosophy.title")}
+              tone="surface"
+            />
+          </div>
+          <div className="lg:col-span-8">
+            <p className="t-lead text-smoke/70">{t("philosophy.body")}</p>
+          </div>
         </div>
-      </section>
+      </SectionShell>
 
       {/* Models */}
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16">
-          <h2 className="text-display-lg text-ink text-center mb-10">
-            {t("models.title")}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <SectionShell tone="void">
+        <div className="shell section-y">
+          <SectionHeader
+            index="02"
+            kicker={tNav("partners")}
+            title={t("models.title")}
+            tone="void"
+          />
+
+          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-white/12 pt-10 md:grid-cols-3">
             {models.map((m, i) => {
               const Icon = iconMap[m.icon as keyof typeof iconMap];
               return (
@@ -79,126 +97,139 @@ export function PartnersPage() {
                   key={m.title}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="bg-canvas-parchment rounded-xl p-8"
+                  viewport={{ once: true, margin: "-8%" }}
+                  transition={{ duration: 0.45, delay: i * 0.05 }}
                 >
-                  <Icon
-                    size={28}
-                    strokeWidth={1.5}
-                    className="text-primary mb-4"
-                  />
-                  <h3 className="text-tagline text-ink">{m.title}</h3>
-                  <p className="text-body text-ink-muted-80 mt-2 text-body-cjk">
-                    {m.desc}
-                  </p>
+                  <div className="flex items-center justify-between">
+                    <HexIcon size={44} tone="legion">
+                      <Icon size={19} strokeWidth={1.6} aria-hidden />
+                    </HexIcon>
+                    <HexBadge size={28} tone="onDark">
+                      {String(i + 1).padStart(2, "0")}
+                    </HexBadge>
+                  </div>
+                  <h3 className="mt-6 t-display-3 text-white">{m.title}</h3>
+                  <p className="mt-3 t-body text-smoke/65">{m.desc}</p>
                 </motion.div>
               );
             })}
           </div>
         </div>
-      </section>
+      </SectionShell>
 
-      {/* Promises */}
-      <section className="tile-dark-1">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16">
-          <h2 className="text-display-lg text-on-dark text-center mb-10">
-            {t("promises.title")}
-          </h2>
-          <ul className="max-w-2xl mx-auto space-y-4">
+      {/* Promises — the brand blue block */}
+      <SectionShell tone="accent" hexField fieldOpacity={0.12}>
+        <div className="shell section-y">
+          <SectionHeader
+            index="03"
+            kicker={tNav("partners")}
+            title={t("promises.title")}
+            tone="accent"
+            titleClassName="text-white"
+          />
+          <ul className="mt-14 max-w-3xl border-t border-white/30">
             {promises.map((p, i) => (
-              <li
+              <motion.li
                 key={i}
-                className="flex items-start gap-3 text-body text-on-dark text-body-cjk"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-8%" }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="grid grid-cols-1 gap-4 border-b border-white/30 py-6 lg:grid-cols-12 lg:gap-8"
               >
-                <span className="text-primary-on-dark">✓</span>
-                {p}
-              </li>
+                <span className="lg:col-span-1">
+                  <HexBadge size={28} tone="onLegion">
+                    {String(i + 1).padStart(2, "0")}
+                  </HexBadge>
+                </span>
+                <span className="lg:col-span-11 t-body text-white/90">{p}</span>
+              </motion.li>
             ))}
           </ul>
         </div>
-      </section>
+      </SectionShell>
 
       {/* Form */}
-      <section className="bg-canvas">
-        <div className="mx-auto max-w-[1024px] px-4 sm:px-6 py-16">
-          <h2 className="text-display-lg text-ink text-center">
-            {t("form.title")}
-          </h2>
-          {status === "success" ? (
-            <div className="max-w-xl mx-auto mt-8 p-8 rounded-xl bg-success/10 text-center">
-              <p className="text-body text-ink">{t("form.success")}</p>
+      <SectionShell tone="void">
+        <div className="shell section-y">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
+            <div className="lg:col-span-5">
+              <SectionHeader
+                index="04"
+                kicker={tNav("partners")}
+                title={t("form.title")}
+                tone="void"
+              />
             </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="max-w-xl mx-auto mt-8 space-y-4"
-            >
-              <Field name="company" label={t("form.fields.company")} required />
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field name="name" label={t("form.fields.name")} required />
-                <Field name="role" label={t("form.fields.role")} required />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field
-                  name="email"
-                  label={t("form.fields.email")}
-                  type="email"
-                  required
-                />
-                <Field
-                  name="phone"
-                  label={t("form.fields.phone")}
-                  type="tel"
-                  required
-                />
-              </div>
-              <div>
-                <label className="text-caption text-ink-muted-80 mb-1 block font-medium">
-                  {t("form.fields.model")}
-                </label>
-                <select
-                  name="model"
-                  required
-                  className="w-full h-11 px-4 rounded-md border border-hairline bg-canvas"
-                >
-                  <option value="">請選擇——</option>
-                  {models.map((m) => (
-                    <option key={m.title} value={m.title}>
-                      {m.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="text-caption text-ink-muted-80 mb-1 block font-medium">
-                  {t("form.fields.background")}
-                </label>
-                <textarea
-                  name="background"
-                  rows={5}
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-hairline bg-canvas resize-none"
-                />
-              </div>
-              <Button
-                type="submit"
-                variant="primary"
-                size="lg"
-                className="w-full"
-                disabled={status === "submitting"}
-              >
-                {status === "submitting" ? "送出中..." : t("form.submit")}
-              </Button>
-              {status === "error" && (
-                <p className="text-caption text-error text-center">
-                  送出失敗，請稍後再試。
-                </p>
+
+            <div className="lg:col-span-7">
+              {status === "success" ? (
+                <div className="border border-accent/40 bg-accent/10 p-8 text-center">
+                  <p className="t-body text-white">{t("form.success")}</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <Field name="company" label={t("form.fields.company")} required />
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <Field name="name" label={t("form.fields.name")} required />
+                    <Field name="role" label={t("form.fields.role")} required />
+                  </div>
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <Field
+                      name="email"
+                      label={t("form.fields.email")}
+                      type="email"
+                      required
+                    />
+                    <Field
+                      name="phone"
+                      label={t("form.fields.phone")}
+                      type="tel"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="t-label mb-2 block text-ash">
+                      {t("form.fields.model")}
+                    </label>
+                    <select name="model" required className={FIELD}>
+                      <option value="">—</option>
+                      {models.map((m) => (
+                        <option key={m.title} value={m.title}>
+                          {m.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="t-label mb-2 block text-ash">
+                      {t("form.fields.background")}
+                    </label>
+                    <textarea
+                      name="background"
+                      rows={5}
+                      required
+                      className={`${FIELD} h-auto resize-none py-3`}
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    variant="accent"
+                    size="lg"
+                    className="w-full"
+                    disabled={status === "submitting"}
+                  >
+                    {status === "submitting" ? tModal("submitting") : t("form.submit")}
+                  </Button>
+                  {status === "error" && (
+                    <p className="t-caption text-center text-error">{tModal("error")}</p>
+                  )}
+                </form>
               )}
-            </form>
-          )}
+            </div>
+          </div>
         </div>
-      </section>
+      </SectionShell>
     </>
   );
 }
@@ -216,15 +247,15 @@ function Field({
 }) {
   return (
     <div>
-      <label className="text-caption text-ink-muted-80 mb-1 block font-medium">
+      <label className="t-label mb-2 block text-ash">
         {label}
-        {required && " *"}
+        {required ? " *" : ""}
       </label>
       <input
         name={name}
         type={type}
         required={required}
-        className="w-full h-11 px-4 rounded-md border border-hairline bg-canvas"
+        className={FIELD}
       />
     </div>
   );
