@@ -16,6 +16,12 @@ const outDir = process.argv[3];
 const width = Number(process.argv[4] || 1440);
 const height = Number(process.argv[5] || 900);
 const step = Number(process.argv[6] || 820);
+/**
+ * `--reveal` forces every in-view animation to its finished state before the
+ * shot, so a frame shows the block that is about to scroll in rather than an
+ * empty placeholder.
+ */
+const reveal = process.argv.includes("--reveal");
 const port = 9222;
 
 mkdirSync(outDir, { recursive: true });
@@ -67,6 +73,24 @@ for (let i = 0; i < frames; i++) {
   });
   // let scroll-linked animations settle
   await new Promise((r) => setTimeout(r, 700));
+  if (reveal) {
+    await send("Runtime.evaluate", {
+      expression: `
+        (function () {
+          var nodes = document.querySelectorAll('[style*="opacity"]');
+          for (var i = 0; i < nodes.length; i++) {
+            var el = nodes[i];
+            if (el.getAttribute("aria-hidden") === "true") continue;
+            var o = parseFloat(el.style.opacity || "1");
+            if (o === 0) el.style.opacity = "1";
+            var t = el.style.transform;
+            if (t && t.indexOf("translateY") !== -1) el.style.transform = "none";
+          }
+        })(); void 0;
+      `,
+    });
+    await new Promise((r) => setTimeout(r, 200));
+  }
   const shot = await send("Page.captureScreenshot", { format: "png" });
   const name = `${String(i + 1).padStart(2, "0")}.png`;
   writeFileSync(join(outDir, name), Buffer.from(shot.result.data, "base64"));
