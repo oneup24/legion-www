@@ -32,14 +32,14 @@ export function Comparison() {
           </div>
 
           <div>
-            <h2 className="t-display-1 t-balance text-white max-w-3xl">
+            <h2 className="t-display-1 t-balance text-ink max-w-3xl">
               {t("headline")}
             </h2>
-            <p className="mt-6 t-lead max-w-2xl text-smoke/70">{t("lead")}</p>
+            <p className="mt-6 t-lead max-w-2xl text-ink-muted">{t("lead")}</p>
           </div>
         </div>
 
-        <ul className="mt-16 border-t border-white/12">
+        <ul className="mt-16 border-t border-line">
           {rows.map((row, i) => (
             <motion.li
               key={row.number}
@@ -47,23 +47,23 @@ export function Comparison() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-6%" }}
               transition={{ duration: 0.45, delay: i * 0.05 }}
-              className="grid gap-6 border-b border-white/12 py-10 lg:grid-cols-12 lg:gap-8"
+              className="grid gap-6 border-b border-line py-10 lg:grid-cols-12 lg:gap-8"
             >
               <div className="lg:col-span-3">
                 <span className="t-giant-index block text-accent">
                   {row.number}
                 </span>
-                <h3 className="mt-4 t-display-3 text-white">{row.title}</h3>
+                <h3 className="mt-4 t-display-3 text-ink">{row.title}</h3>
               </div>
 
               <div className="lg:col-span-4">
-                <span className="t-label text-ash">{t("painLabel")}</span>
-                <p className="mt-3 t-body text-smoke/55">{row.pain}</p>
+                <span className="t-label text-ink-faint">{t("painLabel")}</span>
+                <p className="mt-3 t-body text-ink-muted">{row.pain}</p>
               </div>
 
               <div className="lg:col-span-5">
                 <span className="t-label text-accent">{t("solutionLabel")}</span>
-                <p className="mt-3 t-body text-white/90">{row.solution}</p>
+                <p className="mt-3 t-body text-ink">{row.solution}</p>
               </div>
             </motion.li>
           ))}

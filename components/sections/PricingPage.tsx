@@ -38,7 +38,7 @@ export function PricingPage() {
       />
 
       {/* Tiers */}
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y">
           <SectionHeader
             index="01"
@@ -47,11 +47,11 @@ export function PricingPage() {
             tone="surface"
           />
 
-          <p className="mt-8 max-w-2xl border-l-2 border-accent pl-5 t-body text-smoke/70">
+          <p className="mt-8 max-w-2xl border-l-2 border-accent pl-5 t-body text-ink-muted">
             {t("priceNote")}
           </p>
 
-          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-white/12 pt-2 md:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-line pt-2 md:grid-cols-3">
             {tiers.map((tier, i) => {
               // Pricing has not been published yet — show an honest placeholder
               // instead of rendering a raw "TBC" next to a currency symbol.
@@ -79,18 +79,18 @@ export function PricingPage() {
                     ) : null}
                   </div>
 
-                  <h3 className="mt-5 t-display-3 text-white">{tier.name}</h3>
-                  <p className="mt-2 t-body text-smoke/60">{tier.desc}</p>
+                  <h3 className="mt-5 t-display-3 text-ink">{tier.name}</h3>
+                  <p className="mt-2 t-body text-ink-muted">{tier.desc}</p>
 
                   <div className="mt-6 flex items-baseline gap-2">
                     {pricePending ? (
-                      <span className="t-display-3 text-ash">{t("pricePending")}</span>
+                      <span className="t-display-3 text-ink-faint">{t("pricePending")}</span>
                     ) : (
                       <>
-                        <span className="t-display-2 text-white">
+                        <span className="t-display-2 text-ink">
                           HK${tier.price}
                         </span>
-                        <span className="t-caption text-ash">{tier.period}</span>
+                        <span className="t-caption text-ink-faint">{tier.period}</span>
                       </>
                     )}
                   </div>
@@ -99,7 +99,7 @@ export function PricingPage() {
                     {tier.features.map((f, fi) => (
                       <li
                         key={fi}
-                        className="flex items-start gap-3 t-body text-white/85"
+                        className="flex items-start gap-3 t-body text-ink-muted"
                       >
                         <HexBadge size={12} tone="legion" className="mt-1.5 shrink-0" />
                         {f}
@@ -135,27 +135,27 @@ export function PricingPage() {
             tone="void"
           />
 
-          <div className="mt-14 max-w-3xl border-t border-white/12">
+          <div className="mt-14 max-w-3xl border-t border-line">
             {faqs.map((faq, i) => {
               const isOpen = openIdx === i;
               return (
-                <div key={i} className="border-b border-white/12">
+                <div key={i} className="border-b border-line">
                   <button
                     type="button"
                     onClick={() => setOpenIdx(isOpen ? null : i)}
                     aria-expanded={isOpen}
                     className="w-full flex items-start justify-between gap-6 py-5 text-left"
                   >
-                    <span className="t-body text-white">{faq.q}</span>
+                    <span className="t-body text-ink">{faq.q}</span>
                     <ChevronDown
                       size={20}
                       className={`shrink-0 mt-1 transition-transform ${
-                        isOpen ? "rotate-180 text-accent" : "text-ash"
+                        isOpen ? "rotate-180 text-accent" : "text-ink-faint"
                       }`}
                     />
                   </button>
                   {isOpen ? (
-                    <div className="pb-6 pr-10 t-body text-smoke/65">{faq.a}</div>
+                    <div className="pb-6 pr-10 t-body text-ink-muted">{faq.a}</div>
                   ) : null}
                 </div>
               );

@@ -57,17 +57,17 @@ export function GlobalNav({ locale: _locale }: { locale: string }) {
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
           scrolled || mobileOpen
-            ? "bg-void/92 backdrop-blur-md border-b border-white/10"
+            ? "bg-white/92 backdrop-blur-md border-b border-line"
             : "border-b border-transparent"
         }`}
       >
         <div className="shell h-[68px] flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-3 text-white hover:opacity-70 transition-opacity"
+            className="flex items-center gap-3 text-ink hover:opacity-70 transition-opacity"
             aria-label="LegionOne home"
           >
-            <LogoMark size={26} tone="light" />
+            <LogoMark size={26} tone="dark" />
             <Wordmark size="sm" />
           </Link>
 
@@ -81,8 +81,8 @@ export function GlobalNav({ locale: _locale }: { locale: string }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`t-label transition-colors ${
-                    active ? "text-white" : "text-ash hover:text-white"
+                  className={`text-[15px] font-medium transition-colors ${
+                    active ? "text-ink" : "text-ink-muted hover:text-ink"
                   }`}
                 >
                   {t(item.key)}
@@ -107,7 +107,7 @@ export function GlobalNav({ locale: _locale }: { locale: string }) {
             type="button"
             aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
             aria-expanded={mobileOpen}
-            className="lg:hidden w-11 h-11 flex items-center justify-center text-white -mr-3"
+            className="lg:hidden w-11 h-11 flex items-center justify-center text-ink -mr-3"
             onClick={() => setMobileOpen((v) => !v)}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -117,20 +117,20 @@ export function GlobalNav({ locale: _locale }: { locale: string }) {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[68px] bottom-0 z-30 bg-void overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-[68px] bottom-0 z-30 bg-canvas overflow-y-auto">
           <nav className="shell flex flex-col pt-6">
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="t-display-3 text-white/85 hover:text-white py-5 border-b border-white/10"
+                className="t-display-3 text-ink-muted hover:text-ink py-5 border-b border-line"
               >
                 {t(item.key)}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="t-display-3 text-white/85 hover:text-white py-5 border-b border-white/10"
+              className="t-display-3 text-ink-muted hover:text-ink py-5 border-b border-line"
             >
               {t("contact")}
             </Link>

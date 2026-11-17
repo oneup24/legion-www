@@ -18,7 +18,7 @@ export function SecurityBadges() {
   const items = t.raw("items") as { label: string; desc: string }[];
 
   return (
-    <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+    <SectionShell tone="surface" hexField fieldOpacity={0.014}>
       <div className="shell section-y">
         <div className="split-grid">
           <div>
@@ -26,11 +26,11 @@ export function SecurityBadges() {
           </div>
 
           <div>
-            <h2 className="t-display-1 t-balance text-white max-w-3xl">
+            <h2 className="t-display-1 t-balance text-ink max-w-3xl">
               {t("headline")}
             </h2>
 
-            <ul className="mt-12 grid gap-px bg-white/12 sm:grid-cols-2">
+            <ul className="mt-12 grid gap-px bg-line sm:grid-cols-2">
               {items.map((item, i) => (
                 <motion.li
                   key={item.label}
@@ -38,15 +38,15 @@ export function SecurityBadges() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-6%" }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="bg-surface-1 p-7"
+                  className="bg-canvas-soft p-7"
                 >
-                  <p className="t-display-3 text-white">{item.label}</p>
-                  <p className="mt-3 t-body text-ash">{item.desc}</p>
+                  <p className="t-display-3 text-ink">{item.label}</p>
+                  <p className="mt-3 t-body text-ink-faint">{item.desc}</p>
                 </motion.li>
               ))}
             </ul>
 
-            <Link href="/security" className="link-arrow mt-10 text-white">
+            <Link href="/security" className="link-arrow mt-10 text-ink">
               {t("label")}
             </Link>
           </div>

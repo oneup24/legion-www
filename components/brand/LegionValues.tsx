@@ -72,7 +72,7 @@ export function LegionValues({
             <span
               className={
                 compact
-                  ? "text-caption text-white/70"
+                  ? "text-caption text-ink-muted"
                   : "text-body text-on-dark"
               }
             >

@@ -95,14 +95,14 @@ export function BookDemoModal() {
   };
 
   const fieldCls =
-    "w-full h-12 px-4 border border-white/20 bg-transparent text-white outline-none transition-colors focus:border-accent";
-  const labelCls = "t-label mb-2 block text-ash";
+    "w-full h-12 px-4 border border-line-strong bg-transparent text-ink outline-none transition-colors focus:border-accent";
+  const labelCls = "t-label mb-2 block text-ink-faint";
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/75 backdrop-blur-sm z-[60]" />
-        <Dialog.Content className="fixed top-1/2 left-1/2 z-[61] max-h-[calc(100vh-32px)] w-[min(620px,calc(100vw-32px))] -translate-x-1/2 -translate-y-1/2 overflow-y-auto border border-white/14 bg-surface-1">
+        <Dialog.Content className="fixed top-1/2 left-1/2 z-[61] max-h-[calc(100vh-32px)] w-[min(620px,calc(100vw-32px))] -translate-x-1/2 -translate-y-1/2 overflow-y-auto border border-line bg-canvas-soft">
           <div className="p-7 sm:p-9">
             <div className="mb-8 flex items-start justify-between gap-6">
               <div>
@@ -110,20 +110,20 @@ export function BookDemoModal() {
                   <HexBadge size={26} tone="legion">
                     01
                   </HexBadge>
-                  <span className="h-px w-10 bg-white/20" aria-hidden />
-                  <span className="t-label text-ash">{t("kicker")}</span>
+                  <span className="h-px w-10 bg-line" aria-hidden />
+                  <span className="t-label text-ink-faint">{t("kicker")}</span>
                 </div>
-                <Dialog.Title className="t-display-2 t-balance text-white">
+                <Dialog.Title className="t-display-2 t-balance text-ink">
                   {t("title")}
                 </Dialog.Title>
-                <Dialog.Description className="t-body mt-3 text-smoke/70">
+                <Dialog.Description className="t-body mt-3 text-ink-muted">
                   {t("sub")}
                 </Dialog.Description>
               </div>
               <Dialog.Close asChild>
                 <button
                   aria-label={t("close")}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 text-white transition-colors hover:border-white/50"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center border border-line-strong text-ink transition-colors hover:border-line-strong"
                 >
                   <X size={18} />
                 </button>
@@ -143,7 +143,7 @@ export function BookDemoModal() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <p className="t-body text-white">{t("success")}</p>
+                <p className="t-body text-ink">{t("success")}</p>
                 <Button
                   variant="ghost"
                   onClick={() => setOpen(false)}
@@ -224,7 +224,7 @@ export function BookDemoModal() {
                     {t.raw("painPointOptions").map((opt: string) => (
                       <label
                         key={opt}
-                        className="flex cursor-pointer items-center gap-2 t-caption text-smoke/75"
+                        className="flex cursor-pointer items-center gap-2 t-caption text-ink-muted"
                       >
                         <input
                           type="checkbox"
@@ -269,7 +269,7 @@ export function BookDemoModal() {
                   </label>
                 </div>
 
-                <div className="mt-7 border-t border-white/12 pt-7">
+                <div className="mt-7 border-t border-line pt-7">
                   <Button
                     type="submit"
                     variant="accent"
@@ -280,7 +280,7 @@ export function BookDemoModal() {
                     {status === "submitting" ? t("submitting") : t("submit")}
                   </Button>
 
-                  <p className="t-caption mt-3 text-center text-ash">{t("privacy")}</p>
+                  <p className="t-caption mt-3 text-center text-ink-faint">{t("privacy")}</p>
                 </div>
 
                 {status === "error" && (

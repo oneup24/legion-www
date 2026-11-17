@@ -25,7 +25,7 @@ export function ProductPreview() {
   const tabs: TabKey[] = ["dashboard", "finance", "crm"];
 
   return (
-    <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+    <SectionShell tone="surface" hexField fieldOpacity={0.014}>
       <div className="shell section-y">
         <div className="split-grid">
           <div>
@@ -33,15 +33,15 @@ export function ProductPreview() {
           </div>
 
           <div>
-            <h2 className="t-display-1 t-balance text-white max-w-3xl">
+            <h2 className="t-display-1 t-balance text-ink max-w-3xl">
               {t("headline")}
             </h2>
-            <p className="mt-6 t-lead max-w-2xl text-smoke/70">{t("sub")}</p>
+            <p className="mt-6 t-lead max-w-2xl text-ink-muted">{t("sub")}</p>
 
             <div
               role="tablist"
               aria-label={t("eyebrow")}
-              className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-b border-white/12"
+              className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-b border-line"
             >
               {tabs.map((key) => (
                 <button
@@ -52,8 +52,8 @@ export function ProductPreview() {
                   onClick={() => setTab(key)}
                   className={`t-label pb-4 -mb-px border-b-2 transition-colors ${
                     tab === key
-                      ? "border-accent text-white"
-                      : "border-transparent text-ash hover:text-white"
+                      ? "border-accent text-ink"
+                      : "border-transparent text-ink-faint hover:text-ink"
                   }`}
                 >
                   {t(`tabs.${key}`)}
@@ -61,7 +61,7 @@ export function ProductPreview() {
               ))}
             </div>
 
-            <p className="mt-6 t-body text-smoke/65 max-w-2xl">
+            <p className="mt-6 t-body text-ink-muted max-w-2xl">
               {t(`descriptions.${tab}`)}
             </p>
 
@@ -70,7 +70,7 @@ export function ProductPreview() {
                 aria-hidden
                 className="absolute -inset-5 bg-accent/10 clip-hex hidden lg:block"
               />
-              <div className="relative border border-white/12 bg-white">
+              <div className="relative border border-line bg-white">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={tab}

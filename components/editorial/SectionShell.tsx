@@ -6,21 +6,23 @@ import { HexField } from "@/components/brand/Hex";
  *
  * The rhythm of the site is carried by which surface a block sits on, so the
  * surface choice lives in one place instead of being re-declared per block.
- * Black is the default; light surfaces are the deliberate exception.
+ *
+ * v4: white is the default canvas, soft grey is the band, brand blue is the
+ * one deliberate exception.
  */
 export type SectionTone = "void" | "surface" | "accent" | "paper" | "paperSoft";
 
 const TONE_CLASS: Record<SectionTone, string> = {
-  void: "bg-void text-white",
-  surface: "bg-surface-1 text-white",
+  void: "bg-canvas text-ink",
+  surface: "bg-canvas-soft text-ink",
   accent: "bg-accent text-white",
-  paper: "bg-paper text-ink",
-  paperSoft: "bg-paper-2 text-ink",
+  paper: "bg-white text-ink",
+  paperSoft: "bg-canvas-deep text-ink",
 };
 
 const FIELD_CLASS: Record<SectionTone, string> = {
-  void: "text-white",
-  surface: "text-white",
+  void: "text-ink",
+  surface: "text-ink",
   accent: "text-white",
   paper: "text-ink",
   paperSoft: "text-ink",

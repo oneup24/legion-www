@@ -20,10 +20,10 @@ export function Footer() {
   const tNav = useTranslations("nav");
 
   return (
-    <footer className="relative overflow-hidden bg-void border-t border-white/10">
+    <footer className="relative overflow-hidden bg-canvas-soft border-t border-line">
       <HexField
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        style={{ opacity: 0.045 }}
+        className="pointer-events-none absolute inset-0 h-full w-full text-ink"
+        style={{ opacity: 0.035 }}
       />
 
       <div className="shell relative pt-16 sm:pt-20 pb-10">
@@ -31,10 +31,10 @@ export function Footer() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between pb-14">
           <div>
             <div className="flex items-center gap-4">
-              <LogoMark size={44} tone="light" />
+              <LogoMark size={44} tone="dark" />
               <Wordmark size="lg" />
             </div>
-            <p className="mt-6 t-label text-ash">{t("tagline")}</p>
+            <p className="mt-6 t-label text-ink-faint">{t("tagline")}</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -48,7 +48,7 @@ export function Footer() {
         </div>
 
         {/* Menu, address, branches */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 border-t border-white/10 pt-10">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 border-t border-line pt-10">
           <FooterCol title={t("company")}>
             <FooterLink href="/about">{tNav("about")}</FooterLink>
             <FooterLink href="/contact">{tNav("contact")}</FooterLink>
@@ -77,11 +77,11 @@ export function Footer() {
         </div>
 
         {/* Address line */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <p className="t-micro text-ash">
+        <div className="mt-12 pt-6 border-t border-line flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p className="t-micro text-ink-faint">
             {t("address")} · hello@legionone.hk
           </p>
-          <p className="t-micro text-ash">
+          <p className="t-micro text-ink-faint">
             © {new Date().getFullYear()} LegionOne. {t("rights")}.
           </p>
         </div>
@@ -99,7 +99,7 @@ function FooterCol({
 }) {
   return (
     <div>
-      <h4 className="t-label text-ash mb-5">{title}</h4>
+      <h4 className="t-label text-ink-faint mb-5">{title}</h4>
       <ul className="space-y-3">{children}</ul>
     </div>
   );
@@ -116,7 +116,7 @@ function FooterLink({
     <li>
       <Link
         href={href as never}
-        className="t-caption text-white/70 hover:text-accent-bright transition-colors"
+        className="t-caption text-ink-muted hover:text-accent transition-colors"
       >
         {children}
       </Link>
@@ -136,7 +136,7 @@ function FooterExternalLink({
     <li>
       <a
         href={href}
-        className="t-caption text-white/70 hover:text-accent-bright transition-colors"
+        className="t-caption text-ink-muted hover:text-accent transition-colors"
       >
         {children}
       </a>

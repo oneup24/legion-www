@@ -40,7 +40,7 @@ export function SecurityPage() {
       />
 
       {/* The four certifications */}
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y">
           <SectionHeader
             index="01"
@@ -49,7 +49,7 @@ export function SecurityPage() {
             tone="surface"
           />
 
-          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-white/12 pt-10 sm:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-line pt-10 sm:grid-cols-2">
             {badges.map((b, i) => (
               <motion.div
                 key={b.label}
@@ -66,8 +66,8 @@ export function SecurityPage() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="mt-6 t-display-3 text-white">{b.label}</h3>
-                <p className="mt-3 t-body text-smoke/65">{b.desc}</p>
+                <h3 className="mt-6 t-display-3 text-ink">{b.label}</h3>
+                <p className="mt-3 t-body text-ink-muted">{b.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -87,14 +87,14 @@ export function SecurityPage() {
               />
             </div>
             <div className="lg:col-span-8">
-              <p className="t-statement text-white">{t("dataBody")}</p>
+              <p className="t-statement text-ink">{t("dataBody")}</p>
             </div>
           </div>
         </div>
       </SectionShell>
 
       {/* Detailed documentation */}
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -106,7 +106,7 @@ export function SecurityPage() {
               />
             </div>
             <div className="lg:col-span-8">
-              <p className="t-lead text-smoke/70">{t("docsBody")}</p>
+              <p className="t-lead text-ink-muted">{t("docsBody")}</p>
             </div>
           </div>
         </div>
@@ -120,13 +120,13 @@ export function SecurityPage() {
             kicker={t("ctaKicker")}
             title={t("ctaTitle")}
             tone="accent"
-            titleClassName="text-white"
+            titleClassName="text-ink"
             className="max-w-3xl"
           />
 
           <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end lg:gap-14">
             <div className="lg:col-span-8">
-              <p className="t-lead max-w-2xl text-white/85">{t("ctaBody")}</p>
+              <p className="t-lead max-w-2xl text-ink-muted">{t("ctaBody")}</p>
             </div>
             <div className="lg:col-span-4 lg:justify-self-end">
               <div className="flex flex-col items-start gap-4 sm:flex-row">
@@ -144,7 +144,7 @@ export function SecurityPage() {
                 <Link
                   href="/contact"
                   data-cta-id="security_contact"
-                  className="link-arrow text-white"
+                  className="link-arrow text-ink"
                 >
                   {tNav("contact")}
                 </Link>

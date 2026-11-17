@@ -3,11 +3,10 @@ import * as React from "react";
 export type SectionTone = "void" | "surface" | "accent" | "paper" | "paperSoft";
 
 /**
- * Section label — the small uppercase index that announces a block.
+ * Section label — the small index that announces a block.
  *
- * A short rule, then the label. On the reference site every block opens
- * with a letter-spaced uppercase tag, and that repetition is what makes the
- * page read as one system rather than a pile of sections.
+ * Every block opens with a short rule and a quiet label, and that repetition
+ * is what makes the page read as one system rather than a pile of sections.
  */
 export function SectionLabel({
   index,
@@ -20,12 +19,7 @@ export function SectionLabel({
   tone?: SectionTone;
   className?: string;
 }) {
-  const muted =
-    tone === "void" || tone === "surface"
-      ? "text-ash"
-      : tone === "accent"
-        ? "text-white/70"
-        : "text-graphite";
+  const muted = tone === "accent" ? "text-white/75" : "text-ink-faint";
 
   return (
     <div className={`sec-label ${muted} ${className}`}>

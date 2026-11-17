@@ -32,7 +32,7 @@ export function IndustryCases() {
       : "/use-cases/trading";
 
   return (
-    <SectionShell tone="void" hexField fieldOpacity={0.03}>
+    <SectionShell tone="void" hexField fieldOpacity={0.014}>
       <div className="shell section-y">
         <div className="split-grid">
           <div>
@@ -40,10 +40,10 @@ export function IndustryCases() {
           </div>
 
           <div>
-            <h2 className="t-display-1 t-balance text-white max-w-3xl">
+            <h2 className="t-display-1 t-balance text-ink max-w-3xl">
               {t("headline")}
             </h2>
-            <p className="mt-6 t-lead max-w-2xl text-smoke/70">{t("lead")}</p>
+            <p className="mt-6 t-lead max-w-2xl text-ink-muted">{t("lead")}</p>
 
             <ul className="mt-14 space-y-16">
               {items.map((item, i) => (
@@ -60,7 +60,7 @@ export function IndustryCases() {
                         aria-hidden
                         className="absolute -inset-4 bg-accent/10 clip-hex hidden lg:block"
                       />
-                      <div className="relative border border-white/12 bg-white transition-opacity group-hover:opacity-90">
+                      <div className="relative border border-line bg-white transition-opacity group-hover:opacity-90">
                         {item.key === "professionalServices" ? (
                           <CrmModuleMockup className="block w-full h-auto" />
                         ) : (
@@ -69,12 +69,12 @@ export function IndustryCases() {
                       </div>
                     </div>
 
-                    <div className="mt-6 flex flex-wrap items-baseline gap-x-6 gap-y-2 border-t border-white/12 pt-5">
+                    <div className="mt-6 flex flex-wrap items-baseline gap-x-6 gap-y-2 border-t border-line pt-5">
                       <span className="t-index text-accent">{item.index}</span>
-                      <h3 className="t-display-3 text-white">{item.title}</h3>
-                      <span className="t-label text-ash">{item.role}</span>
+                      <h3 className="t-display-3 text-ink">{item.title}</h3>
+                      <span className="t-label text-ink-faint">{item.role}</span>
                     </div>
-                    <p className="mt-3 max-w-xl text-body text-smoke/65">
+                    <p className="mt-3 max-w-xl text-body text-ink-muted">
                       {item.desc}
                     </p>
                   </Link>
@@ -82,7 +82,7 @@ export function IndustryCases() {
               ))}
             </ul>
 
-            <Link href="/use-cases" className="link-arrow mt-12 text-white">
+            <Link href="/use-cases" className="link-arrow mt-12 text-ink">
               {t("cta")}
             </Link>
           </div>

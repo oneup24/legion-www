@@ -30,7 +30,7 @@ export function NotFoundPage() {
   ];
 
   return (
-    <SectionShell tone="void" hexField fieldOpacity={0.04}>
+    <SectionShell tone="void" hexField fieldOpacity={0.014}>
       <div className="shell relative section-y">
         <HexOutline
           size={460}
@@ -43,8 +43,8 @@ export function NotFoundPage() {
 
         <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h1 className="t-display-hero t-balance text-white">{t("title")}</h1>
-            <p className="mt-7 t-lead max-w-xl text-smoke/70">{t("lead")}</p>
+            <h1 className="t-display-hero t-balance text-ink">{t("title")}</h1>
+            <p className="mt-7 t-lead max-w-xl text-ink-muted">{t("lead")}</p>
 
             <Link
               href="/"
@@ -60,14 +60,14 @@ export function NotFoundPage() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/12 pt-10 sm:mt-24">
-          <h2 className="t-label text-ash">{t("destinations")}</h2>
+        <div className="mt-16 border-t border-line pt-10 sm:mt-24">
+          <h2 className="t-label text-ink-faint">{t("destinations")}</h2>
           <ul className="mt-6 grid grid-cols-2 gap-x-10 gap-y-4 sm:grid-cols-3">
             {destinations.map((d, i) => (
               <li key={d.href}>
                 <Link
                   href={d.href}
-                  className="group flex items-baseline gap-3 py-1 t-body text-white/80 transition-colors hover:text-white"
+                  className="group flex items-baseline gap-3 py-1 t-body text-ink-muted transition-colors hover:text-ink"
                 >
                   <span className="t-index text-accent tabular-nums">
                     {String(i + 1).padStart(2, "0")}

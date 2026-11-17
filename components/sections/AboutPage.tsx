@@ -39,7 +39,7 @@ export function AboutPage() {
       />
 
       {/* Story */}
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -51,7 +51,7 @@ export function AboutPage() {
               />
             </div>
             <div className="lg:col-span-8">
-              <p className="t-lead text-smoke/70">{t("story.body")}</p>
+              <p className="t-lead text-ink-muted">{t("story.body")}</p>
             </div>
           </div>
         </div>
@@ -66,27 +66,27 @@ export function AboutPage() {
             title={t("pillarsTitle")}
             tone="void"
           />
-          <div className="mt-12 grid grid-cols-1 gap-x-14 gap-y-10 border-t border-white/12 pt-10 lg:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 gap-x-14 gap-y-10 border-t border-line pt-10 lg:grid-cols-2">
             <div>
               <HexIcon size={44} tone="legion">
-                <span className="t-micro text-white">01</span>
+                <span className="t-micro text-ink">01</span>
               </HexIcon>
-              <h3 className="mt-6 t-display-3 text-white">{t("vision.title")}</h3>
-              <p className="mt-4 t-body text-smoke/65">{t("vision.body")}</p>
+              <h3 className="mt-6 t-display-3 text-ink">{t("vision.title")}</h3>
+              <p className="mt-4 t-body text-ink-muted">{t("vision.body")}</p>
             </div>
-            <div className="lg:border-l lg:border-white/12 lg:pl-14">
+            <div className="lg:border-l lg:border-line lg:pl-14">
               <HexIcon size={44} tone="legion">
-                <span className="t-micro text-white">02</span>
+                <span className="t-micro text-ink">02</span>
               </HexIcon>
-              <h3 className="mt-6 t-display-3 text-white">{t("mission.title")}</h3>
-              <p className="mt-4 t-body text-smoke/65">{t("mission.body")}</p>
+              <h3 className="mt-6 t-display-3 text-ink">{t("mission.title")}</h3>
+              <p className="mt-4 t-body text-ink-muted">{t("mission.body")}</p>
             </div>
           </div>
         </div>
       </SectionShell>
 
       {/* Values — L.E.G.I.O.N. as hexagon letter tiles */}
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell relative section-y">
           <HexOutline
             size={460}
@@ -101,7 +101,7 @@ export function AboutPage() {
               title={t("values.title")}
               tone="surface"
             />
-            <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-white/12 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-line pt-10 sm:grid-cols-2 lg:grid-cols-3">
               {values.map((v, i) => (
                 <motion.div
                   key={v.letter}
@@ -112,16 +112,16 @@ export function AboutPage() {
                 >
                   <div className="flex items-center gap-4">
                     <HexIcon size={56} tone="legion">
-                      <span className="text-[22px] font-medium leading-none text-white">
+                      <span className="text-[22px] font-medium leading-none text-ink">
                         {v.letter}
                       </span>
                     </HexIcon>
-                    <span className="t-index text-ash">
+                    <span className="t-index text-ink-faint">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <h3 className="mt-6 t-display-3 text-white">{v.title}</h3>
-                  <p className="mt-3 t-body text-smoke/65">{v.desc}</p>
+                  <h3 className="mt-6 t-display-3 text-ink">{v.title}</h3>
+                  <p className="mt-3 t-body text-ink-muted">{v.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -141,12 +141,12 @@ export function AboutPage() {
           />
 
           {team.length === 0 ? (
-            <p className="mt-8 max-w-2xl border-l-2 border-accent pl-5 t-body text-smoke/70">
+            <p className="mt-8 max-w-2xl border-l-2 border-accent pl-5 t-body text-ink-muted">
               {t("team.pendingNote")}
             </p>
           ) : null}
 
-          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-white/12 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-line pt-10 sm:grid-cols-2 lg:grid-cols-3">
             {teamData.map((m, i) => (
               <motion.article
                 key={i}
@@ -161,11 +161,11 @@ export function AboutPage() {
                     <span className="t-index text-accent tabular-nums">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="mt-1 t-body text-white">{m.name}</h3>
+                    <h3 className="mt-1 t-body text-ink">{m.name}</h3>
                     <p className="t-caption text-accent mt-1">{m.role}</p>
                   </div>
                 </div>
-                <p className="mt-4 t-body text-smoke/65">{m.bio}</p>
+                <p className="mt-4 t-body text-ink-muted">{m.bio}</p>
               </motion.article>
             ))}
           </div>

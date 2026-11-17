@@ -22,7 +22,7 @@ export function SocialProof() {
   }[];
 
   return (
-    <SectionShell tone="void" hexField fieldOpacity={0.035}>
+    <SectionShell tone="void" hexField fieldOpacity={0.014}>
       <div className="shell section-y">
         <div className="split-grid">
           <div>
@@ -30,11 +30,11 @@ export function SocialProof() {
           </div>
 
           <div>
-            <h2 className="t-display-1 t-balance text-white max-w-3xl">
+            <h2 className="t-display-1 t-balance text-ink max-w-3xl">
               {t("headline")}
             </h2>
 
-            <ul className="mt-14 grid gap-px bg-white/12 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="mt-14 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, i) => (
                 <motion.li
                   key={stat.label}
@@ -42,18 +42,18 @@ export function SocialProof() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-6%" }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="bg-void px-6 py-9"
+                  className="bg-canvas px-6 py-9"
                 >
                   <HexIcon size={34} tone="legion">
-                    <span className="t-micro text-white">
+                    <span className="t-micro text-ink">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </HexIcon>
-                  <p className="mt-6 t-display-1 text-white leading-none">
+                  <p className="mt-6 t-display-1 text-ink leading-none">
                     {stat.value}
                     <span className="text-accent">{stat.suffix}</span>
                   </p>
-                  <p className="mt-3 t-body text-ash">{stat.label}</p>
+                  <p className="mt-3 t-body text-ink-faint">{stat.label}</p>
                 </motion.li>
               ))}
             </ul>

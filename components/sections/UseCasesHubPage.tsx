@@ -65,7 +65,7 @@ export function UseCasesHubPage() {
         lead={t("sub")}
       />
 
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y">
           <SectionHeader
             index="01"
@@ -74,7 +74,7 @@ export function UseCasesHubPage() {
             tone="surface"
           />
 
-          <div className="mt-14 border-t border-white/12">
+          <div className="mt-14 border-t border-line">
             {industries.map((ind, i) => {
               const title = titleFor(ind.key);
               const row = (
@@ -83,7 +83,7 @@ export function UseCasesHubPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-8%" }}
                   transition={{ duration: 0.45, delay: i * 0.05 }}
-                  className="grid grid-cols-1 gap-4 border-b border-white/12 py-8 lg:grid-cols-12 lg:gap-8 lg:py-10"
+                  className="grid grid-cols-1 gap-4 border-b border-line py-8 lg:grid-cols-12 lg:gap-8 lg:py-10"
                 >
                   <div className="lg:col-span-1">
                     <HexBadge size={32} tone={ind.comingSoon ? "onDark" : "legion"}>
@@ -100,7 +100,7 @@ export function UseCasesHubPage() {
                   <div className="lg:col-span-5">
                     <h3
                       className={`t-display-3 ${
-                        ind.comingSoon ? "text-ash" : "text-white"
+                        ind.comingSoon ? "text-ink-faint" : "text-ink"
                       }`}
                     >
                       {title}
@@ -111,7 +111,7 @@ export function UseCasesHubPage() {
                     {ind.comingSoon ? (
                       <Chip>{t("comingSoon")}</Chip>
                     ) : (
-                      <span className="link-arrow text-white">{t("viewCase")}</span>
+                      <span className="link-arrow text-ink">{t("viewCase")}</span>
                     )}
                   </div>
                 </motion.article>

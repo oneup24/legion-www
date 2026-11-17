@@ -10,7 +10,7 @@ import { SectionShell } from "@/components/editorial/SectionShell";
 import { HexBadge } from "@/components/brand/Hex";
 
 const FIELD =
-  "w-full h-12 px-4 border border-white/20 bg-transparent text-white outline-none transition-colors focus:border-accent";
+  "w-full h-12 px-4 border border-line-strong bg-transparent text-ink outline-none transition-colors focus:border-accent";
 
 export function ContactPage() {
   const t = useTranslations("contact");
@@ -50,7 +50,7 @@ export function ContactPage() {
         lead={t("sub")}
       />
 
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
             {/* Form */}
@@ -65,7 +65,7 @@ export function ContactPage() {
               <div className="mt-10">
                 {status === "success" ? (
                   <div className="border border-accent/40 bg-accent/10 p-8 text-center">
-                    <p className="t-body text-white">{t("form.success")}</p>
+                    <p className="t-body text-ink">{t("form.success")}</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
@@ -83,7 +83,7 @@ export function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="t-label mb-2 block text-ash">
+                      <label className="t-label mb-2 block text-ink-faint">
                         {t("form.message")} *
                       </label>
                       <textarea
@@ -119,7 +119,7 @@ export function ContactPage() {
                 tone="surface"
               />
 
-              <div className="mt-10 border-t border-white/12">
+              <div className="mt-10 border-t border-line">
                 <InfoRow index="01" label={t("info.address")} value={t("info.address")} />
                 <InfoRow index="02" label={t("form.phone")} value={t("info.phone")} />
                 <InfoRow
@@ -135,7 +135,7 @@ export function ContactPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cta-id="contact_whatsapp"
-                className="btn mt-6 bg-[#25D366] text-white hover:bg-[#1ebd5a]"
+                className="btn mt-6 bg-[#25D366] text-ink hover:bg-[#1ebd5a]"
               >
                 {t("info.whatsapp")}
               </a>
@@ -160,7 +160,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="t-label mb-2 block text-ash">
+      <label className="t-label mb-2 block text-ink-faint">
         {label}
         {required ? " *" : ""}
       </label>
@@ -186,13 +186,13 @@ function InfoRow({
         <HexBadge size={24} tone="legion">
           {index}
         </HexBadge>
-        <div className="t-label text-ash">{label}</div>
+        <div className="t-label text-ink-faint">{label}</div>
       </div>
-      <div className="mt-3 t-body text-white">{value}</div>
+      <div className="mt-3 t-body text-ink">{value}</div>
     </>
   );
   return (
-    <div className="border-b border-white/12 py-5">
+    <div className="border-b border-line py-5">
       {href ? (
         <a href={href} className="block hover:opacity-70">
           {content}

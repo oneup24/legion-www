@@ -2,10 +2,10 @@
 /**
  * Open Graph card generator.
  *
- * The share cards are built from the same design system as the site: a black
- * canvas, white uppercase type, brand blue as the only accent, and the cube
- * mark taken from the vector trace of the brand sheet (so the card and the
- * site always show the same logo).
+ * The share cards are built from the same design system as the site: a white
+ * canvas, ink type, brand blue as the only accent, and the cube mark taken
+ * from the vector trace of the brand sheet (so the card and the site always
+ * show the same logo).
  *
  *   pnpm assets          # regenerate the cards
  *   pnpm assets:check    # verify the committed PNGs match the SVG sources
@@ -59,9 +59,10 @@ async function loadSharp() {
 /* brand                                                                       */
 /* -------------------------------------------------------------------------- */
 
-const INK = "#1d1d1f";
+const INK = "#101318";
+const PAPER = "#ffffff";
 const BLUE = "#0166e6";
-const GREY = "#87868b";
+const GREY = "#4e5560";
 
 const FONT =
   "Poppins, Helvetica Neue, Helvetica, Arial, PingFang HK, Noto Sans CJK SC, sans-serif";
@@ -75,7 +76,7 @@ async function cubePaths() {
   const inner = svg
     .replace(/^[\s\S]*?<g id="legion-cube"[^>]*>/, "")
     .replace(/<\/g>\s*<\/svg>\s*$/, "");
-  return inner.replace(/#1d1d1f/g, "#ffffff").replace(/#0166e6/g, BLUE);
+  return inner.replace(/#1d1d1f/g, INK).replace(/#0166e6/g, BLUE);
 }
 
 function esc(s) {
@@ -163,9 +164,9 @@ function renderOgSvg(v, cube) {
     .map((item, i) => {
       const y = listTop + i * rowH;
       return `<g>
-        <text x="790" y="${y}" fill="#3d9bff" font-family="${FONT}" font-size="17" font-weight="500" letter-spacing="0.04em">${String(i + 1).padStart(2, "0")}</text>
-        <text x="836" y="${y}" fill="#ffffff" font-family="${FONT}" font-size="25" font-weight="400">${esc(item)}</text>
-        <line x1="790" y1="${y + 26}" x2="1120" y2="${y + 26}" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+        <text x="790" y="${y}" fill="${BLUE}" font-family="${FONT}" font-size="17" font-weight="500" letter-spacing="0.04em">${String(i + 1).padStart(2, "0")}</text>
+        <text x="836" y="${y}" fill="${INK}" font-family="${FONT}" font-size="25" font-weight="400">${esc(item)}</text>
+        <line x1="790" y1="${y + 26}" x2="1120" y2="${y + 26}" stroke="${INK}" stroke-opacity="0.12" stroke-width="1"/>
       </g>`;
     })
     .join("\n    ");
@@ -177,7 +178,7 @@ function renderOgSvg(v, cube) {
       const size = 58;
       const w = textWidth(line, size);
       const fitted = w > HEAD_MAX ? size * (HEAD_MAX / w) : size;
-      return `<text x="80" y="${236 + i * 70}" fill="#ffffff" font-family="${FONT}" font-size="${fitted.toFixed(1)}" font-weight="500" letter-spacing="-0.02em">${esc(line)}</text>`;
+      return `<text x="80" y="${236 + i * 70}" fill="${INK}" font-family="${FONT}" font-size="${fitted.toFixed(1)}" font-weight="500" letter-spacing="-0.02em">${esc(line)}</text>`;
     })
     .join("\n    ");
 
@@ -191,21 +192,21 @@ function renderOgSvg(v, cube) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <pattern id="hex" width="72" height="83.1" patternUnits="userSpaceOnUse">
-      <polygon points="36,0 72,20.8 72,62.4 36,83.1 0,62.4 0,20.8" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+      <polygon points="36,0 72,20.8 72,62.4 36,83.1 0,62.4 0,20.8" fill="none" stroke="${BLUE}" stroke-opacity="0.07" stroke-width="1"/>
     </pattern>
     <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="${BLUE}" stop-opacity="0.5"/>
       <stop offset="1" stop-color="${BLUE}" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="${INK}"/>
+  <rect width="1200" height="630" fill="${PAPER}"/>
   <rect width="1200" height="630" fill="url(#hex)"/>
   <rect x="0" y="0" width="1200" height="6" fill="url(#edge)"/>
 
   <g transform="translate(80 66) scale(0.085)">${cube}</g>
-  <text x="132" y="108" fill="#ffffff" font-family="${FONT}" font-size="34" font-weight="500" letter-spacing="-0.035em">LegionOne</text>
+  <text x="132" y="108" fill="${INK}" font-family="${FONT}" font-size="34" font-weight="500" letter-spacing="-0.035em">LegionOne</text>
   <rect x="132" y="120" width="44" height="3" fill="${BLUE}"/>
-  <text x="80" y="176" fill="#3d9bff" font-family="${FONT}" font-size="17" font-weight="500" letter-spacing="0.22em">${esc(v.kicker)}</text>
+  <text x="80" y="176" fill="${BLUE}" font-family="${FONT}" font-size="17" font-weight="500" letter-spacing="0.22em">${esc(v.kicker)}</text>
 
   ${headline}
   <text x="80" y="466" fill="${GREY}" font-family="${FONT}" font-size="24" font-weight="400">${esc(v.sub)}</text>
@@ -213,10 +214,10 @@ function renderOgSvg(v, cube) {
   <rect x="80" y="500" width="${ctaW}" height="54" fill="${BLUE}"/>
   <text x="${80 + ctaW / 2}" y="534" fill="#ffffff" font-family="${FONT}" font-size="${ctaSize}" font-weight="500" letter-spacing="0.12em" text-anchor="middle">${esc(v.cta)}</text>
 
-  <line x1="760" y1="176" x2="760" y2="554" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+  <line x1="760" y1="176" x2="760" y2="554" stroke="${INK}" stroke-opacity="0.14" stroke-width="1"/>
   ${rows}
 
-  <text x="1120" y="596" fill="#ffffff" fill-opacity="0.42" font-family="${FONT}" font-size="17" letter-spacing="0.1em" text-anchor="end">legionone.hk</text>
+  <text x="1120" y="596" fill="${INK}" fill-opacity="0.45" font-family="${FONT}" font-size="17" letter-spacing="0.1em" text-anchor="end">legionone.hk</text>
 </svg>`;
 }
 

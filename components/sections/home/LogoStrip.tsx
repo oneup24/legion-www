@@ -16,7 +16,7 @@ export function LogoStrip() {
   return (
     <section className="relative overflow-hidden bg-accent">
       <div className="shell flex items-center gap-6 py-4">
-        <span className="t-label text-white/80 hidden sm:inline shrink-0">
+        <span className="t-label text-white/85 hidden sm:inline shrink-0">
           {t("tickerLabel")}
         </span>
         <div className="marquee flex-1">
@@ -26,7 +26,7 @@ export function LogoStrip() {
                 {items.map((item) => (
                   <span
                     key={`${copy}-${item}`}
-                    className="t-display-3 text-white/95 px-6 whitespace-nowrap"
+                    className="t-display-3 text-white px-6 whitespace-nowrap"
                   >
                     {item}
                   </span>

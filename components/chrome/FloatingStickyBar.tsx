@@ -14,8 +14,8 @@ export function FloatingStickyBar() {
   const { setOpen: setBookOpen, setSource } = useBookDemo();
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-30 flex h-[60px] items-center justify-between gap-3 border-t border-white/12 bg-void/95 px-4 backdrop-blur-md md:hidden">
-      <span className="t-label truncate text-ash">{tHero("tagline")}</span>
+    <div className="fixed bottom-0 left-0 right-0 z-30 flex h-[60px] items-center justify-between gap-3 border-t border-line bg-white/95 px-4 backdrop-blur-md md:hidden">
+      <span className="t-label truncate text-ink-faint">{tHero("tagline")}</span>
       <button
         type="button"
         onClick={() => {

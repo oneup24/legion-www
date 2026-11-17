@@ -14,7 +14,7 @@ import { HexBadge, HexIcon } from "@/components/brand/Hex";
 const iconMap = { Share2, Wrench, Puzzle } as const;
 
 const FIELD =
-  "w-full h-12 px-4 border border-white/20 bg-transparent text-white outline-none transition-colors focus:border-accent";
+  "w-full h-12 px-4 border border-line-strong bg-transparent text-ink outline-none transition-colors focus:border-accent";
 
 export function PartnersPage() {
   const t = useTranslations("partners");
@@ -63,7 +63,7 @@ export function PartnersPage() {
       />
 
       {/* Philosophy */}
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y grid grid-cols-1 gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <SectionHeader
@@ -74,7 +74,7 @@ export function PartnersPage() {
             />
           </div>
           <div className="lg:col-span-8">
-            <p className="t-lead text-smoke/70">{t("philosophy.body")}</p>
+            <p className="t-lead text-ink-muted">{t("philosophy.body")}</p>
           </div>
         </div>
       </SectionShell>
@@ -89,7 +89,7 @@ export function PartnersPage() {
             tone="void"
           />
 
-          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-white/12 pt-10 md:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-line pt-10 md:grid-cols-3">
             {models.map((m, i) => {
               const Icon = iconMap[m.icon as keyof typeof iconMap];
               return (
@@ -108,8 +108,8 @@ export function PartnersPage() {
                       {String(i + 1).padStart(2, "0")}
                     </HexBadge>
                   </div>
-                  <h3 className="mt-6 t-display-3 text-white">{m.title}</h3>
-                  <p className="mt-3 t-body text-smoke/65">{m.desc}</p>
+                  <h3 className="mt-6 t-display-3 text-ink">{m.title}</h3>
+                  <p className="mt-3 t-body text-ink-muted">{m.desc}</p>
                 </motion.div>
               );
             })}
@@ -125,9 +125,9 @@ export function PartnersPage() {
             kicker={tNav("partners")}
             title={t("promises.title")}
             tone="accent"
-            titleClassName="text-white"
+            titleClassName="text-ink"
           />
-          <ul className="mt-14 max-w-3xl border-t border-white/30">
+          <ul className="mt-14 max-w-3xl border-t border-line-strong">
             {promises.map((p, i) => (
               <motion.li
                 key={i}
@@ -135,14 +135,14 @@ export function PartnersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-8%" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="grid grid-cols-1 gap-4 border-b border-white/30 py-6 lg:grid-cols-12 lg:gap-8"
+                className="grid grid-cols-1 gap-4 border-b border-line-strong py-6 lg:grid-cols-12 lg:gap-8"
               >
                 <span className="lg:col-span-1">
                   <HexBadge size={28} tone="onLegion">
                     {String(i + 1).padStart(2, "0")}
                   </HexBadge>
                 </span>
-                <span className="lg:col-span-11 t-body text-white/90">{p}</span>
+                <span className="lg:col-span-11 t-body text-ink">{p}</span>
               </motion.li>
             ))}
           </ul>
@@ -165,7 +165,7 @@ export function PartnersPage() {
             <div className="lg:col-span-7">
               {status === "success" ? (
                 <div className="border border-accent/40 bg-accent/10 p-8 text-center">
-                  <p className="t-body text-white">{t("form.success")}</p>
+                  <p className="t-body text-ink">{t("form.success")}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -189,7 +189,7 @@ export function PartnersPage() {
                     />
                   </div>
                   <div>
-                    <label className="t-label mb-2 block text-ash">
+                    <label className="t-label mb-2 block text-ink-faint">
                       {t("form.fields.model")}
                     </label>
                     <select name="model" required className={FIELD}>
@@ -202,7 +202,7 @@ export function PartnersPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="t-label mb-2 block text-ash">
+                    <label className="t-label mb-2 block text-ink-faint">
                       {t("form.fields.background")}
                     </label>
                     <textarea
@@ -247,7 +247,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="t-label mb-2 block text-ash">
+      <label className="t-label mb-2 block text-ink-faint">
         {label}
         {required ? " *" : ""}
       </label>

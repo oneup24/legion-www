@@ -75,7 +75,8 @@
           "label": "聯絡我們",
           "href": "/contact"
         }
-      ]
+      ],
+      "slideLabel": "投影片"
     },
     "customerLogos": {
       "eyebrow": "受香港各行業信賴",
@@ -115,6 +116,34 @@
         }
       ]
     },
+    "keyFeatures": {
+      "label": "核心功能",
+      "headline": "四大核心模組，每個方案都包括。",
+      "sub": "每個 LegionOne 方案都包括嘅四項核心能力——亦係你團隊日日會用到嗰部分。",
+      "tag": "核心模組",
+      "items": [
+        {
+          "key": "dashboard",
+          "title": "Dashboard",
+          "summary": "公司全局，一頁掌握。"
+        },
+        {
+          "key": "finance",
+          "title": "財務管理",
+          "summary": "從發票到帳齡，告別月底趕數。"
+        },
+        {
+          "key": "crm",
+          "title": "CRM 客戶管理",
+          "summary": "客戶資料、銷售管道、聯絡紀錄集中管理。"
+        },
+        {
+          "key": "inventory",
+          "title": "庫存管理",
+          "summary": "即時庫存，告別缺貨與囤貨。"
+        }
+      ]
+    },
     "manifesto": {
       "label": "我們相信",
       "quote": "香港中小企唔係唔識用工具，係工具太多，每個都講緊唔同語言。",
@@ -135,6 +164,43 @@
         "finance": "AR／AP 帳齡、發票管理、現金流預測，財務健康一目了然。",
         "crm": "銷售管道看板、客戶名單、聯絡人抽屜，跟進不漏接。"
       }
+    },
+    "otherFunctions": {
+      "label": "其他功能",
+      "headline": "平台仲有更多功能。",
+      "sub": "其餘三個模組、整合生態，同埋 LegionOne 點樣貼你現時嘅工作方式。",
+      "items": [
+        {
+          "key": "sales",
+          "meta": "銷售與報價",
+          "title": "報價 → 訂單 → 發票，一氣呵成。"
+        },
+        {
+          "key": "hr",
+          "meta": "人力資源",
+          "title": "員工資料、出勤、假期、薪酬，一站管理。"
+        },
+        {
+          "key": "automation",
+          "meta": "自動化工作流",
+          "title": "規則引擎，把重複交給系統。"
+        },
+        {
+          "key": "integrations",
+          "meta": "整合生態",
+          "title": "內建 API、Webhook 同檔案匯入／匯出，連接你現正使用嘅工具。"
+        },
+        {
+          "key": "sync",
+          "meta": "跨裝置",
+          "title": "雲端即時同步，手機、平板、桌面無縫銜接。"
+        },
+        {
+          "key": "templates",
+          "meta": "行業模板",
+          "title": "由行業模板起步，唔使由零開始逐個模組砌。"
+        }
+      ]
     },
     "services": {
       "label": "服務",

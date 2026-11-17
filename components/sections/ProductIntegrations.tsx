@@ -26,8 +26,8 @@ export function ProductIntegrations() {
   }, [items]);
 
   return (
-    <SectionShell tone="surface" hexField fieldOpacity={0.04}>
-      <div className="shell section-y">
+    <SectionShell tone="surface" hexField fieldOpacity={0.014}>
+      <div id="integrations" className="shell scroll-mt-24 section-y">
         <SectionHeader
           index="03"
           kicker={t("eyebrow")}
@@ -36,7 +36,7 @@ export function ProductIntegrations() {
           tone="surface"
         />
 
-        <div className="mt-14 border-t border-white/12">
+        <div className="mt-14 border-t border-line">
           {GROUP_ORDER.map((g, gi) => {
             const list = grouped.get(g) ?? [];
             if (list.length === 0) return null;
@@ -47,7 +47,7 @@ export function ProductIntegrations() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-8%" }}
                 transition={{ duration: 0.45, delay: gi * 0.05 }}
-                className="grid grid-cols-1 gap-4 border-b border-white/12 py-8 lg:grid-cols-12 lg:gap-8"
+                className="grid grid-cols-1 gap-4 border-b border-line py-8 lg:grid-cols-12 lg:gap-8"
               >
                 <div className="lg:col-span-3">
                   <h3 className="t-label text-accent">{t(`groups.${g}`)}</h3>
@@ -56,9 +56,9 @@ export function ProductIntegrations() {
                   {list.map((it) => (
                     <div
                       key={it.name}
-                      className="flex h-12 items-center justify-center border border-white/14 px-4 transition-colors hover:border-accent hover:bg-accent/10"
+                      className="flex h-12 items-center justify-center border border-line px-4 transition-colors hover:border-accent hover:bg-accent/10"
                     >
-                      <span className="t-caption text-white/85 text-center">
+                      <span className="t-caption text-ink-muted text-center">
                         {it.name}
                       </span>
                     </div>
@@ -72,7 +72,7 @@ export function ProductIntegrations() {
         <a
           href="#"
           data-cta-id="integrations_view_all"
-          className="link-arrow mt-10 text-white"
+          className="link-arrow mt-10 text-ink"
         >
           {t("cta")}
         </a>

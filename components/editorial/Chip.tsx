@@ -17,8 +17,8 @@ export function Chip({
   tone?: Tone;
 }) {
   const tones: Record<Tone, string> = {
-    light: "border-white/20 text-ash",
-    dark: "border-black/15 text-graphite",
+    light: "border-line-strong text-ink-faint",
+    dark: "border-line text-ink-muted",
     brand: "border-accent/40 text-accent",
   };
   return (

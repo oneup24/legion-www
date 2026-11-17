@@ -36,10 +36,10 @@ export function PartnerCTA() {
             className="lg:col-span-8"
           >
             <SectionLabel tone="void">{t("label")}</SectionLabel>
-            <h2 className="mt-6 t-display-1 t-balance text-white">
+            <h2 className="mt-6 t-display-1 t-balance text-ink">
               {t("headline")}
             </h2>
-            <p className="mt-6 t-lead max-w-2xl text-smoke/70">{t("sub")}</p>
+            <p className="mt-6 t-lead max-w-2xl text-ink-muted">{t("sub")}</p>
           </motion.div>
 
           <div className="lg:col-span-4 lg:justify-self-end">

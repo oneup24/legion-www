@@ -3,22 +3,22 @@
 import * as React from "react";
 
 /**
- * Sharp rectangular buttons.
+ * Buttons.
  *
- * Zero radius, uppercase, letter-spaced. Hover changes colour only —
- * no scale, no translate — so the interface stays as still as the black
- * canvas it sits on.
+ * Rounded rectangles in sentence case. Hover changes colour only — no scale,
+ * no translate — so the interface stays as still as the light canvas it sits
+ * on.
  */
 type ButtonVariant = "accent" | "white" | "ghost" | "ghostDark";
 type ButtonSize = "sm" | "md" | "lg";
 
 const variantClasses: Record<ButtonVariant, string> = {
   accent: "bg-accent text-white hover:bg-accent-hover",
-  white: "bg-white text-ink hover:bg-smoke",
+  white: "bg-white text-ink hover:bg-canvas-soft",
   ghost:
-    "bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/10",
+    "bg-transparent text-ink border border-line-strong hover:border-ink hover:bg-canvas-soft",
   ghostDark:
-    "bg-transparent text-ink border border-black/25 hover:border-ink hover:bg-black/5",
+    "bg-transparent text-white border border-white/45 hover:border-white hover:bg-white/10",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

@@ -38,7 +38,7 @@ export function CasePage({ namespace }: CasePageProps) {
       />
 
       {/* Pain */}
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y">
           <SectionHeader
             index="01"
@@ -47,7 +47,7 @@ export function CasePage({ namespace }: CasePageProps) {
             tone="surface"
           />
 
-          <ul className="mt-14 border-t border-white/12">
+          <ul className="mt-14 border-t border-line">
             {painItems.map((item, i) => (
               <motion.li
                 key={i}
@@ -55,14 +55,14 @@ export function CasePage({ namespace }: CasePageProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-8%" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="grid grid-cols-1 gap-4 border-b border-white/12 py-6 lg:grid-cols-12 lg:gap-8"
+                className="grid grid-cols-1 gap-4 border-b border-line py-6 lg:grid-cols-12 lg:gap-8"
               >
                 <span className="lg:col-span-1">
                   <HexBadge size={28} tone="onDark">
                     {String(i + 1).padStart(2, "0")}
                   </HexBadge>
                 </span>
-                <span className="lg:col-span-11 t-body text-smoke/60">{item}</span>
+                <span className="lg:col-span-11 t-body text-ink-muted">{item}</span>
               </motion.li>
             ))}
           </ul>
@@ -79,7 +79,7 @@ export function CasePage({ namespace }: CasePageProps) {
             tone="void"
           />
 
-          <ul className="mt-14 border-t border-white/12">
+          <ul className="mt-14 border-t border-line">
             {solutionItems.map((item, i) => (
               <motion.li
                 key={i}
@@ -87,16 +87,16 @@ export function CasePage({ namespace }: CasePageProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-8%" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="grid grid-cols-1 gap-4 border-b border-white/12 py-6 lg:grid-cols-12 lg:gap-8"
+                className="grid grid-cols-1 gap-4 border-b border-line py-6 lg:grid-cols-12 lg:gap-8"
               >
                 <span className="lg:col-span-1">
                   <HexIcon size={28} tone="legion">
-                    <span className="t-micro text-white">
+                    <span className="t-micro text-ink">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </HexIcon>
                 </span>
-                <span className="lg:col-span-11 t-body text-white/90">{item}</span>
+                <span className="lg:col-span-11 t-body text-ink">{item}</span>
               </motion.li>
             ))}
           </ul>
@@ -104,7 +104,7 @@ export function CasePage({ namespace }: CasePageProps) {
       </SectionShell>
 
       {/* Day flow — numbered spine */}
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y">
           <SectionHeader
             index="03"
@@ -113,7 +113,7 @@ export function CasePage({ namespace }: CasePageProps) {
             tone="surface"
           />
 
-          <div className="mt-14 border-t border-white/12">
+          <div className="mt-14 border-t border-line">
             {dayFlow.map((step, i) => (
               <motion.article
                 key={i}
@@ -121,7 +121,7 @@ export function CasePage({ namespace }: CasePageProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-8%" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="grid grid-cols-1 gap-4 border-b border-white/12 py-8 lg:grid-cols-12 lg:gap-8 lg:py-10"
+                className="grid grid-cols-1 gap-4 border-b border-line py-8 lg:grid-cols-12 lg:gap-8 lg:py-10"
               >
                 <div className="flex items-center gap-4 lg:col-span-2">
                   <HexBadge size={32} tone="legion">
@@ -130,8 +130,8 @@ export function CasePage({ namespace }: CasePageProps) {
                   <span className="t-label text-accent">{step.time}</span>
                 </div>
                 <div className="lg:col-span-10">
-                  <h3 className="t-display-3 text-white">{step.title}</h3>
-                  <p className="mt-3 t-body max-w-xl text-smoke/65">{step.detail}</p>
+                  <h3 className="t-display-3 text-ink">{step.title}</h3>
+                  <p className="mt-3 t-body max-w-xl text-ink-muted">{step.detail}</p>
                 </div>
               </motion.article>
             ))}

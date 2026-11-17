@@ -23,7 +23,7 @@ export function Capabilities() {
   }[];
 
   return (
-    <SectionShell tone="void" hexField fieldOpacity={0.03}>
+    <SectionShell tone="void" hexField fieldOpacity={0.014}>
       <div className="shell section-y">
         <div className="split-grid">
           <div>
@@ -31,12 +31,12 @@ export function Capabilities() {
           </div>
 
           <div>
-            <h2 className="t-display-1 t-balance text-white max-w-3xl">
+            <h2 className="t-display-1 t-balance text-ink max-w-3xl">
               {t("headline")}
             </h2>
-            <p className="mt-6 t-lead max-w-2xl text-smoke/70">{t("lead")}</p>
+            <p className="mt-6 t-lead max-w-2xl text-ink-muted">{t("lead")}</p>
 
-            <ul className="mt-14 border-t border-white/12">
+            <ul className="mt-14 border-t border-line">
               {items.map((item, i) => (
                 <motion.li
                   key={item.index}
@@ -44,16 +44,16 @@ export function Capabilities() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-6%" }}
                   transition={{ duration: 0.4, delay: i * 0.04 }}
-                  className="group grid gap-3 border-b border-white/12 py-7 sm:grid-cols-[88px_220px_minmax(0,1fr)] sm:items-baseline sm:gap-6"
+                  className="group grid gap-3 border-b border-line py-7 sm:grid-cols-[88px_220px_minmax(0,1fr)] sm:items-baseline sm:gap-6"
                 >
                   <span className="t-index text-accent">{item.index}</span>
-                  <span className="t-display-3 text-white">{item.title}</span>
-                  <span className="t-body text-smoke/65">{item.desc}</span>
+                  <span className="t-display-3 text-ink">{item.title}</span>
+                  <span className="t-body text-ink-muted">{item.desc}</span>
                 </motion.li>
               ))}
             </ul>
 
-            <Link href="/product" className="link-arrow mt-10 text-white">
+            <Link href="/product" className="link-arrow mt-10 text-ink">
               {t("cta")}
             </Link>
           </div>

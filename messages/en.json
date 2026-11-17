@@ -75,7 +75,8 @@
           "label": "Contact",
           "href": "/contact"
         }
-      ]
+      ],
+      "slideLabel": "Slide"
     },
     "customerLogos": {
       "eyebrow": "Trusted across Hong Kong industries",
@@ -115,6 +116,34 @@
         }
       ]
     },
+    "keyFeatures": {
+      "label": "Key LegionOne features",
+      "headline": "Four core modules. In every plan.",
+      "sub": "The four capabilities every LegionOne plan includes — the part of the system your team touches every single day.",
+      "tag": "Core module",
+      "items": [
+        {
+          "key": "dashboard",
+          "title": "Dashboard",
+          "summary": "The whole company, on one page."
+        },
+        {
+          "key": "finance",
+          "title": "Finance",
+          "summary": "From invoice to ageing, say goodbye to month-end sprints."
+        },
+        {
+          "key": "crm",
+          "title": "CRM",
+          "summary": "Customer records, pipeline and contact history, together."
+        },
+        {
+          "key": "inventory",
+          "title": "Inventory",
+          "summary": "Live stock — no more stockouts or overstocking."
+        }
+      ]
+    },
     "manifesto": {
       "label": "What we believe",
       "quote": "Hong Kong SMEs are not short of tools. They are short of tools that speak the same language.",
@@ -135,6 +164,43 @@
         "finance": "AR and AP ageing, invoice handling and cash-flow forecast — financial health at a glance.",
         "crm": "Pipeline board, customer list and a contact drawer, so no follow-up slips."
       }
+    },
+    "otherFunctions": {
+      "label": "Other functions",
+      "headline": "Everything else in the platform.",
+      "sub": "The remaining modules, the integrations, and the ways LegionOne fits the way your team already works.",
+      "items": [
+        {
+          "key": "sales",
+          "meta": "Sales & Quotation",
+          "title": "Quotation, order and invoice without a break."
+        },
+        {
+          "key": "hr",
+          "meta": "HR",
+          "title": "Staff records, attendance, leave and payroll, in one place."
+        },
+        {
+          "key": "automation",
+          "meta": "Automation",
+          "title": "A rules engine that takes the repetition off your team."
+        },
+        {
+          "key": "integrations",
+          "meta": "Integrations",
+          "title": "API, webhooks and file import/export — it slots into the tools you have today."
+        },
+        {
+          "key": "sync",
+          "meta": "Any device",
+          "title": "Cloud sync across phone, tablet and desktop, so approvals happen wherever you are."
+        },
+        {
+          "key": "templates",
+          "meta": "Industry templates",
+          "title": "We begin from an industry template, so you are not assembling modules from nothing."
+        }
+      ]
     },
     "services": {
       "label": "Services",

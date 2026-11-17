@@ -85,7 +85,7 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${poppins.variable} ${notoSansTC.variable}`}
     >
-      <body className="min-h-screen bg-void text-white antialiased">
+      <body className="min-h-screen bg-canvas text-ink antialiased">
         <a href="#main" className="skip-link">
           {locale === "zh-HK" ? "跳至主要內容" : "Skip to main content"}
         </a>

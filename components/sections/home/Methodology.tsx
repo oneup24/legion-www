@@ -30,12 +30,12 @@ export function Methodology() {
           </div>
 
           <div>
-            <h2 className="t-display-1 t-balance text-white max-w-3xl">
+            <h2 className="t-display-1 t-balance text-ink max-w-3xl">
               {t("headline")}
             </h2>
-            <p className="mt-6 t-lead max-w-2xl text-smoke/70">{t("lead")}</p>
+            <p className="mt-6 t-lead max-w-2xl text-ink-muted">{t("lead")}</p>
 
-            <ol className="mt-14 grid gap-px bg-white/12 sm:grid-cols-3">
+            <ol className="mt-14 grid gap-px bg-line sm:grid-cols-3">
               {steps.map((step, i) => (
                 <motion.li
                   key={step.number}
@@ -43,18 +43,18 @@ export function Methodology() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-6%" }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="bg-void p-7"
+                  className="bg-canvas p-7"
                 >
                   <span className="t-giant-index text-accent block text-[52px]">
                     {step.number}
                   </span>
-                  <h3 className="mt-5 t-display-3 text-white">{step.title}</h3>
-                  <p className="mt-3 t-body text-smoke/65">{step.desc}</p>
+                  <h3 className="mt-5 t-display-3 text-ink">{step.title}</h3>
+                  <p className="mt-3 t-body text-ink-muted">{step.desc}</p>
                   <ul className="mt-5 flex flex-wrap gap-2">
                     {step.tags.map((tag) => (
                       <li
                         key={tag}
-                        className="t-micro text-ash border border-white/14 px-2.5 py-1"
+                        className="t-micro text-ink-faint border border-line px-2.5 py-1"
                       >
                         {tag}
                       </li>

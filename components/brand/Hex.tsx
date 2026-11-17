@@ -23,8 +23,8 @@ const TONE_BG: Record<HexTone, string> = {
   ink: "bg-ink text-white",
   legion: "bg-accent text-white",
   onLegion: "bg-white text-accent",
-  onDark: "bg-white text-ink",
-  tint: "bg-white text-accent",
+  onDark: "bg-canvas-deep text-ink",
+  tint: "bg-accent-tint text-accent",
   legionTint: "bg-accent-tint text-accent",
 };
 

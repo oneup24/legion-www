@@ -19,7 +19,7 @@ export function Belief() {
   const t = useTranslations("home.manifesto");
 
   return (
-    <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+    <SectionShell tone="surface" hexField fieldOpacity={0.014}>
       <HexOutline
         size={560}
         strokePx={1}
@@ -45,14 +45,14 @@ export function Belief() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.5 }}
-              className="t-display-1 t-balance text-white"
+              className="t-display-1 t-balance text-ink"
             >
               {t("quote")}
             </motion.h2>
 
-            <div className="mt-10 max-w-xl border-t border-white/12 pt-8">
-              <p className="t-lead text-smoke/70">{t("body")}</p>
-              <Link href="/product" className="link-arrow mt-8 text-white">
+            <div className="mt-10 max-w-xl border-t border-line pt-8">
+              <p className="t-lead text-ink-muted">{t("body")}</p>
+              <Link href="/product" className="link-arrow mt-8 text-ink">
                 {t("cta")}
               </Link>
             </div>

@@ -3,17 +3,17 @@ import { SectionLabel, type SectionTone } from "@/components/editorial/SectionLa
 import { HexField, HexOutline } from "@/components/brand/Hex";
 
 const SURFACE: Record<SectionTone, string> = {
-  void: "bg-void",
-  surface: "bg-surface-1",
+  void: "bg-canvas",
+  surface: "bg-canvas-soft",
   accent: "bg-accent",
-  paper: "bg-paper",
-  paperSoft: "bg-paper-2",
+  paper: "bg-white",
+  paperSoft: "bg-canvas-deep",
 };
 
 /**
  * Inner-page hero.
  *
- * Oversized uppercase type on the shared shell grid, sitting under the fixed
+ * Calmer display type on the shared shell grid, sitting under the fixed
  * header. Every route opens the same way so the site reads as one thing;
  * only the surface tone changes, so no two routes look identical.
  */
@@ -32,23 +32,25 @@ export function PageHero({
   index?: string;
   children?: React.ReactNode;
 }) {
-  const onDark = tone === "void" || tone === "surface" || tone === "accent";
+  const onAccent = tone === "accent";
 
   return (
     <section className={`relative overflow-hidden ${SURFACE[tone]}`}>
-      {tone === "void" || tone === "surface" || tone === "accent" ? (
+      {tone !== "paper" && tone !== "paperSoft" ? (
         <HexField
-          className="pointer-events-none absolute inset-0 h-full w-full text-white"
-          style={{ opacity: 0.05 }}
+          className={`pointer-events-none absolute inset-0 h-full w-full ${
+            onAccent ? "text-white" : "text-ink"
+          }`}
+          style={{ opacity: 0.02 }}
         />
       ) : null}
       <HexOutline
         size={520}
         strokePx={1}
         className={`pointer-events-none absolute -right-40 -top-32 ${
-          onDark ? "text-white" : "text-accent"
+          onAccent ? "text-white" : "text-accent"
         }`}
-        style={{ opacity: onDark ? 0.14 : 0.12 }}
+        style={{ opacity: onAccent ? 0.16 : 0.07 }}
       />
 
       <div className="shell relative pt-[120px] pb-14 sm:pb-20 lg:pt-[168px] lg:pb-24">
@@ -56,16 +58,16 @@ export function PageHero({
           {kicker}
         </SectionLabel>
         <h1
-          className={`mt-7 t-display-hero t-balance ${
-            onDark ? "text-white" : "text-ink"
+          className={`mt-6 t-display-hero t-balance ${
+            onAccent ? "text-white" : "text-ink"
           }`}
         >
           {title}
         </h1>
         {lead ? (
           <p
-            className={`mt-7 t-lead max-w-2xl ${
-              onDark ? "text-smoke/70" : "text-graphite"
+            className={`mt-6 t-lead max-w-2xl ${
+              onAccent ? "text-white/85" : "text-ink-muted"
             }`}
           >
             {lead}

@@ -1,60 +1,55 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   LegionOne design system — v3
+   LegionOne design system — v4 (light)
    --------------------------------------------------------------------------
-   Built on the Lamborghini-inspired system in DESIGN.md, adapted to the
-   LegionOne brand:
+   v3 was a true-black system: black canvas, zero radius, uppercase display
+   type. The brief for v4 was that the site had become too dark and too heavy,
+   and that the homepage should follow the minimax.io layout.
 
-     · true black is the default canvas; light surfaces are the exception
+   So the canvas is now light and the page breathes:
+
+     · white canvas, soft-grey section bands
      · one chromatic colour only — Legion blue #0166e6
-     · depth comes from surface layering, never from shadows
-     · zero border-radius, sharp rectangular geometry
-     · uppercase display type at extreme scale with tight line-heights
-     · the cube / hexagon is the only recurring graphic device
+     · rounded geometry (20px cards, 16px tiles, 70px pills)
+     · sentence-case display type at a calmer scale
+     · the cube / hexagon is still the only recurring graphic device
 
-   Reference sites: gaiacommunications.com.hk (look and feel) and
-   monopo.co.jp (body structure).
+   Reference: minimax.io — section rhythm, card anatomy, the "View All"
+   pill, the two-column function list.
    ========================================================================== */
 
 @theme {
-  /* ---- surfaces: the darkness ladder ---- */
-  --color-void: #000000;
-  --color-surface-1: #101012;
-  --color-surface-2: #18181b;
-  --color-surface-3: #222226;
-  --color-surface-4: #2c2c31;
+  /* ---- canvas & surfaces (the lightness ladder) ---- */
+  --color-canvas: #ffffff;
+  --color-canvas-soft: #f6f8fa;
+  --color-canvas-deep: #eef1f5;
+  --color-canvas-strong: #e4e8ee;
 
-  /* ---- light surfaces (rare, deliberate) ---- */
-  --color-paper: #ffffff;
-  --color-paper-2: #f6f6f7;
-  --color-paper-3: #ebebed;
+  /* ---- text ---- */
+  --color-ink: #101318; /* primary */
+  --color-ink-muted: #4e5560; /* secondary */
+  --color-ink-faint: #868d99; /* tertiary, meta */
+
+  /* ---- lines ---- */
+  --color-line: #e6e9ee;
+  --color-line-soft: #f0f2f6;
+  --color-line-strong: #d2d7df;
 
   /* ---- the single accent ---- */
   --color-accent: #0166e6;
   --color-accent-hover: #0a52b8;
   --color-accent-bright: #3d9bff;
-  --color-accent-dim: #0a4a9e;
-  --color-accent-tint: #e8f1fd;
+  --color-accent-deep: #003a94;
+  --color-accent-tint: #e9f2fe;
 
-  /* ---- brand ink (the machine black from the brand sheet) ---- */
-  --color-ink: #1d1d1f;
-
-  /* ---- text on dark ---- */
-  --color-white: #ffffff;
-  --color-smoke: #f2f2f4;
-  --color-ash: #87868b;
-  --color-steel: #a1a1a6;
-
-  /* ---- text on light ---- */
-  --color-graphite: #494949;
-  --color-ash-light: #87868b;
-
-  /* ---- lines ---- */
-  --color-line: rgba(255, 255, 255, 0.12);
-  --color-line-strong: rgba(255, 255, 255, 0.24);
-  --color-line-dark: rgba(0, 0, 0, 0.12);
-  --color-line-accent: rgba(1, 102, 230, 0.28);
+  /* ---- inverse surfaces (the few dark bands that remain) ---- */
+  --color-inverse: #0e1116;
+  --color-inverse-2: #171b22;
+  --color-inverse-3: #20252e;
+  --color-inverse-ink: #ffffff;
+  --color-inverse-muted: #a9b0bc;
+  --color-line-inverse: rgba(255, 255, 255, 0.14);
 
   /* ---- status ---- */
   --color-success: #1f8a4c;
@@ -69,7 +64,12 @@
   --font-body: var(--font-brand, var(--font-poppins)), "Noto Sans TC",
     system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  --radius-none: 0px;
+  /* ---- radius ---- */
+  --radius-card: 20px;
+  --radius-tile: 16px;
+  --radius-btn: 10px;
+  --radius-pill: 70px;
+  --radius-nav: 30px;
 }
 
 /* ==========================================================================
@@ -78,8 +78,8 @@
 
 html,
 body {
-  background: var(--color-void);
-  color: var(--color-white);
+  background: var(--color-canvas);
+  color: var(--color-ink);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.5;
@@ -106,79 +106,77 @@ a {
 /* ==========================================================================
    type scale
    --------------------------------------------------------------------------
-   Extreme scale range, from 132px display down to 10px micro labels. Weight
-   500 carries the display type so the size does the shouting, not the weight.
+   Calm by design: the display sizes come down from v3's 132px ceiling and
+   lose the uppercase, so the page reads as a product site rather than a
+   poster. The small meta labels keep their uppercase — that is where the
+   brand's letter-spaced voice still belongs.
    ========================================================================== */
 
 .t-display-hero {
-  font-size: clamp(44px, 8.6vw, 132px);
-  line-height: 0.92;
-  letter-spacing: -0.025em;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-size: clamp(36px, 5.6vw, 72px);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  font-weight: 600;
 }
 
 .t-display-1 {
-  font-size: clamp(34px, 6vw, 84px);
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-size: clamp(28px, 3.9vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  font-weight: 600;
 }
 
 .t-display-2 {
-  font-size: clamp(26px, 3.8vw, 54px);
-  line-height: 1.1;
-  letter-spacing: -0.016em;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-size: clamp(22px, 2.8vw, 34px);
+  line-height: 1.16;
+  letter-spacing: -0.014em;
+  font-weight: 600;
 }
 
 .t-display-3 {
-  font-size: clamp(20px, 2.4vw, 34px);
-  line-height: 1.18;
-  letter-spacing: -0.012em;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.26;
+  letter-spacing: -0.01em;
+  font-weight: 600;
 }
 
 .t-statement {
-  font-size: clamp(22px, 2.9vw, 42px);
-  line-height: 1.16;
-  letter-spacing: -0.014em;
+  font-size: clamp(19px, 2.2vw, 30px);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
   font-weight: 400;
 }
 
 .t-lead {
-  font-size: clamp(17px, 1.7vw, 22px);
-  line-height: 1.52;
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.6;
   font-weight: 400;
 }
 
 .t-body {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .t-body-cjk {
   font-size: 16px;
-  line-height: 1.78;
+  line-height: 1.8;
 }
 
 .t-caption {
   font-size: 14px;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .t-fine {
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .t-label {
   font-size: 11px;
   line-height: 1.2;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -186,7 +184,7 @@ a {
 .t-micro {
   font-size: 10px;
   line-height: 1.2;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -199,12 +197,12 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
-/* The giant section number — GAIA's oversized numerals, in brand blue. */
+/* The section number — brand blue, but no longer shouted at 132px. */
 .t-giant-index {
-  font-size: clamp(56px, 9vw, 132px);
-  line-height: 0.8;
-  letter-spacing: -0.04em;
-  font-weight: 500;
+  font-size: clamp(40px, 5.2vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
 
@@ -212,13 +210,12 @@ a {
   text-wrap: balance;
 }
 
-/* Chinese display type keeps the uppercase rule out of the way. */
+/* Chinese display type is set a touch heavier to hold its own. */
 :lang(zh-HK) .t-display-hero,
 :lang(zh-HK) .t-display-1,
 :lang(zh-HK) .t-display-2,
 :lang(zh-HK) .t-display-3 {
-  text-transform: none;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   font-weight: 600;
 }
 
@@ -229,7 +226,7 @@ a {
 .shell {
   margin-inline: auto;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1320px;
   padding-inline: 20px;
 }
 
@@ -258,30 +255,30 @@ a {
   }
 }
 
-/* Section rhythm — 8px base unit, per the design system. */
+/* Section rhythm — 8px base unit, following the reference spacing. */
 .section-y {
-  padding-block: 72px;
+  padding-block: 64px;
 }
 
 @media (min-width: 768px) {
   .section-y {
-    padding-block: 112px;
+    padding-block: 88px;
   }
 }
 
 @media (min-width: 1280px) {
   .section-y {
-    padding-block: 144px;
+    padding-block: 104px;
   }
 }
 
 .section-y-tight {
-  padding-block: 48px;
+  padding-block: 40px;
 }
 
 @media (min-width: 768px) {
   .section-y-tight {
-    padding-block: 72px;
+    padding-block: 64px;
   }
 }
 
@@ -298,15 +295,15 @@ a {
 }
 
 .rule-accent {
-  border-top: 1px solid var(--color-line-accent);
+  border-top: 1px solid var(--color-line-accent, rgba(1, 102, 230, 0.24));
 }
 
 .rule-dark {
-  border-top: 1px solid var(--color-line-dark);
+  border-top: 1px solid var(--color-line-inverse);
 }
 
 /* ==========================================================================
-   buttons — sharp rectangles, colour-only hover
+   buttons — rounded rectangles, colour-only hover
    ========================================================================== */
 
 .btn {
@@ -315,17 +312,16 @@ a {
   justify-content: center;
   gap: 10px;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--radius-btn);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  line-height: 1;
-  padding: 17px 26px;
-  min-height: 50px;
+  letter-spacing: 0.005em;
+  line-height: 1.2;
+  padding: 13px 24px;
+  min-height: 46px;
   transition: background-color 0.18s ease, color 0.18s ease,
-    border-color 0.18s ease;
+    border-color 0.18s ease, box-shadow 0.18s ease;
   cursor: pointer;
 }
 
@@ -344,62 +340,82 @@ a {
 }
 
 .btn-white:hover {
-  background: var(--color-smoke);
+  background: var(--color-canvas-soft);
 }
 
 .btn-ghost {
   background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line-strong);
 }
 
 .btn-ghost:hover {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-ink);
+  background: var(--color-canvas-soft);
 }
 
 .btn-ghost-dark {
   background: transparent;
-  color: var(--color-ink);
-  border: 1px solid rgba(0, 0, 0, 0.28);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .btn-ghost-dark:hover {
-  border-color: var(--color-ink);
-  background: rgba(0, 0, 0, 0.04);
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .btn-sm {
-  padding: 13px 18px;
-  min-height: 42px;
-  font-size: 12px;
+  padding: 10px 18px;
+  min-height: 40px;
+  font-size: 14px;
 }
 
-/* The monopo-style text link: a rule that grows on hover. */
+/* The arrow link — a rule under the text that grows on hover. */
 .link-arrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
+  gap: 8px;
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  line-height: 1;
-  padding-bottom: 8px;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  padding-bottom: 6px;
   border-bottom: 1px solid currentColor;
   transition: gap 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 
 .link-arrow:hover {
-  gap: 16px;
+  gap: 14px;
 }
 
 .link-arrow-muted {
-  color: var(--color-ash);
+  color: var(--color-ink-muted);
 }
 
 .link-arrow-muted:hover {
-  color: var(--color-white);
+  color: var(--color-accent);
+}
+
+/* The pill used for "View All" and similar secondary actions. */
+.pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: var(--color-ink);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 11px 22px;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.pill-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 /* ==========================================================================
@@ -407,34 +423,72 @@ a {
    ========================================================================== */
 
 .surface-1 {
-  background: var(--color-surface-1);
+  background: var(--color-canvas-soft);
 }
 
 .surface-2 {
-  background: var(--color-surface-2);
+  background: var(--color-canvas-soft);
 }
 
 .surface-3 {
-  background: var(--color-surface-3);
+  background: var(--color-canvas-deep);
 }
 
 .surface-4 {
-  background: var(--color-surface-4);
+  background: var(--color-canvas-strong);
 }
 
 .surface-paper {
-  background: var(--color-paper);
+  background: var(--color-canvas);
   color: var(--color-ink);
 }
 
 .surface-paper-2 {
-  background: var(--color-paper-2);
+  background: var(--color-canvas-soft);
   color: var(--color-ink);
 }
 
 .surface-accent {
   background: var(--color-accent);
   color: #fff;
+}
+
+/* ==========================================================================
+   cards — the reference site's card anatomy
+   --------------------------------------------------------------------------
+   A rounded white card with a hairline border, an optional media panel on
+   top, then the body. Hover lifts the border towards the accent rather
+   than dropping a shadow, which keeps the page flat and quick.
+   ========================================================================== */
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: border-color 0.22s ease, transform 0.22s ease;
+}
+
+.card-hover:hover {
+  border-color: var(--color-line-strong);
+}
+
+.card-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-tile);
+  background: var(--color-canvas-soft);
+}
+
+.card-body {
+  padding: 22px 24px 26px;
+}
+
+/* The tile used for the function list's thumbnail. */
+.tile {
+  border-radius: var(--radius-tile);
+  overflow: hidden;
+  background: var(--color-accent-tint);
 }
 
 /* ==========================================================================
@@ -519,7 +573,7 @@ a {
    ========================================================================== */
 
 :focus-visible {
-  outline: 2px solid var(--color-accent-bright);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
@@ -543,8 +597,7 @@ a {
   padding: 12px 18px;
   z-index: 100;
   font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .skip-link:focus {
@@ -564,13 +617,13 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--color-ash);
+  color: var(--color-ink-faint);
 }
 
 [data-overlay] {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.78);
+  background: rgba(16, 19, 24, 0.42);
   backdrop-filter: blur(6px);
   z-index: 50;
 }
@@ -584,15 +637,16 @@ textarea::placeholder {
   width: min(600px, calc(100vw - 32px));
   max-height: calc(100vh - 32px);
   overflow-y: auto;
-  background: var(--color-surface-1);
+  background: var(--color-canvas);
   border: 1px solid var(--color-line);
-  border-radius: 0;
+  border-radius: var(--radius-card);
 }
 
 /* ==========================================================================
-   hero navigation strip (GAIA)
+   hero navigation strip
    --------------------------------------------------------------------------
-   A row of uppercase links pinned to the bottom of the hero.
+   A row of links pinned to the bottom edge of the hero, the way the
+   reference site carries its section menu.
    ========================================================================== */
 
 .hero-nav-strip {
@@ -614,18 +668,17 @@ textarea::placeholder {
 }
 
 .hero-nav-strip a {
-  padding: 20px 16px;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-steel);
+  padding: 18px 16px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--color-ink-muted);
   border-right: 1px solid var(--color-line);
   transition: color 0.18s ease, background-color 0.18s ease;
 }
 
 .hero-nav-strip a:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-accent);
+  background: var(--color-canvas-soft);
 }
 
 .hero-nav-strip a:last-child {
@@ -633,16 +686,16 @@ textarea::placeholder {
 }
 
 /* ==========================================================================
-   section label — the small uppercase index above a heading
+   section label — the small index above a heading
    ========================================================================== */
 
 .sec-label {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -652,11 +705,11 @@ textarea::placeholder {
   width: 22px;
   height: 1px;
   background: currentColor;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 /* ==========================================================================
-   grid helpers used by the monopo-style two column layout
+   grid helpers used by the two column layout
    ========================================================================== */
 
 .split-grid {
@@ -666,8 +719,8 @@ textarea::placeholder {
 
 @media (min-width: 1024px) {
   .split-grid {
-    grid-template-columns: 260px minmax(0, 1fr);
-    gap: 64px;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 56px;
   }
 }
 
@@ -678,7 +731,7 @@ textarea::placeholder {
 
 @media (min-width: 1024px) {
   .split-grid-wide {
-    grid-template-columns: 360px minmax(0, 1fr);
-    gap: 80px;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 72px;
   }
 }

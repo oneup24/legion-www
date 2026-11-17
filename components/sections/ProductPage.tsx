@@ -79,16 +79,16 @@ export function ProductPage() {
       </PageHero>
 
       {/* The product render — the brightest object on the page */}
-      <section className="relative bg-void pb-4">
+      <section className="relative bg-canvas pb-4">
         <div className="shell">
-          <div className="relative border border-white/12 bg-white">
+          <div className="relative border border-line bg-white">
             <DashboardOverviewMockup className="block w-full h-auto" />
           </div>
         </div>
       </section>
 
       {/* The seven modules as a hexagon grid */}
-      <SectionShell tone="surface" hexField fieldOpacity={0.04}>
+      <SectionShell tone="surface" hexField fieldOpacity={0.014}>
         <div className="shell section-y">
           <SectionHeader
             index="01"
@@ -112,7 +112,7 @@ export function ProductPage() {
                   <HexIcon size={52} tone="legion">
                     <Icon size={21} strokeWidth={1.5} aria-hidden />
                   </HexIcon>
-                  <h3 className="mt-5 t-body text-white">{t(`section.${key}.title`)}</h3>
+                  <h3 className="mt-5 t-body text-ink">{t(`section.${key}.title`)}</h3>
                   <span className="mt-2 t-index text-accent tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -133,17 +133,18 @@ export function ProductPage() {
             tone="void"
           />
 
-          <div className="mt-14 border-t border-white/12">
+          <div className="mt-14 border-t border-line">
             {MODULES.map((key, i) => {
               const bullets = t.raw(`section.${key}.bullets`) as string[];
               return (
                 <motion.article
                   key={key}
+                  id={`module-${key}`}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-8%" }}
                   transition={{ duration: 0.45, delay: i * 0.04 }}
-                  className="grid grid-cols-1 gap-4 border-b border-white/12 py-8 lg:grid-cols-12 lg:gap-8 lg:py-10"
+                  className="grid scroll-mt-24 grid-cols-1 gap-4 border-b border-line py-8 lg:grid-cols-12 lg:gap-8 lg:py-10"
                 >
                   <div className="lg:col-span-1">
                     <HexBadge size={30} tone="legion">
@@ -152,10 +153,10 @@ export function ProductPage() {
                   </div>
 
                   <div className="lg:col-span-4">
-                    <h3 className="t-display-3 text-white">
+                    <h3 className="t-display-3 text-ink">
                       {t(`section.${key}.title`)}
                     </h3>
-                    <p className="mt-2 t-body text-smoke/60">
+                    <p className="mt-2 t-body text-ink-muted">
                       {t(`section.${key}.tagline`)}
                     </p>
                   </div>
@@ -165,7 +166,7 @@ export function ProductPage() {
                       {bullets.map((b, bi) => (
                         <li
                           key={bi}
-                          className="flex items-start gap-3 t-body text-white/85"
+                          className="flex items-start gap-3 t-body text-ink-muted"
                         >
                           <HexIcon size={12} tone="legion" className="mt-1.5 shrink-0" />
                           {b}
@@ -192,7 +193,7 @@ export function ProductPage() {
                 kicker={t("sections.ctaKicker")}
                 title={t("bottomCta.headline")}
                 tone="accent"
-                titleClassName="text-white"
+                titleClassName="text-ink"
               />
             </div>
             <div className="lg:col-span-4 lg:justify-self-end">
@@ -211,7 +212,7 @@ export function ProductPage() {
                 <a
                   href="#"
                   data-cta-id="product_download"
-                  className="link-arrow text-white"
+                  className="link-arrow text-ink"
                 >
                   {t("bottomCta.secondaryCta")}
                 </a>
