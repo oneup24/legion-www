@@ -33,8 +33,8 @@ export default function LocaleError({
 
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-14">
           <div className="lg:col-span-7">
-            <h1 className="text-display-xl text-ink text-balance">{t("title")}</h1>
-            <p className="mt-7 text-editorial-lead text-ink-muted-80 max-w-xl text-body-cjk">
+            <h1 className="t-display-hero t-balance text-ink">{t("title")}</h1>
+            <p className="mt-6 t-lead text-ink-muted max-w-xl text-body-cjk">
               {t("body")}
             </p>
 
@@ -43,14 +43,14 @@ export default function LocaleError({
                 type="button"
                 onClick={() => reset()}
                 data-cta-id="error_retry"
-                className="inline-flex items-center gap-2 h-12 px-6 rounded-pill bg-primary text-on-primary text-button hover:bg-primary-focus transition-colors"
+                className="btn btn-accent"
               >
                 {t("retry")}
               </button>
               <Link
                 href="/"
                 data-cta-id="error_home"
-                className="inline-flex items-center gap-2 h-12 px-4 text-button text-ink hover:text-primary transition-colors"
+                className="btn btn-ghost"
               >
                 {t("backHome")}
               </Link>
@@ -58,7 +58,7 @@ export default function LocaleError({
           </div>
 
           <div className="lg:col-span-5 flex items-start justify-center lg:justify-end">
-            <NotFoundMark className="w-full max-w-[320px] text-primary" />
+            <NotFoundMark className="w-full max-w-[320px] text-accent" />
           </div>
         </div>
       </div>

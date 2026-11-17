@@ -20,7 +20,7 @@ export default function BookPage() {
 
   return (
     <div className="mx-auto max-w-[600px] px-4 py-24 text-center">
-      <p className="text-body text-ink-muted-80">開啟預約表單中...</p>
+      <p className="t-body text-ink-muted">開啟預約表單中...</p>
     </div>
   );
 }

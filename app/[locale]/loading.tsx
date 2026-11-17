@@ -15,30 +15,30 @@ export default function Loading() {
           <div className="lg:col-span-7">
             <div
               aria-hidden
-              className="h-12 w-full max-w-xl rounded-sm bg-surface-pearl"
+              className="h-12 w-full max-w-xl rounded-sm bg-canvas-deep"
             />
             <div
               aria-hidden
-              className="mt-5 h-12 w-4/5 max-w-md rounded-sm bg-surface-pearl"
+              className="mt-5 h-12 w-4/5 max-w-md rounded-sm bg-canvas-deep"
             />
             <div
               aria-hidden
-              className="mt-6 h-4 w-full max-w-lg rounded-sm bg-surface-pearl"
+              className="mt-6 h-4 w-full max-w-lg rounded-sm bg-canvas-deep"
             />
             <div
               aria-hidden
-              className="mt-2.5 h-4 w-3/4 max-w-sm rounded-sm bg-surface-pearl"
+              className="mt-2.5 h-4 w-3/4 max-w-sm rounded-sm bg-canvas-deep"
             />
             <div
               aria-hidden
-              className="mt-10 h-12 w-40 rounded-pill bg-surface-pearl"
+              className="mt-10 h-12 w-40 rounded-btn bg-canvas-deep"
             />
           </div>
 
           <div className="lg:col-span-5 flex items-start justify-center lg:justify-end">
             <div
               aria-hidden
-              className="w-full max-w-[320px] aspect-square rounded-sm bg-surface-pearl"
+              className="w-full max-w-[320px] aspect-square rounded-sm bg-canvas-deep"
             />
           </div>
         </div>
