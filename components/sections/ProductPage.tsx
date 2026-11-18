@@ -166,7 +166,8 @@ export function ProductPage() {
                       {bullets.map((b, bi) => (
                         <li
                           key={bi}
-                          className="flex items-start gap-3 t-body text-ink-muted"
+                          id={`module-${key}-${bi}`}
+                          className="flex scroll-mt-24 items-start gap-3 t-body text-ink-muted"
                         >
                           <HexIcon size={12} tone="legion" className="mt-1.5 shrink-0" />
                           {b}

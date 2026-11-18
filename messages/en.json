@@ -159,11 +159,32 @@
         "finance": "Finance",
         "crm": "CRM"
       },
+      "chips": {
+        "dashboard": [
+          "KPI cards",
+          "Revenue trend",
+          "Recent activity",
+          "Custom dashboards"
+        ],
+        "finance": [
+          "AR & AP ageing",
+          "Invoice flow",
+          "Cash-flow forecast",
+          "Multi-currency & tax"
+        ],
+        "crm": [
+          "Pipeline board",
+          "360° customer record",
+          "Contact history",
+          "WhatsApp & email"
+        ]
+      },
       "descriptions": {
         "dashboard": "KPI cards, a revenue trend and recent activity — the whole company on one page.",
         "finance": "AR and AP ageing, invoice handling and cash-flow forecast — financial health at a glance.",
         "crm": "Pipeline board, customer list and a contact drawer, so no follow-up slips."
-      }
+      },
+      "cardCta": "See it"
     },
     "otherFunctions": {
       "label": "Other functions",
